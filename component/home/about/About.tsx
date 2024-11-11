@@ -22,7 +22,7 @@ const AboutSection: React.FC = () => {
         >
           <div className="relative mb-[60px] w-[100%] overflow-hidden rounded-md lg:max-w-[425px]">
             <Image
-              src="logo.svg"
+              src="/images/about/about-2.webp"
               alt="About image"
               width={0}
               height={0}
@@ -33,7 +33,7 @@ const AboutSection: React.FC = () => {
           </div>
           <div className="absolute bottom-0 right-0">
             <Image
-              src="/images/about/about-1.jfif"
+              src="/images/about/about-1.webp"
               alt="About image small"
               width={344}
               height={282}
