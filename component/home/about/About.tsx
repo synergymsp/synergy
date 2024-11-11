@@ -22,7 +22,7 @@ const AboutSection: React.FC = () => {
         >
           <div className="relative mb-[60px] w-[100%] overflow-hidden rounded-md lg:max-w-[425px]">
             <Image
-              src="/images/about/about-2.jfif"
+              src="logo.svg"
               alt="About image"
               width={0}
               height={0}
