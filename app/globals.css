@@ -1,0 +1,361 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.font-exo {
+  /* font-family: var(--font-exo) !important; */
+}
+
+body {
+  font-size: 16px;
+  font-weight: 400;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  /* font-family: var(--font-fira); */
+}
+
+@media (width <= 767.98px) {
+  body {
+    font-size: 14px;
+    line-height: 24px;
+  }
+}
+
+.ellipsis-3-lines {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(48px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes slide-down {
+  from {
+    opacity: 1;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateY(48px);
+  }
+}
+
+.transform-up {
+  animation: slide-up 0.5s ease-out forwards;
+}
+
+.transform-down {
+  animation: slide-down 0.5s ease-out forwards;
+}
+
+.dropdown-items::before {
+  content: "";
+  position: absolute;
+  left: 34px;
+  top: 30px;
+  width: 1px;
+  background-color: rgb(237 237 237);
+  height: calc(100% - 60px);
+}
+
+.dropdown-items .item-style {
+  position: relative;
+  z-index: 11;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--icon-font);
+  width: 11px;
+  height: 11px;
+  text-align: center;
+  font-size: 0.2em;
+  line-height: 11.5px;
+  font-weight: 700;
+  background-color: #fff;
+  box-shadow: rgb(173 136 88 / 40%) 0 2px 4px 0 inset;
+  border-radius: 50%;
+}
+
+.dropdown-items .item-style .dot {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background-color: #0e5af2;
+}
+
+/* Mobile Menu Dialog */
+@keyframes slide-right {
+  from {
+    transform: translateX(-999px);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+.mobileMenuOpen {
+  animation: slide-right 0.5s ease-out forwards;
+}
+
+/* hero section slider */
+.slider {
+  position: relative;
+  width: 100%;
+  height: 90vh;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+}
+
+.slide.active {
+  visibility: visible;
+}
+
+/* Background container for zoom effect */
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+  transition: transform 3s ease;
+  opacity: 0;
+}
+
+.background.visible {
+  opacity: 1;
+}
+
+/* Zoom animations */
+.zoom-in.visible {
+  animation: zoom-in 10s ease forwards;
+}
+
+.zoom-out.visible {
+  animation: zoom-out 10s ease forwards;
+}
+
+/* Zoom in effect */
+@keyframes zoom-in {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.2);
+  }
+}
+
+
+/* Zoom out effect */
+@keyframes zoom-out {
+  from {
+    transform: scale(1.2);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+.angled-div-1 {
+  position: absolute;
+  left: -650px;
+  top: -300px;
+  transform: rotate(45deg);
+  background: rgb(14 84 245 / 50%);
+  width: 248.842px;
+  height: 1292.32px;
+}
+
+.angled-div-2 {
+  position: absolute;
+  left: -902px;
+  top: -450px;
+  transform: rotate(45deg);
+  background: linear-gradient(
+      172deg,
+      rgb(5 26 79 / 35%) 21%,
+      rgb(0 0 0 / 0%) 54%
+    )
+    rgb(255 255 255 / 0%);
+  width: 488.56px;
+  height: 1509.64px;
+}
+
+@keyframes slide-in {
+  from {
+    left: -650px;
+    top: -300px;
+    transform: rotate(45deg);
+    opacity: 0;
+  }
+
+  to {
+    left: -40px;
+    top: -300px;
+    transform: rotate(45deg);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-two {
+  from {
+    left: -902px;
+    top: -450px;
+    transform: rotate(45deg);
+    opacity: 0;
+  }
+
+  to {
+    left: 402px;
+    top: -450px;
+    transform: rotate(45deg);
+    opacity: 1;
+  }
+}
+
+/* @keyframes slideOut2 {
+  from {
+    left: 402px;
+    top: -450px;
+    transform: rotate(45deg);
+    opacity: 1;
+  }
+  to {
+    left: 100%;
+    top: -450px;
+    transform: rotate(0deg);
+    opacity: 0;
+  }
+} */
+
+.slide-in1 {
+  animation: slide-in 1s ease forwards;
+  animation-delay: 0.1s;
+}
+
+.slide-in2 {
+  animation: slide-in-two 1s ease forwards;
+}
+
+/* .slide-out2 {
+  animation: slideOut2 0.5s ease forwards;
+} */
+
+.overlay-text {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+}
+
+.prev-button,
+.next-button {
+  position: absolute;
+  top: 50%;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  border: 1px solid #fff;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+.prev-button {
+  left: 0;
+}
+
+.next-button {
+  right: 0;
+}
+
+/* Comman button */
+.vs-btn::before,
+.vs-btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  transition: all ease 0.5s;
+  z-index: -1;
+  border-radius: inherit;
+}
+
+.vs-btn::before {
+  transform: rotateX(90deg);
+}
+
+.vs-btn::after {
+  transform: rotateY(90deg);
+}
+
+.vs-btn:hover::before {
+  transform: rotateX(0);
+}
+
+.vs-btn:hover::after {
+  transform: rotateY(0);
+}
+
+/* About section */
+.vertical-text {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  white-space: nowrap;
+}
+
+@keyframes ping {
+  75%,
+  100% {
+    transform: scale(1.3);
+    opacity: 0;
+  }
+}
+
+.animate-ping {
+  animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+/* Counter section */
+.counter-shape {
+  background-color: rgb(17 33 62 / 7%);
+  position: absolute;
+  inset: -60px 0;
+  clip-path: polygon(0 0, 100% 120px, 100% 100%, 0 calc(100% - 120px));
+}
