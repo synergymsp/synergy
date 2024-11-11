@@ -27,27 +27,27 @@ const teamMembers: TeamMember[] = [
   {
     name: 'Alexander Mason',
     role: 'Founder & CEO',
-    image: '/images/teams/team.jfif',
+    image: '/images/teams/team.webp',
   },
   {
     name: 'Maverick Cameron',
     role: 'Pro Developer',
-    image: '/images/teams/team.jfif',
+    image: '/images/teams/team.webp',
   },
   {
     name: 'Marian Widiya',
     role: 'Lead Developer',
-    image: '/images/teams/team.jfif',
+    image: '/images/teams/team.webp',
   },
   {
     name: 'Daniel Matthew',
     role: 'Chief Expert',
-    image: '/images/teams/team.jfif',
+    image: '/images/teams/team.webp',
   },
   {
     name: 'Grayson Gabriel',
     role: 'Head Manager',
-    image: '/images/teams/team.jfif',
+    image: '/images/teams/team.webp',
   },
 ];
 
