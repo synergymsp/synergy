@@ -84,13 +84,13 @@ export const HeroSection: React.FC = () => {
             {index === currentIndex && (
               <div className="overlay-text">
                 <div className="mx-auto w-full px-[30px] sm:max-w-[540px] md:max-w-[720px] min-[1100px]:max-w-[945px] 2xl:max-w-[1140px]">
-                  <div className="mb-8 flex items-center gap-6">
+                  <div className="flex items-center gap-6">
                     <motion.h1
                       initial={{ x: -100, opacity: 0 }}
                       animate={{ x: 0, opacity: 1 }}
                       exit={{ x: -100, opacity: 0 }}
                       transition={{ duration: 0.6 }}
-                      className="font-exo text-[45px] font-bold text-white"
+                      className="font-exo text-[50px] font-bold text-white leading-tight"
                     >
                       {slide.title1}
                     </motion.h1>
@@ -111,7 +111,7 @@ export const HeroSection: React.FC = () => {
                     animate={{ x: 0, opacity: 1 }}
                     exit={{ x: -100, opacity: 0 }}
                     transition={{ duration: 0.6, delay: 0.3 }}
-                    className="font-exo mb-8 text-start text-[45px] font-bold text-white"
+                    className="font-exo mb-8 text-start leading-tight text-[50px] font-bold text-white"
                   >
                     {slide.title2}
                   </motion.h2>
