@@ -2,7 +2,6 @@
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Image from 'next/image';
-import { useMediaQuery } from 'react-responsive';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 
@@ -10,9 +9,6 @@ import { Button } from '@/component/common/Button';
 import { Container } from '@/component/common/Container';
 
 const StatsSection = () => {
-  const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1024 });
-  const isMobile = useMediaQuery({ maxWidth: 768 });
-
   const cards = [
     {
       title: 'Development Services',
@@ -37,8 +33,13 @@ const StatsSection = () => {
   return (
     <Container className="-translate-y-[75px]">
       <Swiper
-        spaceBetween={24}
-        slidesPerView={isMobile ? 1 : isTablet ? 2 : 3}
+        spaceBetween={30}
+        slidesPerView={3}
+        breakpoints={{
+          320: { slidesPerView: 1 },
+          576: { slidesPerView: 2 },
+          768: { slidesPerView: 3 },
+        }}
         grabCursor={true}
         loop={true}
         className="vs-carousel"
@@ -47,7 +48,7 @@ const StatsSection = () => {
           <SwiperSlide key={index} className="w-[100%] md:w-auto">
             <div className="relative  h-[100%] rounded-md bg-white px-10 py-12 shadow-card-shadow after:absolute after:bottom-0 after:left-10 after:h-[3px] after:w-[calc(100%-80px)] after:rounded-t after:bg-theme after:content-['']">
               <div className="feature-icon">
-                <Image src={card.icon} alt="Feature Icon" width={0} height={0} sizes='100wv' />
+                <Image src={card.icon} alt="Feature Icon" width={70} height={70} sizes='100wv' />
               </div>
               <h3 className="font-exo my-3 text-[24px] font-bold capitalize text-title">
                 <a className="text-inherit" href="service-details.html">

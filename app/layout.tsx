@@ -1,9 +1,9 @@
-// import { config } from '@fortawesome/fontawesome-svg-core';
+import { config } from '@fortawesome/fontawesome-svg-core';
 import type { Metadata } from 'next';
 import { Exo, Fira_Sans } from 'next/font/google';
 
-// import '@fortawesome/fontawesome-svg-core/styles.css';
-// config.autoAddCss = false;
+import '@fortawesome/fontawesome-svg-core/styles.css';
+config.autoAddCss = false;
 
 import './globals.css';
 

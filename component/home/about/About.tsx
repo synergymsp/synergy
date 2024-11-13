@@ -43,12 +43,12 @@ const AboutSection: React.FC = () => {
               href="https://www.youtube.com/watch?v=_sI_Ps7JSEk"
               className="duration-400 group absolute left-[50%] top-[50%] z-10 inline-block -translate-x-[50%] -translate-y-[50%] bg-transparent p-0 transition-all ease-in-out"
             >
-              <span className="duration-400 flex h-[60px] w-[60px] items-center justify-center rounded-lg bg-theme text-lg text-white transition-all ease-in-out">
+              <span className="duration-400 flex h-[60px] w-[60px] items-center justify-center rounded-md bg-theme text-lg text-white transition-all ease-in-out">
                 <FontAwesomeIcon icon={faPlay} />
               </span>
 
-              <span className="duration-400 absolute inset-0 -z-10 h-full w-full rounded-lg bg-theme opacity-50 transition-all ease-in-out group-hover:opacity-100" />
-              <span className="absolute inset-0 -z-10 h-full w-full animate-ping rounded-lg bg-theme opacity-50" />
+              <span className="duration-400 absolute inset-0 -z-10 h-full w-full rounded-md bg-theme opacity-50 transition-all ease-in-out group-hover:opacity-100" />
+              <span className="absolute inset-0 -z-10 h-full w-full animate-ping rounded-md bg-theme opacity-50" />
             </a>
           </div>
         </div>

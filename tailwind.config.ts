@@ -11,6 +11,8 @@ const config = {
         'services-sec-bg': "url('/bg/sr-bg.png')",
         'services-bg': "url('/bg/sr-box-bg.jpg')",
         'counter-sec': "url('/bg/counter-bg.webp')",
+        'faq-sec': "url('/bg/faq-bg-1.jpg')",
+        'faq-sec-two': "url('/bg/faq-bg-2.jpg')",
       },
       colors: {
         theme: '#0E5AF2',
@@ -43,6 +45,9 @@ const config = {
         'card-shadow2': '0px 10px 31px rgba(169, 177, 193, 0.17)',
         'team-card-shadow': '0px 10px 31px rgba(169, 177, 193, 0.07)',
       },
+      transitionProperty: {
+        'height': 'height',
+      }
     },
   },
   plugins: [],

@@ -1,5 +1,6 @@
 import AboutSection from '@/component/home/about/About';
 import CounterSection from '@/component/home/counter/Counter';
+import FAQSection from '@/component/home/faq/Faq';
 import HeroSection from '@/component/home/hero/slider';
 import ReviewsSection from '@/component/home/reviews/reviews';
 import ServicesSection from '@/component/home/services/Services';
@@ -29,6 +30,12 @@ export default function Home() {
 
       <section className="py-[120px]">
         <TeamsSection />
+      </section>
+
+      <section className="relative pb-[90px] pt-[240px]">
+        <div className="faq-shape1 bg-faq-sec bg-cover bg-fixed bg-center bg-no-repeat"></div>
+        <div className="faq-shape2 bg-faq-sec-two bg-cover bg-center bg-no-repeat"></div>
+        <FAQSection />
       </section>
 
       <section className="py-[120px]">
