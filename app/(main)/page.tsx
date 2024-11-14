@@ -4,6 +4,7 @@ import FAQSection from '@/component/home/faq/Faq';
 import HeroSection from '@/component/home/hero/slider';
 import ReviewsSection from '@/component/home/reviews/reviews';
 import ServicesSection from '@/component/home/services/Services';
+import SkillsSection from '@/component/home/skill/Skill';
 import StatsSection from '@/component/home/stats/StatsSec';
 import TeamsSection from '@/component/home/teams/Teams';
 
@@ -38,6 +39,9 @@ export default function Home() {
         <FAQSection />
       </section>
 
+      <section className="py-[120px]">
+        <SkillsSection />
+      </section>
       <section className="py-[120px]">
         <ReviewsSection />
       </section>

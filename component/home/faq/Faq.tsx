@@ -62,11 +62,11 @@ const FAQSection: React.FC = () => {
               href="#"
               className="duration-400 group absolute left-[50%] top-[50%] z-10 inline-block -translate-x-[50%] -translate-y-[50%] bg-transparent p-0 transition-all ease-in-out"
             >
-              <span className="duration-400 bg-theme/55 flex h-[60px] w-[60px] items-center justify-center rounded-md text-lg text-white transition-all ease-in-out">
+              <span className="duration-400 flex h-[60px] w-[60px] items-center justify-center rounded-md bg-theme/55 text-lg text-white transition-all ease-in-out">
                 <FontAwesomeIcon icon={faPlay} />
               </span>
-              <span className="duration-400 bg-theme/55 absolute inset-0 -z-10 h-full w-full rounded-md opacity-50 transition-all ease-in-out group-hover:opacity-100" />
-              <span className="bg-theme/55 absolute inset-0 -z-10 h-full w-full animate-ping rounded-md opacity-50" />
+              <span className="duration-400 absolute inset-0 -z-10 h-full w-full rounded-md bg-theme/55 opacity-50 transition-all ease-in-out group-hover:opacity-100" />
+              <span className="absolute inset-0 -z-10 h-full w-full animate-ping rounded-md bg-theme/55 opacity-50" />
             </a>
           </div>
         </div>
@@ -114,7 +114,7 @@ const FAQSection: React.FC = () => {
               >
                 {openIndex === index && (
                   <div className="py-5">
-                    <p className="text-body text-base">{faq.answer}</p>
+                    <p className="text-base text-body">{faq.answer}</p>
                   </div>
                 )}
               </div>

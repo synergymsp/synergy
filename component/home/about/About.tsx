@@ -40,7 +40,7 @@ const AboutSection: React.FC = () => {
               className="rounded-md"
             />
             <a
-              href="https://www.youtube.com/watch?v=_sI_Ps7JSEk"
+              href="#"
               className="duration-400 group absolute left-[50%] top-[50%] z-10 inline-block -translate-x-[50%] -translate-y-[50%] bg-transparent p-0 transition-all ease-in-out"
             >
               <span className="duration-400 flex h-[60px] w-[60px] items-center justify-center rounded-md bg-theme text-lg text-white transition-all ease-in-out">
@@ -54,7 +54,7 @@ const AboutSection: React.FC = () => {
         </div>
 
         <div
-          className="wow fadeInUp flex flex-col justify-center lg:w-1/2 xl:w-7/12"
+          className="flex flex-col justify-center lg:w-1/2 xl:w-7/12"
           data-wow-delay="0.3s"
         >
           <span className="font-exo mb-5 flex items-center text-base font-semibold uppercase text-theme">
