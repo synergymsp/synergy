@@ -15,6 +15,7 @@ const config = {
         'faq-sec-two': "url('/bg/faq-bg-2.jpg')",
         'cta-sec': "url('/bg/cta-sec-bg.webp')",
         'process-sec': "url('/bg/process-bg-1.jpg')",
+        'footer-sec': "url('/shape/bg-footer-1-1.jpg')",
       },
       colors: {
         theme: '#0E5AF2',

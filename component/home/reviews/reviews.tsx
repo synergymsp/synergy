@@ -50,10 +50,10 @@ const ReviewsSection: React.FC = () => {
     <Container>
       <div className="flex items-center justify-between">
         <div className="mb-10">
-          <span className="font-exo mb-5 flex items-center text-base font-semibold uppercase text-theme">
+          <span className="font-exo text-theme mb-5 flex items-center text-base font-semibold uppercase">
             <FontAwesomeIcon icon={faCopy} className="mr-2" /> Our Best Review’s
           </span>
-          <h2 className="font-exo text-[50px] font-bold uppercase leading-snug text-title">
+          <h2 className="font-exo text-title text-[50px] font-bold uppercase leading-snug">
             Customer’s Feedback
           </h2>
         </div>
@@ -103,20 +103,20 @@ const ReviewsSection: React.FC = () => {
       >
         {customersReviews.map((item, index) => (
           <SwiperSlide key={index} className="w-[100%] md:w-auto">
-            <div className="relative h-[100%] rounded-md bg-[#F8F8F9] px-6 pb-9 shadow-shadow3 transition-all duration-300 ease-out hover:bg-white hover:shadow-shadow4">
+            <div className="hover:shadow-shadow4 relative h-[100%] rounded-md bg-[#F8F8F9] px-6 pb-9 transition-all duration-300 ease-out hover:bg-white">
               <div className="w-fit -translate-y-[25px] rounded-md bg-white p-[10px]">
-                <div className="flex h-[60px] w-[60px] items-center justify-center rounded-md bg-theme">
+                <div className="bg-theme flex h-[60px] w-[60px] items-center justify-center rounded-md">
                   <FontAwesomeIcon
                     icon={faQuoteRight}
                     className="h-8 w-8 text-white"
                   />
                 </div>
               </div>
-              <p className="mb-5 text-base text-body">{item.feedback}</p>
-              <h3 className="font-exo text-base font-bold capitalize text-title">
+              <p className="text-body mb-5 text-base">{item.feedback}</p>
+              <h3 className="font-exo text-title text-base font-bold capitalize">
                 {item.name}
               </h3>
-              <p className="text-sm text-theme">{item.role}</p>
+              <p className="text-theme text-sm">{item.role}</p>
             </div>
           </SwiperSlide>
         ))}

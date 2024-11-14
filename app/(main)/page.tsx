@@ -1,4 +1,5 @@
 import AboutSection from '@/component/home/about/About';
+import BrandSection from '@/component/home/brand/Brand';
 import CounterSection from '@/component/home/counter/Counter';
 import FAQSection from '@/component/home/faq/Faq';
 import HeroSection from '@/component/home/hero/slider';
@@ -44,14 +45,20 @@ export default function Home() {
       <section className="py-[120px]">
         <SkillsSection />
       </section>
-      <section className="py-[120px]">
-        <ReviewsSection />
-      </section>
+
       <section className="bg-cta-sec bg-cover bg-center bg-no-repeat py-[120px]">
         <NeedConsultationSection />
       </section>
       <section className="bg-process-sec bg-cover bg-center bg-no-repeat pb-[90px] pt-[120px]">
         <WorkSection />
+      </section>
+
+      <section className="py-[120px]">
+        <ReviewsSection />
+      </section>
+      
+      <section className="pb-[120px]">
+        <BrandSection />
       </section>
     </>
   );

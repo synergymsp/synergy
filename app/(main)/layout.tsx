@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
 
+import Footer from '@/component/Footer/Footer';
 import { HeaderInfo } from '@/component/HeaderInfo/HeaderInfo';
 import Navbar from '@/component/Navbar/Navbar';
 import { TopBar } from '@/component/TopBar/TopBar';
@@ -20,6 +21,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
       <HeaderInfo />
       <Navbar />
       <main className='flex-1'>{children}</main>
+      <Footer />
     </div>
   );
 };

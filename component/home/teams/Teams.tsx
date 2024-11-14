@@ -32,7 +32,7 @@ const teamMembers: TeamMember[] = [
   {
     name: 'Maverick Cameron',
     role: 'Pro Developer',
-    image: '/images/teams/team.webp',
+    image: '/images/teams/team2.webp',
   },
   {
     name: 'Marian Widiya',
@@ -42,12 +42,17 @@ const teamMembers: TeamMember[] = [
   {
     name: 'Daniel Matthew',
     role: 'Chief Expert',
-    image: '/images/teams/team.webp',
+    image: '/images/teams/team2.webp',
   },
   {
     name: 'Grayson Gabriel',
     role: 'Head Manager',
     image: '/images/teams/team.webp',
+  },
+  {
+    name: 'John doe',
+    role: 'Developer',
+    image: '/images/teams/team2.webp',
   },
 ];
 
