@@ -43,12 +43,12 @@ const AboutSection: React.FC = () => {
               href="#"
               className="duration-400 group absolute left-[50%] top-[50%] z-10 inline-block -translate-x-[50%] -translate-y-[50%] bg-transparent p-0 transition-all ease-in-out"
             >
-              <span className="duration-400 flex h-[60px] w-[60px] items-center justify-center rounded-md bg-theme text-lg text-white transition-all ease-in-out">
+              <span className="duration-400 bg-theme flex h-[60px] w-[60px] items-center justify-center rounded-md text-lg text-white transition-all ease-in-out">
                 <FontAwesomeIcon icon={faPlay} />
               </span>
 
-              <span className="duration-400 absolute inset-0 -z-10 h-full w-full rounded-md bg-theme opacity-50 transition-all ease-in-out group-hover:opacity-100" />
-              <span className="absolute inset-0 -z-10 h-full w-full animate-ping rounded-md bg-theme opacity-50" />
+              <span className="duration-400 bg-theme absolute inset-0 -z-10 h-full w-full rounded-md opacity-50 transition-all ease-in-out group-hover:opacity-100" />
+              <span className="bg-theme absolute inset-0 -z-10 h-full w-full animate-ping rounded-md opacity-50" />
             </a>
           </div>
         </div>
@@ -57,22 +57,22 @@ const AboutSection: React.FC = () => {
           className="flex flex-col justify-center lg:w-1/2 xl:w-7/12"
           data-wow-delay="0.3s"
         >
-          <span className="font-exo mb-5 flex items-center text-base font-semibold uppercase text-theme">
+          <span className="font-exo text-theme mb-5 flex items-center text-base font-semibold uppercase">
             <FontAwesomeIcon icon={faCopy} className="mr-2" /> Get Best IT
             Solution 2022
           </span>
-          <h2 className="font-exo mb-5 text-[36px] font-bold uppercase leading-snug text-title xl:text-[44px] 2xl:text-[48px]">
+          <h2 className="font-exo text-title mb-5 text-[36px] font-bold uppercase leading-snug xl:text-[44px] 2xl:text-[48px]">
             Trust Our Best IT Solution For Your Business
           </h2>
-          <p className="mb-6 text-base text-body">
+          <p className="text-body mb-6 text-base">
             Compellingly mesh cross-platform portals through functional human
             capital world-class architectures for orthogonal initiatives.
             Assertively benchmark visionary quality vectors after covalent
             e-tailers. Intrinsically enhance 24/7 users and supply process.
           </p>
 
-          <div className="mb-10 flex w-fit items-center rounded-md bg-white p-[10px] pr-10 shadow-card-shadow2">
-            <div className="mr-5 flex h-[80px] w-[80px] flex-shrink-0 items-center justify-center rounded-md bg-smoke shadow-icon-box-shadow2 xl:h-[95px] xl:w-[95px]">
+          <div className="shadow-card-shadow2 mb-10 flex w-fit items-center rounded-md bg-white p-[10px] pr-10">
+            <div className="bg-smoke shadow-icon-box-shadow2 mr-5 flex h-[80px] w-[80px] flex-shrink-0 items-center justify-center rounded-md xl:h-[95px] xl:w-[95px]">
               <Image
                 src="/icon/tel-1-1.png"
                 alt="phone Icon"
@@ -83,10 +83,10 @@ const AboutSection: React.FC = () => {
               />
             </div>
             <div>
-              <span className="font-exo text-sm font-normal uppercase text-body">
+              <span className="font-exo text-body text-sm font-normal uppercase">
                 24 HOURS SERVICE AVAILABLE
               </span>
-              <p className="font-exo text-base font-bold text-title">
+              <p className="font-exo text-title text-base font-bold">
                 Call Us:{' '}
                 <a href="tel:+17323343590" className="hover:text-theme">
                   +1 732 334 3590
@@ -95,7 +95,7 @@ const AboutSection: React.FC = () => {
             </div>
           </div>
 
-          <Button className="w-fit bg-theme text-white">
+          <Button className="bg-theme w-fit text-white">
             ABOUT US
             <FontAwesomeIcon icon={faArrowRight} className="ml-2 h-4 w-4" />
           </Button>

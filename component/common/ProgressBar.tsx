@@ -20,12 +20,12 @@ const ProgressBar: React.FC<ProgressBarProps> = ({ label, percentage, className 
   return (
     <div className={`mb-4 ${className}`}>
       <div className="mb-3 flex justify-between">
-        <span className="font-exo text-base font-semibold uppercase text-title">{label}</span>
-        <span className="font-exo text-base font-semibold uppercase text-title">{progress}%</span>
+        <span className="font-exo text-title text-base font-semibold uppercase">{label}</span>
+        <span className="font-exo text-title text-base font-semibold uppercase">{progress}%</span>
       </div>
       <div className="h-4 w-full rounded-md border border-[#D5E0F5] p-1">
         <div
-          className="h-full rounded-full bg-theme transition-all duration-500 ease-out"
+          className="bg-theme h-full rounded-full transition-all duration-500 ease-out"
           style={{ width: `${progress}%` }}
         />
       </div>

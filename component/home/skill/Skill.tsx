@@ -16,13 +16,13 @@ const SkillsSection: React.FC = () => {
     <Container>
       <div className="flex flex-col items-center lg:flex-row lg:space-x-10 xl:space-x-16">
         <div className="flex flex-col justify-center lg:w-7/12 xl:w-1/2">
-          <span className="font-exo mb-5 flex items-center text-base font-semibold uppercase text-theme">
+          <span className="font-exo text-theme mb-5 flex items-center text-base font-semibold uppercase">
             <FontAwesomeIcon icon={faCopy} className="mr-2" /> The Great Company Skill
           </span>
-          <h2 className="font-exo mb-5 text-[36px] font-bold uppercase leading-snug text-title xl:text-[44px] 2xl:text-[48px]">
+          <h2 className="font-exo text-title mb-5 text-[36px] font-bold uppercase leading-snug xl:text-[44px] 2xl:text-[48px]">
             Connecting People And Build Technology
           </h2>
-          <p className="mb-6 text-base text-body">
+          <p className="text-body mb-6 text-base">
             Energistically evisculate an expanded array of meta-services after
             cross-media strategic theme areas. Interactively simplify
             interactive customer service before fully tested relationship

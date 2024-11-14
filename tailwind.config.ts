@@ -13,6 +13,7 @@ const config = {
         'counter-sec': "url('/bg/counter-bg.webp')",
         'faq-sec': "url('/bg/faq-bg-1.jpg')",
         'faq-sec-two': "url('/bg/faq-bg-2.jpg')",
+        'cta-sec': "url('/bg/cta-sec-bg.webp')",
       },
       colors: {
         theme: '#0E5AF2',
