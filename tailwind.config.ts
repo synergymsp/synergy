@@ -14,6 +14,7 @@ const config = {
         'faq-sec': "url('/bg/faq-bg-1.jpg')",
         'faq-sec-two': "url('/bg/faq-bg-2.jpg')",
         'cta-sec': "url('/bg/cta-sec-bg.webp')",
+        'process-sec': "url('/bg/process-bg-1.jpg')",
       },
       colors: {
         theme: '#0E5AF2',
@@ -40,11 +41,12 @@ const config = {
       },
       boxShadow: {
         'dropdown-shadow': 'rgba(0, 0, 0, 0.09) 0px 10px 60px 0px, rgba(231, 13, 60, 0.004) 0px 3px 0px 0px',
-        'icon-box-shadow': 'rgba(173, 136, 88, 0.5) 0px 0px 20px -8px',
-        'icon-box-shadow2': '0px 7px 37px rgba(96, 125, 185, 0.11)',
-        'card-shadow': '0px 18px 13px rgba(234, 240, 250, 0.5)',
-        'card-shadow2': '0px 10px 31px rgba(169, 177, 193, 0.17)',
-        'team-card-shadow': '0px 10px 31px rgba(169, 177, 193, 0.07)',
+        'shadow1': 'rgba(173, 136, 88, 0.5) 0px 0px 20px -8px',
+        'shadow2': '0px 7px 37px rgba(96, 125, 185, 0.11)',
+        'shadow3': '0px 18px 13px rgba(234, 240, 250, 0.5)',
+        'shadow4': '0px 10px 31px rgba(169, 177, 193, 0.17)',
+        'shadow5': '0px 10px 31px rgba(169, 177, 193, 0.07)',
+        'shadow6': '0px 0px 77px 10px rgba(170, 170, 170, 0.13)',
       },
       transitionProperty: {
         'height': 'height',

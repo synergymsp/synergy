@@ -191,7 +191,7 @@ const Navbar: React.FC = () => {
           <div className="relative bg-[#e8f8f9] px-6 py-10">
             <button
               onClick={() => setMobileMenuOpen(false)}
-              className="absolute right-3 top-3 h-10 w-10 rounded-full bg-[#eff1f5] text-theme shadow-icon-box-shadow"
+              className="absolute right-3 top-3 h-10 w-10 rounded-full bg-[#eff1f5] text-theme shadow-shadow1"
             >
               <FontAwesomeIcon
                 icon={faTimes}
@@ -243,7 +243,7 @@ const Navbar: React.FC = () => {
                 <span>Services</span>
               </div>
               <button onClick={() => setServicesMenuOpen(!servicesMenuOpen)}>
-                <span className="flex h-[25px] w-[25px] items-center justify-center rounded-full bg-[#eff1f5] shadow-icon-box-shadow">
+                <span className="flex h-[25px] w-[25px] items-center justify-center rounded-full bg-[#eff1f5] shadow-shadow1">
                   <FontAwesomeIcon
                     icon={servicesMenuOpen ? faMinus : faPlus}
                     className="text-[12px] font-normal text-title"

@@ -46,7 +46,7 @@ const StatsSection = () => {
       >
         {cards.map((card, index) => (
           <SwiperSlide key={index} className="w-[100%] md:w-auto">
-            <div className="relative  h-[100%] rounded-md bg-white px-10 py-12 shadow-card-shadow after:absolute after:bottom-0 after:left-10 after:h-[3px] after:w-[calc(100%-80px)] after:rounded-t after:bg-theme after:content-['']">
+            <div className="relative  h-[100%] rounded-md bg-white px-10 py-12 shadow-shadow3 after:absolute after:bottom-0 after:left-10 after:h-[3px] after:w-[calc(100%-80px)] after:rounded-t after:bg-theme after:content-['']">
               <div className="feature-icon">
                 <Image src={card.icon} alt="Feature Icon" width={70} height={70} sizes='100wv' />
               </div>

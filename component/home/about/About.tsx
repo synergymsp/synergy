@@ -71,8 +71,8 @@ const AboutSection: React.FC = () => {
             e-tailers. Intrinsically enhance 24/7 users and supply process.
           </p>
 
-          <div className="shadow-card-shadow2 mb-10 flex w-fit items-center rounded-md bg-white p-[10px] pr-10">
-            <div className="bg-smoke shadow-icon-box-shadow2 mr-5 flex h-[80px] w-[80px] flex-shrink-0 items-center justify-center rounded-md xl:h-[95px] xl:w-[95px]">
+          <div className="shadow-shadow4 mb-10 flex w-fit items-center rounded-md bg-white p-[10px] pr-10">
+            <div className="bg-smoke shadow-shadow2 mr-5 flex h-[80px] w-[80px] flex-shrink-0 items-center justify-center rounded-md xl:h-[95px] xl:w-[95px]">
               <Image
                 src="/icon/tel-1-1.png"
                 alt="phone Icon"

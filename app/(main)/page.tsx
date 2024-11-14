@@ -8,6 +8,7 @@ import ServicesSection from '@/component/home/services/Services';
 import SkillsSection from '@/component/home/skill/Skill';
 import StatsSection from '@/component/home/stats/StatsSec';
 import TeamsSection from '@/component/home/teams/Teams';
+import WorkSection from '@/component/home/work/Work';
 
 export default function Home() {
   return (
@@ -48,6 +49,9 @@ export default function Home() {
       </section>
       <section className="bg-cta-sec bg-cover bg-center bg-no-repeat py-[120px]">
         <NeedConsultationSection />
+      </section>
+      <section className="bg-process-sec bg-cover bg-center bg-no-repeat pb-[90px] pt-[120px]">
+        <WorkSection />
       </section>
     </>
   );

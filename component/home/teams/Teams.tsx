@@ -75,10 +75,10 @@ const TeamsSection: React.FC = () => {
   return (
     <Container>
       <div className="mx-auto mb-10 max-w-[600px] text-center">
-        <span className="font-exo text-base font-semibold uppercase text-theme">
+        <span className="font-exo text-theme text-base font-semibold uppercase">
           Great Team Members
         </span>
-        <h2 className="font-exo text-[36px] font-bold uppercase leading-snug text-title">
+        <h2 className="font-exo text-title text-[36px] font-bold uppercase leading-snug">
           We Have Expert Team
         </h2>
       </div>
@@ -110,7 +110,7 @@ const HoverAnimationCard = ({ member }: { member: TeamMember }) => {
 
   return (
     <div
-      className="team-card-shadow group relative overflow-hidden bg-white hover:bg-[#f6f7fa]"
+      className="shadow5 group relative overflow-hidden bg-white hover:bg-[#f6f7fa]"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -123,7 +123,7 @@ const HoverAnimationCard = ({ member }: { member: TeamMember }) => {
           className="h-full w-full transform object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
         />
 
-        <div className="absolute inset-0 bottom-0 left-[30px] right-[30px] mt-auto flex h-fit items-center justify-center gap-3 bg-theme px-8 py-3 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+        <div className="bg-theme absolute inset-0 bottom-0 left-[30px] right-[30px] mt-auto flex h-fit items-center justify-center gap-3 px-8 py-3 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
           {socialIcons.map((social, i) => (
             <motion.a
               key={i}
@@ -141,10 +141,10 @@ const HoverAnimationCard = ({ member }: { member: TeamMember }) => {
       </div>
 
       <div className="team-content pb-5 pt-8 text-center">
-        <h3 className="font-exo text-[20px] font-bold text-title">
+        <h3 className="font-exo text-title text-[20px] font-bold">
           {member.name}
         </h3>
-        <p className="text-sm text-theme">{member.role}</p>
+        <p className="text-theme text-sm">{member.role}</p>
       </div>
     </div>
   );

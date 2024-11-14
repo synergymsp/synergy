@@ -103,7 +103,7 @@ const ReviewsSection: React.FC = () => {
       >
         {customersReviews.map((item, index) => (
           <SwiperSlide key={index} className="w-[100%] md:w-auto">
-            <div className="relative h-[100%] rounded-md bg-[#F8F8F9] px-6 pb-9 shadow-card-shadow transition-all duration-300 ease-out hover:bg-white hover:shadow-card-shadow2">
+            <div className="relative h-[100%] rounded-md bg-[#F8F8F9] px-6 pb-9 shadow-shadow3 transition-all duration-300 ease-out hover:bg-white hover:shadow-shadow4">
               <div className="w-fit -translate-y-[25px] rounded-md bg-white p-[10px]">
                 <div className="flex h-[60px] w-[60px] items-center justify-center rounded-md bg-theme">
                   <FontAwesomeIcon
