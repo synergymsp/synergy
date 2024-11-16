@@ -140,7 +140,7 @@ export const HeroSection: React.FC = () => {
                         className="ml-2 h-4 w-4"
                       />
                     </Button>
-                    <Button className="bg-white text-theme">
+                    <Button className="text-theme bg-white">
                       READ MORE
                       <FontAwesomeIcon
                         icon={faArrowRight}

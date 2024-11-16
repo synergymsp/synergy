@@ -20,19 +20,19 @@ export const HeaderInfo: React.FC = () => {
             </Link>
           </div>
 
-          <div className="flex flex-wrap items-center justify-between space-x-10">
+          <div className="flex flex-wrap items-stretch justify-between space-x-10">
             <div className="flex items-center py-7">
               <FontAwesomeIcon
                 icon={faPhone}
-                className="mr-5 h-6 w-6 text-theme"
+                className="text-theme mr-5 h-6 w-6"
               />
               <div>
-                <span className="mb-1 block text-sm text-body">
+                <span className="text-body mb-1 block text-sm">
                   Call Anytime 24/7
                 </span>
                 <Link
                   href="tel:+26921562148"
-                  className="text-xl font-extrabold text-title hover:text-theme"
+                  className="text-title hover:text-theme text-xl font-extrabold"
                 >
                   +1 732 334 3590
                 </Link>
@@ -42,15 +42,15 @@ export const HeaderInfo: React.FC = () => {
             <div className="hidden items-center border-l border-[#e7ebf3] py-7 pl-10 lg:flex">
               <FontAwesomeIcon
                 icon={faEnvelope}
-                className="mr-5 h-6 w-6 text-theme"
+                className="text-theme mr-5 h-6 w-6"
               />
               <div>
-                <span className="mb-1 block text-sm text-body">
+                <span className="text-body mb-1 block text-sm">
                   Mail Us For Support
                 </span>
                 <Link
                   href="mailto:info@synergymsp.net"
-                  className="text-xl font-extrabold text-title hover:text-theme"
+                  className="text-title hover:text-theme text-xl font-extrabold"
                 >
                   info@synergymsp.net
                 </Link>
@@ -60,15 +60,15 @@ export const HeaderInfo: React.FC = () => {
             <div className="hidden items-center border-l border-[#e7ebf3] py-7 pl-10 xl:flex">
               <FontAwesomeIcon
                 icon={faMapMarkerAlt}
-                className="mr-5 h-6 w-6 text-theme"
+                className="text-theme mr-5 h-6 w-6"
               />
               <div>
-                <span className="mb-1 block text-sm text-body">
+                <span className="text-body mb-1 block text-sm">
                   Office Address
                 </span>
-                <div className="text-xl font-extrabold text-title hover:text-theme">
-                  259 HGS, Hotland, USA
-                </div>
+                <Link href="https://maps.app.goo.gl/5FuGVzeQPH66os1u6" className="text-title hover:text-theme inline-block max-w-[200px] text-xl font-extrabold">
+                  1317 Morris Ave, Ste 2, Union, NJ 07083, USA
+                </Link>
               </div>
             </div>
           </div>
