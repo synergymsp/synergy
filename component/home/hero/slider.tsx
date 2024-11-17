@@ -83,14 +83,14 @@ export const HeroSection: React.FC = () => {
           <AnimatePresence mode="wait">
             {index === currentIndex && (
               <div className="overlay-text">
-                <div className="mx-auto w-full px-[30px] sm:max-w-[540px] md:max-w-[720px] min-[1100px]:max-w-[945px] 2xl:max-w-[1140px]">
-                  <div className="flex items-center gap-6">
+                <div className="mx-auto w-full px-[20px] sm:px-[30px] md:px-[80px] lg:max-w-[720px] lg:px-[30px] min-[1100px]:max-w-[945px] 2xl:max-w-[1140px]">
+                  <div className="flex items-center justify-center  gap-6 md:justify-start">
                     <motion.h1
                       initial={{ x: -100, opacity: 0 }}
                       animate={{ x: 0, opacity: 1 }}
                       exit={{ x: -100, opacity: 0 }}
                       transition={{ duration: 0.6 }}
-                      className="font-exo text-[50px] font-bold leading-tight text-white"
+                      className="font-exo sm2:text-[26px] text-[24px] font-bold leading-tight text-white sm:text-[34px] lg:text-[44px] xl:text-[50px]"
                     >
                       {slide.title1}
                     </motion.h1>
@@ -100,7 +100,7 @@ export const HeroSection: React.FC = () => {
                       animate={{ x: 0, opacity: 1 }}
                       exit={{ x: 100, opacity: 0 }}
                       transition={{ duration: 0.6, delay: 0.5 }}
-                      className="whitespace-nowrap rounded-md border-2 border-white bg-transparent px-6 py-1 text-white"
+                      className="hidden whitespace-nowrap rounded-md border-2 border-white bg-transparent px-6 py-1 text-white md:block"
                     >
                       {slide.badge}
                     </motion.button>
@@ -111,7 +111,7 @@ export const HeroSection: React.FC = () => {
                     animate={{ x: 0, opacity: 1 }}
                     exit={{ x: -100, opacity: 0 }}
                     transition={{ duration: 0.6, delay: 0.3 }}
-                    className="font-exo mb-8 text-start text-[50px] font-bold leading-tight text-white"
+                    className="font-exo sm2:text-[26px] mb-4 text-center text-[24px] font-bold leading-tight text-white sm:text-[34px] md:mb-8 md:text-start lg:text-[44px] xl:text-[50px]"
                   >
                     {slide.title2}
                   </motion.h2>
@@ -121,7 +121,7 @@ export const HeroSection: React.FC = () => {
                     animate={{ y: 0, opacity: 1 }}
                     exit={{ y: 50, opacity: 0 }}
                     transition={{ duration: 0.6, delay: 0.8 }}
-                    className="mb-8 max-w-[695px] text-sm text-white"
+                    className="mb-8 hidden max-w-[695px] text-sm text-white lg:block"
                   >
                     {slide.description}
                   </motion.p>
@@ -131,20 +131,20 @@ export const HeroSection: React.FC = () => {
                     animate={{ y: 0, opacity: 1 }}
                     exit={{ y: 50, opacity: 0 }}
                     transition={{ duration: 0.6, delay: 1.2 }}
-                    className="flex gap-4"
+                    className="flex justify-center gap-4 md:justify-start"
                   >
-                    <Button className="bg-theme text-white">
+                    <Button className="bg-theme px-[14px] py-[11px] text-white md:px-7 md:py-5">
                       ABOUT US
                       <FontAwesomeIcon
                         icon={faArrowRight}
                         className="ml-2 h-4 w-4"
                       />
                     </Button>
-                    <Button className="text-theme bg-white">
+                    <Button className="text-theme bg-white px-[14px] py-[11px] md:px-7 md:py-5">
                       READ MORE
                       <FontAwesomeIcon
                         icon={faArrowRight}
-                        className="ml-2 h-4 w-4"
+                        className="ml-2 h-4 w-4 "
                       />
                     </Button>
                   </motion.div>

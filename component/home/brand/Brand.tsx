@@ -55,9 +55,9 @@ const BrandSection: React.FC = () => {
   return (
     <>
       <Container>
-        <div className="mx-auto mb-[80px] flex items-center gap-5 text-center">
+        <div className="mx-auto mb-10 sm:mb-[60px] md:mb-[80px] flex items-center gap-5 text-center">
           <span className="bg-theme h-[2px] flex-1"></span>
-          <h4 className="font-exo text-title text-base font-bold uppercase leading-snug">
+          <h4 className="font-exo text-title text-sm sm:text-base font-bold uppercase leading-snug">
             Our Trusted Clients
           </h4>
           <span className="bg-theme h-[2px] flex-1"></span>
@@ -75,7 +75,7 @@ const BrandSection: React.FC = () => {
           {[...logos, ...logos].map((logo, index) => (
             <div
               key={index}
-              className="mx-10 flex w-[150px] flex-shrink-0 items-center justify-center"
+              className="md:mx-10 mx-2 flex w-[100px] md:w-[150px] flex-shrink-0 items-center justify-center"
             >
               <Image
                 src={logo.src}

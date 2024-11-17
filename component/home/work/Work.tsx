@@ -43,10 +43,10 @@ const WorkSection: React.FC = () => {
   return (
     <Container>
       <div className="mx-auto mb-16 max-w-[600px] text-center">
-        <span className="font-exo text-theme text-base font-semibold uppercase">
+        <span className="font-exo text-theme mb-2 inline-block text-base font-semibold uppercase md:mb-5">
           Great Team Members
         </span>
-        <h2 className="font-exo text-title text-[36px] font-bold uppercase leading-snug xl:text-[44px] 2xl:text-[48px]">
+        <h2 className="font-exo text-title sm2:text-[26px] text-[24px] font-bold uppercase leading-snug sm:text-[36px] lg:text-[40px]  xl:text-[44px] 2xl:text-[48px]">
           We Have Expert Team
         </h2>
       </div>
@@ -54,7 +54,7 @@ const WorkSection: React.FC = () => {
         {teamItems.map((item, index) => (
           <div
             key={index}
-            className="relative flex flex-col items-center px-[15px] text-center even:mt-[60px] lg:w-[25%]"
+            className="relative mb-5 flex flex-col items-center px-[15px] text-center md:w-[50%] lg:mb-0 lg:w-[25%] lg:even:mt-[60px]"
           >
             {index < teamItems.length - 1 && (
               <div className="absolute -right-[53px] top-[0] hidden lg:block">
@@ -68,7 +68,7 @@ const WorkSection: React.FC = () => {
                 />
               </div>
             )}
-            <div className="shadow-shadow6 relative mb-7 flex h-[130px] w-[130px] items-center justify-center rounded-full bg-white">
+            <div className="shadow-shadow6 relative mb-7 flex h-[100px] w-[100px] items-center justify-center rounded-full bg-white lg:h-[130px] lg:w-[130px]">
               <Image
                 src={item.iconSrc}
                 alt="icon"
@@ -83,7 +83,7 @@ const WorkSection: React.FC = () => {
               </span>
             </div>
             <h3 className="text-title font-exo mb-2 text-[24px] font-bold">{item.title}</h3>
-            <p className="text-body text-base">{item.description}</p>
+            <p className="text-body max-w-[340px] text-base">{item.description}</p>
           </div>
         ))}
       </div>

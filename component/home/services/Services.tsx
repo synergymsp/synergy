@@ -48,10 +48,10 @@ const ServicesSection: React.FC = () => {
   return (
     <Container>
       <div className="head mx-auto mb-14 max-w-[600px] text-center">
-        <span className="font-exo mb-5 text-base font-semibold uppercase text-theme">
+        <span className="font-exo text-theme mb-2 inline-block text-base font-semibold uppercase md:mb-5">
           Our Latest Services
         </span>
-        <h2 className="font-exo mb-5 text-[36px] font-bold uppercase leading-snug text-title xl:text-[44px] 2xl:text-[48px]">
+        <h2 className="font-exo text-title sm2:text-[26px] text-[24px] font-bold uppercase leading-snug sm:text-[36px] lg:text-[40px]  xl:text-[44px] 2xl:text-[48px]">
           What Kind of Services We are Offering
         </h2>
       </div>
@@ -60,30 +60,32 @@ const ServicesSection: React.FC = () => {
         {services?.map((service, index) => (
           <div
             key={index}
-            className="duration-400 group relative h-full cursor-pointer overflow-hidden rounded-md bg-white px-10 py-12 shadow-shadow3 transition-all"
+            className="duration-400 shadow-shadow3 group relative h-full cursor-pointer overflow-hidden rounded-md bg-white px-5 py-8  transition-all sm:px-10 sm:py-12"
           >
-            <div className="absolute inset-0 h-full w-full scale-125 bg-services-bg bg-cover bg-center opacity-0 transition-all duration-700 ease-in-out group-hover:scale-100 group-hover:opacity-100"></div>
+            <div className="bg-services-bg absolute inset-0 h-full w-full scale-125 bg-cover bg-center opacity-0 transition-all duration-700 ease-in-out group-hover:scale-100 group-hover:opacity-100"></div>
 
-            <div className="relative z-10">
-              <div className="mb-8 flex h-[70px] w-[70px] items-center justify-center rounded-full bg-smoke">
-                <Image
-                  src={service.icon}
-                  alt="services Icon"
-                  width={0}
-                  height={0}
-                  sizes="100vw"
-                  style={{ width: '50%', height: 'auto' }}
-                />
+            <div className="relative z-10 flex h-[100%] flex-col items-start justify-between">
+              <div>
+                <div className="bg-smoke mb-4 flex h-[60px] w-[60px] items-center justify-center rounded-full sm:mb-6 sm:h-[70px] sm:w-[70px] xl:mb-8">
+                  <Image
+                    src={service.icon}
+                    alt="services Icon"
+                    width={0}
+                    height={0}
+                    sizes="100vw"
+                    style={{ width: '50%', height: 'auto' }}
+                  />
+                </div>
+                <h3 className="font-exo  duration-400 text-title my-2 text-lg font-bold capitalize transition-all ease-in-out group-hover:text-white lg:my-3 xl:text-[24px]">
+                  <a className="text-inherit" href="#">
+                    {service.title}
+                  </a>
+                </h3>
+                <p className="ellipsis-3-lines duration-400 text-body mb-5 text-sm transition-all ease-in-out group-hover:text-white md:text-base">
+                  {service.description}
+                </p>
               </div>
-              <h3 className="font-exo duration-400 my-3 text-[24px] font-bold capitalize leading-snug text-title transition-all ease-in-out group-hover:text-white">
-                <a className="text-inherit" href="#">
-                  {service.title}
-                </a>
-              </h3>
-              <p className="ellipsis-3-lines duration-400 mb-5 text-base text-body transition-all ease-in-out group-hover:text-white">
-                {service.description}
-              </p>
-              <Button className="bg-smoke px-5 py-[14px] text-theme">
+              <Button className="bg-smoke text-theme px-5 py-[14px]">
                 READ MORE
                 <FontAwesomeIcon icon={faArrowRight} className="ml-2 h-4 w-4" />
               </Button>

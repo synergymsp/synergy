@@ -24,15 +24,15 @@ export const HeaderInfo: React.FC = () => {
             <div className="flex items-center py-7">
               <FontAwesomeIcon
                 icon={faPhone}
-                className="text-theme mr-5 h-6 w-6"
+                className="text-theme mr-2 h-5 w-5 sm:mr-5 sm:h-6 sm:w-6"
               />
               <div>
-                <span className="text-body mb-1 block text-sm">
+                <span className="text-body block text-xs sm:mb-1 sm:text-sm">
                   Call Anytime 24/7
                 </span>
                 <Link
                   href="tel:+26921562148"
-                  className="text-title hover:text-theme text-xl font-extrabold"
+                  className="text-title hover:text-theme text-sm font-extrabold sm:text-xl"
                 >
                   +1 732 334 3590
                 </Link>
@@ -42,15 +42,15 @@ export const HeaderInfo: React.FC = () => {
             <div className="hidden items-center border-l border-[#e7ebf3] py-7 pl-10 lg:flex">
               <FontAwesomeIcon
                 icon={faEnvelope}
-                className="text-theme mr-5 h-6 w-6"
+                className="text-theme mr-2 h-5 w-5 sm:mr-5 sm:h-6 sm:w-6"
               />
               <div>
-                <span className="text-body mb-1 block text-sm">
+                <span className="text-body block text-xs sm:mb-1 sm:text-sm">
                   Mail Us For Support
                 </span>
                 <Link
                   href="mailto:info@synergymsp.net"
-                  className="text-title hover:text-theme text-xl font-extrabold"
+                  className="text-title hover:text-theme text-sm font-extrabold sm:text-xl"
                 >
                   info@synergymsp.net
                 </Link>
@@ -60,13 +60,13 @@ export const HeaderInfo: React.FC = () => {
             <div className="hidden items-center border-l border-[#e7ebf3] py-7 pl-10 xl:flex">
               <FontAwesomeIcon
                 icon={faMapMarkerAlt}
-                className="text-theme mr-5 h-6 w-6"
+                className="text-theme mr-2 h-5 w-5 sm:mr-5 sm:h-6 sm:w-6"
               />
               <div>
-                <span className="text-body mb-1 block text-sm">
+                <span className="text-body block text-xs sm:mb-1 sm:text-sm">
                   Office Address
                 </span>
-                <Link href="https://maps.app.goo.gl/5FuGVzeQPH66os1u6" className="text-title hover:text-theme inline-block max-w-[200px] text-xl font-extrabold">
+                <Link href="https://maps.app.goo.gl/5FuGVzeQPH66os1u6" className="text-title hover:text-theme inline-block max-w-[200px] text-sm font-extrabold sm:text-xl">
                   1317 Morris Ave, Ste 2, Union, NJ 07083, USA
                 </Link>
               </div>

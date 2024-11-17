@@ -119,6 +119,23 @@ body {
   overflow: hidden;
 }
 
+@media screen and (max-width: 991.98px) {
+  .slider {
+    height: 450px;
+  }
+}
+
+@media screen and (max-width: 767.98px) {
+  .slider {
+    height: 345px;
+  }
+}
+@media screen and (max-width: 575.98px) {
+  .slider {
+    height: 250px;
+  }
+}
+
 .slide {
   position: absolute;
   width: 100%;
@@ -170,7 +187,6 @@ body {
   }
 }
 
-
 /* Zoom out effect */
 @keyframes zoom-out {
   from {
@@ -191,7 +207,17 @@ body {
   width: 248.842px;
   height: 1292.32px;
 }
+@media screen and (max-width: 991.98px) {
+  .angled-div-1 {
+    width: 132px;
+  }
+}
 
+@media screen and (max-width: 767.98px) {
+  .angled-div-1 {
+    width: 107px;
+  }
+}
 .angled-div-2 {
   position: absolute;
   left: -902px;
@@ -220,6 +246,23 @@ body {
     top: -300px;
     transform: rotate(45deg);
     opacity: 1;
+  }
+}
+@media (max-width: 991.98px) {
+  @keyframes slide-in {
+    from {
+      left: -650px;
+      top: -300px;
+      transform: rotate(45deg);
+      opacity: 0;
+    }
+
+    to {
+      left: -200px;
+      top: -300px;
+      transform: rotate(45deg);
+      opacity: 1;
+    }
   }
 }
 
@@ -272,7 +315,6 @@ body {
   width: 100%;
   height: 100%;
   color: white;
-  padding: 10px 20px;
   border-radius: 5px;
   z-index: 1;
   display: flex;
@@ -370,6 +412,22 @@ body {
   max-width: 1120px;
   border-radius: 5px 0 0 5px;
   z-index: -1;
+}
+
+@media screen and (max-width: 1399.98px) {
+  .faq-shape1 {
+    max-width: 70%;
+  }
+}
+@media screen and (max-width: 1199.98px) {
+  .faq-shape1 {
+    top: 0px;
+  }
+}
+@media screen and (max-width: 991.98px) {
+  .faq-shape1 {
+    max-width: 100%;
+  }
 }
 
 .faq-shape2 {

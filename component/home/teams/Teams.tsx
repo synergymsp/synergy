@@ -79,11 +79,11 @@ const iconVariants = {
 const TeamsSection: React.FC = () => {
   return (
     <Container>
-      <div className="mx-auto mb-10 max-w-[600px] text-center">
-        <span className="font-exo text-theme text-base font-semibold uppercase">
+      <div className="mx-auto mb-6 max-w-[600px] text-center md:mb-10">
+        <span className="font-exo text-theme mb-2 inline-block text-base font-semibold uppercase md:mb-5">
           Great Team Members
         </span>
-        <h2 className="font-exo text-title text-[36px] font-bold uppercase leading-snug">
+        <h2 className="font-exo text-title sm2:text-[26px] text-[24px] font-bold uppercase leading-snug sm:text-[36px] lg:text-[40px]  xl:text-[44px] 2xl:text-[48px]">
           We Have Expert Team
         </h2>
       </div>

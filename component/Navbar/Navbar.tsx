@@ -52,13 +52,13 @@ const Navbar: React.FC = () => {
           <div className="hidden lg:flex lg:space-x-8">
             <Link
               href="/"
-              className="flex items-center py-4 text-base font-medium hover:text-theme"
+              className="hover:text-theme flex items-center py-4 text-base font-medium"
             >
               Home
             </Link>
             <Link
               href="/about-us"
-              className="py-4 text-base font-medium hover:text-theme"
+              className="hover:text-theme py-4 text-base font-medium"
             >
               Why Choose Us
             </Link>
@@ -69,7 +69,7 @@ const Navbar: React.FC = () => {
               onMouseLeave={handleMouseLeave}
               className="group relative inline-block text-left"
             >
-              <button className="flex items-center py-[16.5px] text-base font-medium hover:text-theme">
+              <button className="hover:text-theme flex items-center py-[16.5px] text-base font-medium">
                 Services
                 <FontAwesomeIcon
                   icon={faChevronDown}
@@ -78,13 +78,13 @@ const Navbar: React.FC = () => {
               </button>
               {isDropdownOpen && (
                 <div
-                  className={`dropdown-items absolute z-50 mt-2 w-max translate-y-12 transform border-b-[3px] border-[#0E5AF2] bg-white px-5 py-[18px] shadow-dropdown-shadow transition-all duration-200 group-hover:block ${
+                  className={`dropdown-items shadow-dropdown-shadow absolute z-50 mt-2 w-max translate-y-12 transform border-b-[3px] border-[#0E5AF2] bg-white px-5 py-[18px] transition-all duration-200 group-hover:block ${
                     isDropdownFade ? 'transform-up' : 'transform-down'
                   }`}
                 >
                   <Link
                     href="/tech-support"
-                    className="flex items-center gap-2 px-[9px] py-[3px] text-base font-medium leading-[30px] transition-all duration-200 ease-in-out hover:text-theme"
+                    className="hover:text-theme flex items-center gap-2 px-[9px] py-[3px] text-base font-medium leading-[30px] transition-all duration-200 ease-in-out"
                   >
                     <span className="item-style">
                       <span className="dot"></span>
@@ -94,7 +94,7 @@ const Navbar: React.FC = () => {
 
                   <Link
                     href="/secure-hosting"
-                    className="flex items-center gap-2 px-[9px] py-[3px] text-base font-medium leading-[30px] transition-all duration-200 ease-in-out hover:text-theme"
+                    className="hover:text-theme flex items-center gap-2 px-[9px] py-[3px] text-base font-medium leading-[30px] transition-all duration-200 ease-in-out"
                   >
                     <span className="item-style">
                       <span className="dot"></span>
@@ -104,7 +104,7 @@ const Navbar: React.FC = () => {
 
                   <Link
                     href="/virtualization"
-                    className="flex items-center gap-2 px-[9px] py-[3px] text-base font-medium leading-[30px] transition-all duration-200 ease-in-out hover:text-theme"
+                    className="hover:text-theme flex items-center gap-2 px-[9px] py-[3px] text-base font-medium leading-[30px] transition-all duration-200 ease-in-out"
                   >
                     <span className="item-style">
                       <span className="dot"></span>
@@ -114,7 +114,7 @@ const Navbar: React.FC = () => {
 
                   <Link
                     href="/voip"
-                    className="flex items-center gap-2 px-[9px] py-[3px] text-base font-medium leading-[30px] transition-all duration-200 ease-in-out hover:text-theme"
+                    className="hover:text-theme flex items-center gap-2 px-[9px] py-[3px] text-base font-medium leading-[30px] transition-all duration-200 ease-in-out"
                   >
                     <span className="item-style">
                       <span className="dot"></span>
@@ -124,7 +124,7 @@ const Navbar: React.FC = () => {
 
                   <Link
                     href="/data-protection"
-                    className="flex items-center gap-2 px-[9px] py-[3px] text-base font-medium leading-[30px] transition-all duration-200 ease-in-out hover:text-theme"
+                    className="hover:text-theme flex items-center gap-2 px-[9px] py-[3px] text-base font-medium leading-[30px] transition-all duration-200 ease-in-out"
                   >
                     <span className="item-style">
                       <span className="dot"></span>
@@ -134,7 +134,7 @@ const Navbar: React.FC = () => {
 
                   <Link
                     href="/oracle-db-support"
-                    className="flex items-center gap-2 px-[9px] py-[3px] text-base font-medium leading-[30px] transition-all duration-200 ease-in-out hover:text-theme"
+                    className="hover:text-theme flex items-center gap-2 px-[9px] py-[3px] text-base font-medium leading-[30px] transition-all duration-200 ease-in-out"
                   >
                     <span className="item-style">
                       <span className="dot"></span>
@@ -147,7 +147,7 @@ const Navbar: React.FC = () => {
 
             <Link
               href="/contact"
-              className="py-4 text-base font-medium hover:text-theme"
+              className="hover:text-theme py-4 text-base font-medium"
             >
               Contact Us
             </Link>
@@ -156,7 +156,7 @@ const Navbar: React.FC = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(true)}
-            className="my-[10px] flex h-[48px] w-[48px] items-center justify-center rounded-[5px] bg-[#f2f6ff] text-theme lg:hidden"
+            className="text-theme my-[10px] flex h-[48px] w-[48px] items-center justify-center rounded-[5px] bg-[#f2f6ff] lg:hidden"
           >
             <FontAwesomeIcon
               icon={faBars}
@@ -167,11 +167,11 @@ const Navbar: React.FC = () => {
 
           <div className="flex w-[340px] items-center max-[1199px]:w-[200px]">
             <input
-              className="h-[35px] w-full flex-1 rounded-md border-0 px-5 focus:bg-[#f3f4f7] focus:outline-none"
+              className="h-[35px] w-full flex-1 rounded-md border-0 px-5 text-base focus:bg-[#f3f4f7] focus:outline-none"
               type="text"
               placeholder="Search here..."
             />
-            <button className="h-[35px] w-[35px] rounded-[4px] bg-theme">
+            <button className="bg-theme h-[35px] w-[35px] rounded-[4px]">
               <FontAwesomeIcon icon={faSearch} className="h-4 w-4 text-white" />
             </button>
           </div>
@@ -191,7 +191,7 @@ const Navbar: React.FC = () => {
           <div className="relative bg-[#e8f8f9] px-6 py-10">
             <button
               onClick={() => setMobileMenuOpen(false)}
-              className="absolute right-3 top-3 h-10 w-10 rounded-full bg-[#eff1f5] text-theme shadow-shadow1"
+              className="text-theme shadow-shadow1 absolute right-3 top-3 h-10 w-10 rounded-full bg-[#eff1f5]"
             >
               <FontAwesomeIcon
                 icon={faTimes}
@@ -210,7 +210,7 @@ const Navbar: React.FC = () => {
             <Link
               href="/"
               onClick={handleLinkClick}
-              className="flex items-center gap-2 border-b border-[#fdedf1] py-3 text-base font-normal hover:text-theme"
+              className="hover:text-theme flex items-center gap-2 border-b border-[#fdedf1] py-3 text-base font-normal"
             >
               <FontAwesomeIcon
                 icon={faChevronRight}
@@ -222,7 +222,7 @@ const Navbar: React.FC = () => {
             <Link
               href="/"
               onClick={handleLinkClick}
-              className="flex items-center gap-2 border-b border-[#fdedf1] py-3 text-base font-normal hover:text-theme"
+              className="hover:text-theme flex items-center gap-2 border-b border-[#fdedf1] py-3 text-base font-normal"
             >
               <FontAwesomeIcon
                 icon={faChevronRight}
@@ -233,7 +233,7 @@ const Navbar: React.FC = () => {
             </Link>
 
             {/* Services Collapsible Menu in Mobile */}
-            <div className="flex items-center justify-between gap-2 border-b border-[#fdedf1] py-3 text-base font-normal hover:text-theme">
+            <div className="hover:text-theme flex items-center justify-between gap-2 border-b border-[#fdedf1] py-3 text-base font-normal">
               <div className="flex items-center gap-2">
                 <FontAwesomeIcon
                   icon={faChevronRight}
@@ -243,10 +243,10 @@ const Navbar: React.FC = () => {
                 <span>Services</span>
               </div>
               <button onClick={() => setServicesMenuOpen(!servicesMenuOpen)}>
-                <span className="flex h-[25px] w-[25px] items-center justify-center rounded-full bg-[#eff1f5] shadow-shadow1">
+                <span className="shadow-shadow1 flex h-[25px] w-[25px] items-center justify-center rounded-full bg-[#eff1f5]">
                   <FontAwesomeIcon
                     icon={servicesMenuOpen ? faMinus : faPlus}
-                    className="text-[12px] font-normal text-title"
+                    className="text-title text-[12px] font-normal"
                   />
                 </span>
               </button>
@@ -331,7 +331,7 @@ const Navbar: React.FC = () => {
             <Link
               href="/"
               onClick={handleLinkClick}
-              className="flex items-center gap-2 py-3 text-base font-normal hover:text-theme"
+              className="hover:text-theme flex items-center gap-2 py-3 text-base font-normal"
             >
               <FontAwesomeIcon
                 icon={faChevronRight}

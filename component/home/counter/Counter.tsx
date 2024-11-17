@@ -28,10 +28,10 @@ const counterData = [
 const CounterSection: React.FC = () => {
   return (
     <Container>
-      <div className="grid grid-cols-2 gap-6 md:grid-cols-4">
+      <div className="grid grid-cols-2 gap-6 lg:grid-cols-4">
         {counterData.map((item, index) => (
-          <div key={index} className="flex w-full items-center">
-            <div className="mr-6 flex h-[90px] w-[90px] flex-shrink-0 items-center justify-center rounded-md bg-theme">
+          <div key={index} className="flex w-full flex-col items-center text-center lg:flex-row lg:text-left">
+            <div className="bg-theme mb-5 flex h-[70px] w-[70px] flex-shrink-0 items-center justify-center rounded-md sm:h-[90px] sm:w-[90px] lg:mb-0 lg:mr-6">
               <Image
                 src={item.icon}
                 alt={`${item.label} Icon`}
@@ -42,10 +42,10 @@ const CounterSection: React.FC = () => {
               />
             </div>
             <div>
-              <span className="font-exo text-[36px] font-bold uppercase leading-none text-white xl:text-[44px] 2xl:text-[48px]">
+              <span className="font-exo text-[30px] font-bold uppercase leading-none text-white sm:text-[36px] xl:text-[44px] 2xl:text-[48px]">
                 {item.count}
               </span>
-              <p className="font-exo text-base font-semibold text-white">
+              <p className="font-exo text-sm font-semibold text-white md:text-base">
                 {item.label}
               </p>
             </div>

@@ -48,23 +48,23 @@ const ReviewsSection: React.FC = () => {
 
   return (
     <Container>
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col items-center justify-center md:flex-row md:justify-between">
         <div className="mb-10">
-          <span className="font-exo text-theme mb-5 flex items-center text-base font-semibold uppercase">
+          <span className="font-exo text-theme mb-2 flex items-center justify-center text-base font-semibold uppercase md:mb-5 md:justify-start">
             <FontAwesomeIcon icon={faCopy} className="mr-2" /> Our Best Review’s
           </span>
-          <h2 className="font-exo text-title text-[50px] font-bold uppercase leading-snug">
+          <h2 className="font-exo text-title sm2:text-[26px] text-[24px] font-bold uppercase leading-snug sm:text-[36px] lg:text-[40px]  xl:text-[44px] 2xl:text-[48px]">
             Customer’s Feedback
           </h2>
         </div>
 
-        <div className="mb-6 flex justify-center gap-4">
-          <Button className="bg-smoke text-theme" ref={prevRef}>
+        <div className="mb-6 ml-2 hidden justify-center gap-4 md:flex">
+          <Button className="bg-smoke text-theme px-[20px] py-[14px] lg:px-7 lg:py-5" ref={prevRef}>
             <FontAwesomeIcon icon={faArrowLeft} className="mr-2 h-4 w-4" />
             PREV
           </Button>
 
-          <Button className="bg-smoke text-theme" ref={nextRef}>
+          <Button className="bg-smoke text-theme px-[20px] py-[14px] lg:px-7 lg:py-5" ref={nextRef}>
             NEXT
             <FontAwesomeIcon icon={faArrowRight} className="ml-2 h-4 w-4" />
           </Button>
@@ -75,8 +75,7 @@ const ReviewsSection: React.FC = () => {
         spaceBetween={30}
         breakpoints={{
           320: { slidesPerView: 1 },
-          576: { slidesPerView: 2 },
-          768: { slidesPerView: 3 },
+          768: { slidesPerView: 2 },
           992: { slidesPerView: 3 },
         }}
         grabCursor={true}
@@ -112,7 +111,7 @@ const ReviewsSection: React.FC = () => {
                   />
                 </div>
               </div>
-              <p className="text-body mb-5 text-base">{item.feedback}</p>
+              <p className="text-body mb-5 text-sm md:text-base">{item.feedback}</p>
               <h3 className="font-exo text-title text-base font-bold capitalize">
                 {item.name}
               </h3>

@@ -11,8 +11,9 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       <button
         ref={ref || undefined} 
         className={clsx(
-          'vs-btn relative z-10 flex items-center justify-center overflow-hidden rounded-md border-0 px-7 py-5 text-center text-base font-medium uppercase leading-none transition-all duration-500 hover:text-white',
           className,
+          'vs-btn relative z-10 flex items-center justify-center overflow-hidden rounded-md border-0 text-center text-xs font-medium uppercase leading-none transition-all duration-500 hover:text-white  md:text-base',
+          
         )}
         {...props}
       />

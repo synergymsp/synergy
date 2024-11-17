@@ -31,6 +31,7 @@ const config = {
         border: '#E0E0E0',
       },
       screens: {
+        sm2: '400px',
         sm: '576px',
         md: '768px',
         lg: '992px',
