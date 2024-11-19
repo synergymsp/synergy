@@ -3,7 +3,6 @@ import { ReactNode } from 'react';
 import Footer from '@/component/Footer/Footer';
 import { HeaderInfo } from '@/component/HeaderInfo/HeaderInfo';
 import Navbar from '@/component/Navbar/Navbar';
-import { TopBar } from '@/component/TopBar/TopBar';
 
 export const metadata = {
   title: 'SYNERGY MSP',
