@@ -2,12 +2,12 @@ import {
   faPlay,
   faArrowRight,
   faCopy,
-} from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Image from 'next/image';
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Image from "next/image";
 
-import { Button } from '@/component/common/Button';
-import { Container } from '@/component/common/Container';
+import { Button } from "@/component/common/Button";
+import { Container } from "@/component/common/Container";
 const AboutSection: React.FC = () => {
   return (
     <Container>
@@ -27,7 +27,7 @@ const AboutSection: React.FC = () => {
               width={0}
               height={0}
               sizes="100vw"
-              style={{ width: '100%', height: 'auto' }}
+              style={{ width: "100%", height: "auto" }}
               className="rounded-md"
             />
           </div>
@@ -39,7 +39,7 @@ const AboutSection: React.FC = () => {
               width={0}
               height={0}
               sizes="100vw"
-              style={{ width: '100%', height: 'auto' }}
+              style={{ width: "100%", height: "auto" }}
             />
             <a
               href="#"
@@ -61,46 +61,56 @@ const AboutSection: React.FC = () => {
         >
           <span className="font-exo text-theme mb-5 flex items-center text-base font-semibold uppercase">
             <FontAwesomeIcon icon={faCopy} className="mr-2" /> Get Best IT
-            Solution 2022
+            Solution 2024
           </span>
           <h2 className="font-exo text-title sm2:text-[26px] mb-5 text-[24px] font-bold uppercase leading-snug sm:text-[36px] lg:text-[40px]  xl:text-[44px] 2xl:text-[48px]">
-            Trust Our Best IT Solution For Your Business
+            Reasons for Choosing Us
           </h2>
-          <p className="text-body mb-6 text-sm md:text-base">
-            Compellingly mesh cross-platform portals through functional human
-            capital world-class architectures for orthogonal initiatives.
-            Assertively benchmark visionary quality vectors after covalent
-            e-tailers. Intrinsically enhance 24/7 users and supply process.
-          </p>
 
-          <div className="shadow-shadow4 sm2:flex-row sm2:w-fit sm2:items-center mb-6 flex flex-col rounded-md bg-white p-[10px] pr-10 md:mb-10">
-            <div className="bg-smoke shadow-shadow2 sm2:mb-0 sm2:mr-5 mb-2 flex h-[60px] w-[60px] flex-shrink-0 items-center justify-center rounded-md md:h-[80px] md:w-[80px] xl:h-[95px] xl:w-[95px]">
-              <Image
-                src="/icon/tel-1-1.png"
-                alt="phone Icon"
-                width={0}
-                height={0}
-                sizes="100vw"
-                style={{ width: '40%', height: 'auto' }}
-              />
-            </div>
-            <div>
-              <span className="font-exo text-body text-xs font-normal uppercase leading-[unset] sm:text-sm">
-                24 HOURS SERVICE AVAILABLE
+          <div className="flex items-center mb-6">
+            <div className="mr-4 w-[50px] h-[50px] bg-theme rounded-md flex items-center justify-center">
+              <span className="text-white font-bold text-base uppercase font-exo">
+                01
               </span>
-              <p className="font-exo text-title text-sm font-bold sm:text-base">
-                Call Us:{' '}
-                <a href="tel:+17323343590" className="hover:text-theme">
-                  +1 732 334 3590
-                </a>
-              </p>
+            </div>
+            <div className="flex-1">
+              <h5 className="font-exo text-title text-base font-semibold uppercase leading-snug">
+                One Stop Shop For All Your Technology Needs
+              </h5>
+            </div>
+          </div>
+          <div className="flex items-center mb-6">
+            <div className="mr-4 w-[50px] h-[50px] bg-theme rounded-md flex items-center justify-center">
+              <span className="text-white font-bold text-base uppercase font-exo">
+                02
+              </span>
+            </div>
+            <div className="flex-1">
+              <h5 className="font-exo text-title text-base font-semibold uppercase leading-snug">
+                Expert guidance to build your growing business
+              </h5>
+            </div>
+          </div>
+          <div className="flex items-center mb-10">
+            <div className="mr-4 w-[50px] h-[50px] bg-theme rounded-md flex items-center justify-center">
+              <span className="text-white font-bold text-base uppercase font-exo">
+                03
+              </span>
+            </div>
+            <div className="flex-1">
+              <h5 className="font-exo text-title text-base font-semibold uppercase leading-snug">
+                Create endless business possibilities!
+              </h5>
             </div>
           </div>
 
-          <Button className="bg-theme w-fit px-[14px] py-[11px] text-white md:px-7 md:py-5">
-            ABOUT US
-            <FontAwesomeIcon icon={faArrowRight} className="ml-2 h-4 w-4" />
-          </Button>
+          <p className="text-body mb-6 text-sm md:text-base">
+            We believe in the possibility of what can be. Our team of
+            experienced system and network engineers, tech support specialists,
+            and developers are driven to produce a robust and manageable IT
+            environment. We have created thousands of solutions over the last
+            decade and helped businesses like yours expand at a rapid scale.
+          </p>
         </div>
       </div>
     </Container>

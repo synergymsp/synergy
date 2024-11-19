@@ -1,76 +1,35 @@
-import {
-  faPhone,
-  faEnvelope,
-  faMapMarkerAlt,
-} from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Image from 'next/image';
-import Link from 'next/link';
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Image from "next/image";
+import Link from "next/link";
 
-import { Container } from '@/component/common/Container';
+import { Container } from "@/component/common/Container";
+import { Button } from "../common/Button";
 
 export const HeaderInfo: React.FC = () => {
   return (
     <div className="bg-white">
       <Container>
-        <div className="flex flex-wrap items-center justify-between border-b border-[#e7ebf3]">
+        <div className="flex items-center py-10 justify-between border-b border-[#e7ebf3]">
           <div className="flex-shrink-0">
-            <Link href={'/'}>
-              <Image src="/logo.svg" alt="logo" width={140} height={0} />
+            <Link href={"/"}>
+              <Image src="/logo.svg" alt="logo" width={200} height={0} />
             </Link>
           </div>
 
-          <div className="flex flex-wrap items-stretch justify-between space-x-10">
-            <div className="flex items-center py-7">
-              <FontAwesomeIcon
-                icon={faPhone}
-                className="text-theme mr-2 h-5 w-5 sm:mr-5 sm:h-6 sm:w-6"
-              />
-              <div>
-                <span className="text-body block text-xs sm:mb-1 sm:text-sm">
-                  Call Anytime 24/7
-                </span>
-                <Link
-                  href="tel:+26921562148"
-                  className="text-title hover:text-theme text-sm font-extrabold sm:text-xl"
-                >
-                  +1 732 334 3590
-                </Link>
-              </div>
-            </div>
-
-            <div className="hidden items-center border-l border-[#e7ebf3] py-7 pl-10 lg:flex">
-              <FontAwesomeIcon
-                icon={faEnvelope}
-                className="text-theme mr-2 h-5 w-5 sm:mr-5 sm:h-6 sm:w-6"
-              />
-              <div>
-                <span className="text-body block text-xs sm:mb-1 sm:text-sm">
-                  Mail Us For Support
-                </span>
-                <Link
-                  href="mailto:info@synergymsp.net"
-                  className="text-title hover:text-theme text-sm font-extrabold sm:text-xl"
-                >
-                  info@synergymsp.net
-                </Link>
-              </div>
-            </div>
-
-            <div className="hidden items-center border-l border-[#e7ebf3] py-7 pl-10 xl:flex">
-              <FontAwesomeIcon
-                icon={faMapMarkerAlt}
-                className="text-theme mr-2 h-5 w-5 sm:mr-5 sm:h-6 sm:w-6"
-              />
-              <div>
-                <span className="text-body block text-xs sm:mb-1 sm:text-sm">
-                  Office Address
-                </span>
-                <Link href="https://maps.app.goo.gl/5FuGVzeQPH66os1u6" className="text-title hover:text-theme inline-block max-w-[200px] text-sm font-extrabold sm:text-xl">
-                  1317 Morris Ave, Ste 2, Union, NJ 07083, USA
-                </Link>
-              </div>
-            </div>
+          <div className="flex items-center">
+            <h3 className="text-title text-xl font-extrabold mr-4 lg:mr-8 hidden lg:block">
+              Click Here for Immediate Assistance
+            </h3>
+            <Link
+              href="tel:+26921562148"
+              className="text-title hover:text-theme text-sm font-extrabold sm:text-xl"
+            >
+              <Button className="bg-theme px-[10px] py-[14px] md:px-[20px] sm:px-[30px] sm:py-[15px] text-white">
+                Help & Support
+                <FontAwesomeIcon icon={faArrowRight} className="ml-2 h-4 w-4" />
+              </Button>
+            </Link>
           </div>
         </div>
       </Container>

@@ -31,26 +31,12 @@ interface SocialIconsProps {
   icons: React.ComponentProps<typeof FontAwesomeIcon>["icon"][];
 }
 
-const InfoBlock: React.FC<InfoBlockProps> = ({ icon, title, content }) => (
-  <div className="mb-6 flex w-[100%] sm:w-1/3 flex-col items-center justify-center sm:py-[60px] md:mb-0 lg:flex-row">
-    <div className="mb-5 flex h-[70px] w-[70px] items-center justify-center rounded-md bg-[#152B54] md:h-[85px] md:w-[85px] lg:mb-0">
-      <FontAwesomeIcon icon={icon} className="h-7 w-7 text-white" />
-    </div>
-    <div className="max-w-[210px] flex-1 text-center lg:ml-5 lg:text-start">
-      <h3 className="font-exo mb-1 text-base font-semibold uppercase text-white">
-        {title}
-      </h3>
-      {content}
-    </div>
-  </div>
-);
-
 const FooterLinks: React.FC<FooterLinksProps> = ({ title, links }) => (
-  <div className="mb-7 flex flex-col items-center w-[100%] md:w-[50%] lg:mb-0 lg:w-fit ">
+  <div className="mb-7 flex flex-col items-center md:items-start md:mb-0 md:w-fit w-[100%]">
     <h3 className="font-exo mb-5 text-[24px] font-bold text-white">{title}</h3>
     <ul>
       {links.map((link, index) => (
-        <li key={index} className="text-center lg:text-start">
+        <li key={index} className="text-center md:text-start">
           <Link
             href="#"
             className="hover:text-theme mb-3 inline-block text-base text-[#8A99B4]"
@@ -81,57 +67,136 @@ const Footer: React.FC = () => {
   return (
     <footer className="bg-footer-sec bg-[#07193d] bg-cover bg-center bg-no-repeat">
       <div className="border-b border-[#152B54]">
-        <Container className="flex flex-col sm:flex-row md:justify-between pt-[50px] sm:pt-0">
-          <InfoBlock
-            icon={faMapMarkerAlt}
-            title="Office Address"
-            content={
-              <Link
-                href="https://maps.app.goo.gl/5FuGVzeQPH66os1u6"
-                className="mb-[2px] block text-base text-[#8A99B4] transition-all hover:text-white"
-              >
-                1317 Morris Ave Suite 2, Union, NJ 07083, USA
-              </Link>
-            }
-          />
-          <InfoBlock
-            icon={faClock}
-            title="Working Hours"
-            content={
-              <>
-                <p className="mb-[2px] text-base text-[#8A99B4]">
-                  Weekdays 9 AM – 5 PM (EST)
-                </p>
-                <p className="text-base text-[#8A99B4]">Weekend Closed</p>
-              </>
-            }
-          />
-          <InfoBlock
-            icon={faPhoneVolume}
-            title="Contact Us"
-            content={
-              <>
+        <Container className="grid grid-cols-1 gap-y-10 md:gap-6 md:grid-cols-3 py-[50px]">
+          <div className="flex flex-col items-center md:items-start text-center md:text-start">
+            <div className="flex items-center justify-center rounded-md bg-[#152B54] h-[150px] w-[100%] max-w-[290px] overflow-hidden">
+              <img src="https://via.placeholder.com/290" alt="" width={'100%'} height={'100%'} />
+            </div>
+            <div className="flex-1 mt-5">
+              <div className="mb-4">
+                <h3 className="font-exo text-sm font-semibold uppercase text-white">
+                  Call Anytime 24/7
+                </h3>
                 <Link
-                  href="mailto:info@synergymsp.net"
-                  className="mb-[2px] block text-base text-[#8A99B4] transition-all hover:text-white"
-                >
-                  info@synergymsp.net
-                </Link>
-                <Link
-                  href="tel:+17323343590"
-                  className="block text-base text-[#8A99B4] transition-all hover:text-white"
+                  href="tel:+26921562148"
+                  className="block text-sm text-[#8A99B4] transition-all hover:text-theme duration-300"
                 >
                   +1 732 334 3590
                 </Link>
-              </>
-            }
-          />
+              </div>
+              <div className="mb-4">
+                <h3 className="font-exo text-sm font-semibold uppercase text-white">
+                  Mail Us For Support
+                </h3>
+                <Link
+                  href="tel:+26921562148"
+                  className="block text-sm text-[#8A99B4] transition-all hover:text-theme duration-300"
+                >
+                  info@synergymsp.net
+                </Link>
+              </div>
+              <div>
+                <h3 className="font-exo text-sm font-semibold uppercase text-white">
+                  Office Address
+                </h3>
+                <Link
+                  href="https://maps.app.goo.gl/5FuGVzeQPH66os1u6"
+                  className="block text-sm text-[#8A99B4] transition-all hover:text-theme duration-300"
+                >
+                  1317 Morris Ave Suite 2, Union, NJ 07083, USA
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          <div className="flex flex-col items-center md:items-start text-center md:text-start">
+            <div className="flex  items-center justify-center rounded-md bg-[#152B54] h-[150px] w-[100%] max-w-[290px] overflow-hidden">
+              <img src="https://via.placeholder.com/290" alt="" width={'100%'} height={'100%'} />
+            </div>
+            <div className="flex-1 mt-5">
+              <div className="mb-4">
+                <h3 className="font-exo text-sm font-semibold uppercase text-white">
+                  Call Anytime 24/7
+                </h3>
+                <Link
+                  href="tel:+04235197160"
+                  className="block text-sm text-[#8A99B4] transition-all hover:text-theme duration-300"
+                >
+                  +042 35197160
+                </Link>
+              </div>
+              <div className="mb-4">
+                <h3 className="font-exo text-sm font-semibold uppercase text-white">
+                  Mail Us For Support
+                </h3>
+                <Link
+                  href="tel:+26921562148"
+                  className="block text-sm text-[#8A99B4] transition-all hover:text-theme duration-300"
+                >
+                  info@synergymsp.net
+                </Link>
+              </div>
+              <div>
+                <h3 className="font-exo text-sm font-semibold uppercase text-white">
+                  Office Address
+                </h3>
+                <Link
+                  href="https://maps.app.goo.gl/5NGXHm81S8ou6b3H6"
+                  className="block text-sm text-[#8A99B4] transition-all hover:text-theme duration-300"
+                >
+                  Synergy MSP Pvt. Ltd, Pakistan
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          <div className="flex flex-col items-center md:items-start text-center md:text-start">
+            <div className="flex  items-center justify-center rounded-md bg-[#152B54] h-[150px] w-[100%] max-w-[290px] overflow-hidden">
+              <img src="https://via.placeholder.com/290" alt="" width={'100%'} height={'100%'} />
+            </div>
+            <div className="flex-1 mt-5">
+              <div className="mb-4">
+                <h3 className="font-exo text-sm font-semibold uppercase text-white">
+                  Call Anytime 24/7
+                </h3>
+                <Link
+                  href="tel:+26921562148"
+                  className="block text-sm text-[#8A99B4] transition-all hover:text-theme duration-300"
+                >
+                  +1 732 334 3590
+                </Link>
+              </div>
+              <div className="mb-4">
+                <h3 className="font-exo text-sm font-semibold uppercase text-white">
+                  Mail Us For Support
+                </h3>
+                <Link
+                  href="tel:+26921562148"
+                  className="block text-sm text-[#8A99B4] transition-all hover:text-theme duration-300"
+                >
+                  info@synergymsp.net
+                </Link>
+              </div>
+              <div>
+                <h3 className="font-exo text-sm font-semibold uppercase text-white">
+                  Office Address
+                </h3>
+                <Link
+                  href="https://maps.app.goo.gl/5FuGVzeQPH66os1u6"
+                  className="block text-sm text-[#8A99B4] transition-all hover:text-theme duration-300"
+                >
+                  1317 Morris Ave Suite 2, Union, NJ 07083, USA
+                </Link>
+              </div>
+            </div>
+          </div>
+
         </Container>
       </div>
 
       <div className="py-12">
-        <Container className="flex flex-wrap lg:justify-between lg:flex-nowrap justify-center">
-          <div className="mb-7 flex flex-col items-center text-center md:w-[50%] lg:mb-0 lg:w-fit lg:items-start lg:text-start">
+        <Container className="flex flex-wrap md:justify-between lg:flex-nowrap justify-center">
+          <div className="mb-7 flex flex-col items-center text-center md:w-[50%] lg:mb-0 lg:w-fit md:items-start md:text-start">
             <h3 className="font-exo mb-5 text-[24px] font-bold text-white">
               About Us
             </h3>
@@ -168,23 +233,6 @@ const Footer: React.FC = () => {
             ]}
           />
 
-          <div className=" w-[100%] flex flex-col items-center text-center md:w-[50%] lg:mb-0 lg:w-fit lg:items-start lg:text-start">
-            <h3 className="font-exo mb-5 text-[24px] font-bold text-white">
-              Office Maps
-            </h3>
-            <div className="h-[250px] md:h-[180px] w-full">
-              <iframe
-                title="office location map"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2907.193690854589!2d-74.2428154!3d40.687797599999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c3b1d06bfeaaab%3A0x674b24038d25aec7!2sSynergy%20MSP!5e1!3m2!1sen!2s!4v1731768734544!5m2!1sen!2s"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              ></iframe>
-            </div>
-          </div>
         </Container>
       </div>
 

@@ -164,17 +164,6 @@ const Navbar: React.FC = () => {
               aria-hidden="true"
             />
           </button>
-
-          <div className="flex w-[340px] items-center max-[1199px]:w-[200px]">
-            <input
-              className="h-[35px] w-full flex-1 rounded-md border-0 px-5 text-base focus:bg-[#f3f4f7] focus:outline-none"
-              type="text"
-              placeholder="Search here..."
-            />
-            <button className="bg-theme h-[35px] w-[35px] rounded-[4px]">
-              <FontAwesomeIcon icon={faSearch} className="h-4 w-4 text-white" />
-            </button>
-          </div>
         </nav>
       </Container>
 

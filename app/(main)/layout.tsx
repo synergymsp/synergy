@@ -17,7 +17,7 @@ interface MainLayoutProps {
 const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
   return (
     <div className='flex min-h-screen flex-col'>
-      <TopBar />
+      {/* <TopBar /> */}
       <HeaderInfo />
       <Navbar />
       <main className='flex-1'>{children}</main>
