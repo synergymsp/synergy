@@ -83,63 +83,63 @@ const Navbar: React.FC = () => {
                   }`}
                 >
                   <Link
-                    href="/tech-support"
+                    href="/"
                     className="hover:text-theme flex items-center gap-2 px-[9px] py-[3px] text-base font-medium leading-[30px] transition-all duration-200 ease-in-out"
                   >
                     <span className="item-style">
                       <span className="dot"></span>
                     </span>
-                    Tech Support & Network Security
+                    Oracle Development and Support
                   </Link>
 
                   <Link
-                    href="/secure-hosting"
+                    href="/"
                     className="hover:text-theme flex items-center gap-2 px-[9px] py-[3px] text-base font-medium leading-[30px] transition-all duration-200 ease-in-out"
                   >
                     <span className="item-style">
                       <span className="dot"></span>
                     </span>
-                    Secure Hosting
+                    IT Infrastructure Design and Engineering
                   </Link>
 
                   <Link
-                    href="/virtualization"
+                    href="/"
                     className="hover:text-theme flex items-center gap-2 px-[9px] py-[3px] text-base font-medium leading-[30px] transition-all duration-200 ease-in-out"
                   >
                     <span className="item-style">
                       <span className="dot"></span>
                     </span>
-                    Virtualization
+                    On-prem and Cloud base Solutions
                   </Link>
 
                   <Link
-                    href="/voip"
+                    href="/"
                     className="hover:text-theme flex items-center gap-2 px-[9px] py-[3px] text-base font-medium leading-[30px] transition-all duration-200 ease-in-out"
                   >
                     <span className="item-style">
                       <span className="dot"></span>
                     </span>
-                    Voice Over IP
+                    Help Desk service
                   </Link>
 
                   <Link
-                    href="/data-protection"
+                    href="/"
                     className="hover:text-theme flex items-center gap-2 px-[9px] py-[3px] text-base font-medium leading-[30px] transition-all duration-200 ease-in-out"
                   >
                     <span className="item-style">
                       <span className="dot"></span>
                     </span>
-                    Data Protection Backup
+                    Cyber Security
                   </Link>
 
                   <Link
-                    href="/oracle-db-support"
+                    href="/"
                     className="hover:text-theme flex items-center gap-2 px-[9px] py-[3px] text-base font-medium leading-[30px] transition-all duration-200 ease-in-out"
                   >
                     <span className="item-style">
                       <span className="dot"></span>
                     </span>
-                    Oracle Database Development & Support
+                    Voice over IP
                   </Link>
                 </div>
               )}
