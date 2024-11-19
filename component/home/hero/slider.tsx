@@ -79,7 +79,7 @@ export const HeroSection: React.FC = () => {
             className={`angled-div-2 ${index === currentIndex ? 'slide-in2' : 'slide-out2'}`}
           ></div>
 
-          {/* Text Overlay */}
+          {/* Text-Overlay */}
           <AnimatePresence mode="wait">
             {index === currentIndex && (
               <div className="overlay-text">
