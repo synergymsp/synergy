@@ -2,54 +2,19 @@ import { faHome } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { Container } from '@/component/common/Container';
+import { Service, services } from '@/data/ServicesData';
 
-interface Feature {
-  title: string;
-  text: string;
-}
-
-interface Content {
-  sectionTitle: string;
-  text?: string;
-  features?: Feature[];
-}
-
-interface Service {
-  id: number;
-  title: string;
-  description: string;
-  content: Content[];
-}
-
-async function getServices(): Promise<Service[]> {
-  const response = await fetch('/services.json'); // Fetch from public folder
-
-  if (!response.ok) {
-    throw new Error(`Failed to fetch services data. Status: ${response.status}`);
-  }
-
-  return response.json();
-}
-
-// Fetch a single service by its ID
-async function getServiceById(id: string): Promise<Service | undefined> {
-  const services = await getServices();
-
-  return services.find((service) => service.id === parseInt(id));
-}
-
-// Dynamic page component for service details
-export default async function ServiceDetails({
-  params,
-}: {
-  params: { id: string };
-}) {
-  const service = await getServiceById(params.id);
+export default function ServiceDetails({ params }: { params: { id: string } }) {
+  const service: Service | undefined = services.find(
+    (service) => service.id === parseInt(params.id)
+  );
 
   if (!service) {
     return (
       <div className="container mx-auto py-10">
-        <h1 className="font-exo sm2:text-[26px] text-title text-[24px] font-bold uppercase leading-snug sm:text-[36px] lg:text-[40px]  xl:text-[44px] 2xl:text-[48px]">Service Not Found</h1>
+        <h1 className="font-exo sm2:text-[26px] text-title text-[24px] font-bold uppercase leading-snug sm:text-[36px] lg:text-[40px] xl:text-[44px] 2xl:text-[48px]">
+          Service Not Found
+        </h1>
       </div>
     );
   }
