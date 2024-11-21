@@ -22,17 +22,10 @@ interface Service {
 }
 
 async function getServices(): Promise<Service[]> {
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
-  const response = await fetch(`${baseUrl}/services.json`, {
-    cache: 'no-store',
-  });
-
-  console.log('Fetching from:', `${baseUrl}/services.json`);
+  const response = await fetch('/services.json'); // Fetch from public folder
 
   if (!response.ok) {
-    throw new Error(
-      `Failed to fetch services data. Status: ${response.status}`
-    );
+    throw new Error(`Failed to fetch services data. Status: ${response.status}`);
   }
 
   return response.json();
