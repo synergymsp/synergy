@@ -35,7 +35,7 @@ export default function Home() {
         <FAQSection />
       </section>
 
-      <section className='bg-cta-sec bg-cover bg-center bg-no-repeat py-[50px] md:py-[80px] lg:py-[120px] mt-[50px] md:mt-[80px] lg:mt-[120px]'>
+      <section className='bg-cta-sec mt-[50px] bg-cover bg-center bg-no-repeat py-[50px] md:mt-[80px] md:py-[80px] lg:mt-[120px] lg:py-[120px]'>
         <NeedConsultationSection />
       </section>
       <section className='bg-process-sec bg-cover bg-center bg-no-repeat py-[50px] md:pb-[70px] md:pt-[80px] lg:pb-[90px] lg:pt-[120px]'>

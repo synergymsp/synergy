@@ -16,6 +16,8 @@ const config = {
         'cta-sec': "url('/bg/cta-sec-bg.webp')",
         'process-sec': "url('/bg/process-bg-1.jpg')",
         'footer-sec': "url('/shape/bg-footer-1-1.jpg')",
+        'services-details-img': "url('/bg/services-details-bg.webp')",
+        'quote-box': "url('/bg/quote-box.webp')",
       },
       colors: {
         theme: '#0E5AF2',

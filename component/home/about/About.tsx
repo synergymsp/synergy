@@ -1,13 +1,11 @@
 import {
-  faPlay,
-  faArrowRight,
   faCopy,
-} from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Image from "next/image";
+  faPlay
+} from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Image from 'next/image';
 
-import { Button } from "@/component/common/Button";
-import { Container } from "@/component/common/Container";
+import { Container } from '@/component/common/Container';
 const AboutSection: React.FC = () => {
   return (
     <Container>
@@ -27,7 +25,7 @@ const AboutSection: React.FC = () => {
               width={0}
               height={0}
               sizes="100vw"
-              style={{ width: "100%", height: "auto" }}
+              style={{ width: '100%', height: 'auto' }}
               className="rounded-md"
             />
           </div>
@@ -39,7 +37,7 @@ const AboutSection: React.FC = () => {
               width={0}
               height={0}
               sizes="100vw"
-              style={{ width: "100%", height: "auto" }}
+              style={{ width: '100%', height: 'auto' }}
             />
             <a
               href="#"
@@ -67,9 +65,9 @@ const AboutSection: React.FC = () => {
             Reasons for Choosing Us
           </h2>
 
-          <div className="flex items-center mb-6">
-            <div className="mr-4 w-[50px] h-[50px] bg-theme rounded-md flex items-center justify-center">
-              <span className="text-white font-bold text-base uppercase font-exo">
+          <div className="mb-6 flex items-center">
+            <div className="bg-theme mr-4 flex h-[50px] w-[50px] items-center justify-center rounded-md">
+              <span className="font-exo text-base font-bold uppercase text-white">
                 01
               </span>
             </div>
@@ -79,9 +77,9 @@ const AboutSection: React.FC = () => {
               </h5>
             </div>
           </div>
-          <div className="flex items-center mb-6">
-            <div className="mr-4 w-[50px] h-[50px] bg-theme rounded-md flex items-center justify-center">
-              <span className="text-white font-bold text-base uppercase font-exo">
+          <div className="mb-6 flex items-center">
+            <div className="bg-theme mr-4 flex h-[50px] w-[50px] items-center justify-center rounded-md">
+              <span className="font-exo text-base font-bold uppercase text-white">
                 02
               </span>
             </div>
@@ -91,9 +89,9 @@ const AboutSection: React.FC = () => {
               </h5>
             </div>
           </div>
-          <div className="flex items-center mb-10">
-            <div className="mr-4 w-[50px] h-[50px] bg-theme rounded-md flex items-center justify-center">
-              <span className="text-white font-bold text-base uppercase font-exo">
+          <div className="mb-10 flex items-center">
+            <div className="bg-theme mr-4 flex h-[50px] w-[50px] items-center justify-center rounded-md">
+              <span className="font-exo text-base font-bold uppercase text-white">
                 03
               </span>
             </div>
