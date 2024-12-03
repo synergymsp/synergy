@@ -1,12 +1,8 @@
 import { NextResponse } from 'next/server';
 
 export async function POST(req) {
-  console.log('API route triggered'); // Debugging: Check if this logs
-
   try {
     const body = await req.json();
-
-    console.log('Received payload:', body); // Debugging: Log incoming request payload
 
     const issueData = {
       fields: {
@@ -35,8 +31,6 @@ export async function POST(req) {
       },
     };
 
-    console.log('Prepared payload for Jira:', issueData); // Debugging: Log Jira payload
-
     const response = await fetch('https://towelspecialties.atlassian.net/rest/api/3/issue', {
       method: 'POST',
       headers: {
@@ -48,9 +42,11 @@ export async function POST(req) {
       body: JSON.stringify(issueData),
     });
 
+    // eslint-disable-next-line no-console
     console.log('Jira API Response Status:', response.status);
     const responseBody = await response.json();
 
+    // eslint-disable-next-line no-console
     console.log('Jira API Response Body:', responseBody);
 
     if (response.ok) {
@@ -59,7 +55,8 @@ export async function POST(req) {
       return NextResponse.json(responseBody, { status: response.status });
     }
   } catch (error) {
-    console.error('Error in API route:', error); // Debugging: Log server errors
+    // eslint-disable-next-line no-console
+    console.error('Error in API route:', error);
 
     return NextResponse.json({ error: 'Internal Server Error', details: error.message }, { status: 500 });
   }

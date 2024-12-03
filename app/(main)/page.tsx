@@ -16,33 +16,33 @@ export default function Home() {
   return (
     <>
       <HeroSection />
-      <div className=''>
-        <section className='bg-services-sec-bg relative bg-cover bg-top pb-[80px] pt-[50px] md:pt-[60px] lg:pb-[120px] lg:pt-[90px]'>
+      <div className="">
+        <section className="bg-services-sec-bg relative bg-cover bg-top pb-[80px] pt-[50px] md:pt-[60px] lg:pb-[120px] lg:pt-[90px]">
           <ServicesSection />
         </section>
       </div>
-      <section className='relative py-[60px] md:py-[80px] lg:py-[120px]'>
+      <section className="relative py-[60px] md:py-[80px] lg:py-[120px]">
         <AboutSection />
       </section>
 
-      <section className='pb-[60px] md:pb-[80px] lg:pb-[120px]'>
+      <section className="pb-[60px] md:pb-[80px] lg:pb-[120px]">
         <TeamsSection />
       </section>
 
-      <section className='relative py-[50px] md:pb-[70px] md:pt-[80px] lg:pb-[90px] lg:pt-[120px] xl:pt-[240px]'>
-        <div className='faq-shape1 bg-faq-sec bg-cover bg-center bg-no-repeat'></div>
-        <div className='faq-shape2 bg-faq-sec-two hidden bg-cover bg-center bg-no-repeat xl:block'></div>
+      <section className="relative py-[50px] md:pb-[70px] md:pt-[80px] lg:pb-[90px] lg:pt-[120px] xl:pt-[240px]">
+        <div className="faq-shape1 bg-faq-sec bg-cover bg-center bg-no-repeat"></div>
+        <div className="faq-shape2 bg-faq-sec-two hidden bg-cover bg-center bg-no-repeat xl:block"></div>
         <FAQSection />
       </section>
 
-      <section className='bg-cta-sec mt-[50px] bg-cover bg-center bg-no-repeat py-[50px] md:mt-[80px] md:py-[80px] lg:mt-[120px] lg:py-[120px]'>
+      <section className="bg-cta-sec mt-[50px] bg-cover bg-center bg-no-repeat py-[50px] md:mt-[80px] md:py-[80px] lg:mt-[120px] lg:py-[120px]">
         <NeedConsultationSection />
       </section>
-      <section className='bg-process-sec bg-cover bg-center bg-no-repeat py-[50px] md:pb-[70px] md:pt-[80px] lg:pb-[90px] lg:pt-[120px]'>
+      <section className="bg-process-sec bg-cover bg-center bg-no-repeat py-[50px] md:pb-[70px] md:pt-[80px] lg:pb-[90px] lg:pt-[120px]">
         <WorkSection />
       </section>
 
-      <section className='py-[50px] md:py-[80px] lg:py-[120px]'>
+      <section className="py-[50px] md:py-[80px] lg:py-[120px]">
         <ReviewsSection />
       </section>
 

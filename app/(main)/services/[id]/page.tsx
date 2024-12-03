@@ -68,7 +68,9 @@ export default function ServiceDetails({ params }: { params: { id: string } }) {
           <h2 className="font-exo text-title sm2:text-[26px] text-[24px] font-bold uppercase leading-snug sm:text-[36px] lg:text-[40px]  xl:text-[44px] 2xl:text-[48px]">
             {service?.title}
           </h2>
-          <p className="text-theme mt-2 text-sm sm:text-base md:text-lg">{service?.description}</p>
+          <p className="text-theme mt-2 text-sm sm:text-base md:text-lg">
+            {service?.description}
+          </p>
         </div>
 
         {service?.content.map((section, index) => (
@@ -78,7 +80,9 @@ export default function ServiceDetails({ params }: { params: { id: string } }) {
                 {section?.sectionTitle}
               </h2>
               {section?.text && (
-                <p className="text-body mb-10 text-sm sm:text-base">{section?.text}</p>
+                <p className="text-body mb-10 text-sm sm:text-base">
+                  {section?.text}
+                </p>
               )}
             </div>
             {section?.features && (

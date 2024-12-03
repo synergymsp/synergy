@@ -111,15 +111,18 @@ const ContactForm: React.FC = () => {
       if (response.ok) {
         const result = await response.json();
 
+        // eslint-disable-next-line no-console
         console.log('Jira Ticket Created:', result);
         alert('Your request has been submitted successfully!');
       } else {
         const errorData = await response.json();
 
+        // eslint-disable-next-line no-console
         console.error('Failed to create Jira ticket:', errorData);
         alert('Failed to submit your request. Please try again later.');
       }
     } catch (error) {
+      // eslint-disable-next-line no-console
       console.error('Error submitting Jira ticket:', error);
       alert('An error occurred while submitting your request.');
     }

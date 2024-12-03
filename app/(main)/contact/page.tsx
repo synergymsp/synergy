@@ -63,7 +63,7 @@ export default function Contact() {
                   </svg>
                   <a
                     href={'#'}
-                    className="ml-1 text-sm sm:text-base font-medium text-white transition-all duration-300 hover:text-white/70"
+                    className="ml-1 text-sm font-medium text-white transition-all duration-300 hover:text-white/70 sm:text-base"
                   >
                     Contact Us
                   </a>

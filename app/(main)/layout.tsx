@@ -1,7 +1,6 @@
 import { ReactNode, Suspense } from 'react';
 
-import Loading from './loading';
-
+import Loading from '@/app/(main)/loading';
 import Footer from '@/component/Footer/Footer';
 import { HeaderInfo } from '@/component/HeaderInfo/HeaderInfo';
 import Navbar from '@/component/Navbar/Navbar';
