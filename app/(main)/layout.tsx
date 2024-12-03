@@ -1,4 +1,6 @@
-import { ReactNode } from 'react';
+import { ReactNode, Suspense } from 'react';
+
+import Loading from './loading';
 
 import Footer from '@/component/Footer/Footer';
 import { HeaderInfo } from '@/component/HeaderInfo/HeaderInfo';
@@ -15,10 +17,12 @@ interface MainLayoutProps {
 
 const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
   return (
-    <div className='flex min-h-screen flex-col'>
+    <div className="flex min-h-screen flex-col">
       <HeaderInfo />
       <Navbar />
-      <main className='flex-1'>{children}</main>
+      <Suspense fallback={<Loading />}>
+        <main className="flex-1">{children}</main>
+      </Suspense>
       <Footer />
     </div>
   );

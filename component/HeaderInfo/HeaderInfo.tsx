@@ -23,7 +23,7 @@ export const HeaderInfo: React.FC = () => {
               Click Here for Immediate Assistance
             </h3>
             <Link
-              href="tel:+26921562148"
+              href="/contact"
               className="text-title hover:text-theme text-sm font-extrabold sm:text-xl"
             >
               <Button className="bg-theme px-[10px] py-[14px] text-white sm:px-[30px] sm:py-[15px] md:px-[20px]">

@@ -73,7 +73,7 @@ const AboutSection: React.FC = () => {
             </div>
             <div className="flex-1">
               <h5 className="font-exo text-title text-base font-semibold uppercase leading-snug">
-                One Stop Shop For All Your Technology Needs
+                Comprehensive Technology Solutions
               </h5>
             </div>
           </div>
@@ -85,7 +85,7 @@ const AboutSection: React.FC = () => {
             </div>
             <div className="flex-1">
               <h5 className="font-exo text-title text-base font-semibold uppercase leading-snug">
-                Expert guidance to build your growing business
+                Expert Advice for Your Business Growth
               </h5>
             </div>
           </div>
@@ -97,17 +97,16 @@ const AboutSection: React.FC = () => {
             </div>
             <div className="flex-1">
               <h5 className="font-exo text-title text-base font-semibold uppercase leading-snug">
-                Create endless business possibilities!
+               Endless Opportunities for Your Business
               </h5>
             </div>
           </div>
 
           <p className="text-body mb-6 text-sm md:text-base">
-            We believe in the possibility of what can be. Our team of
-            experienced system and network engineers, tech support specialists,
-            and developers are driven to produce a robust and manageable IT
-            environment. We have created thousands of solutions over the last
-            decade and helped businesses like yours expand at a rapid scale.
+          Synergy combines innovation and expertise to provide robust IT services that fuel business
+growth. We’re committed to understanding your unique challenges and delivering solutions that
+enhance operational efficiency, security, and scalability, making us the ideal IT partner for
+businesses at every stage.
           </p>
         </div>
       </div>

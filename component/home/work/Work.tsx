@@ -6,33 +6,33 @@ import { Container } from '@/component/common/Container';
 
 const teamItems = [
   {
-    title: 'Medicine Help',
+    title: 'Healthcare Technology Solutions',
     description:
-      'Extensible for web iterate process before meta services impact with olisticly enable client.',
+      'We offer expert support in integrating Oracle technologies with healthcare systems, optimizing workflows and improving patient care.',
     iconSrc: '/icon/process-1-4.png',
     arrowSrc: '/icon/process-arrow-1-1.png',
     number: '01',
   },
   {
-    title: 'We Build and Create',
+    title: 'Innovative Solution Development',
     description:
-      'Extensible for web iterate process before meta services impact with olisticly enable client.',
+      'Leveraging Oracle and advanced technologies, we design scalable, flexible solutions that empower businesses to stay ahead in a rapidly evolving digital world.',
     iconSrc: '/icon/process-1-1.png',
     arrowSrc: '/icon/process-arrow-1-1.png',
     number: '02',
   },
   {
-    title: 'Water Delivery',
+    title: 'Optimized Water Distribution',
     description:
-      'Extensible for web iterate process before meta services impact with olisticly enable client.',
+      'Using Oracle-based systems, we help optimize water delivery networks, ensuring efficiency and sustainability through real-time monitoring and smart management.',
     iconSrc: '/icon/process-1-2.png',
     arrowSrc: '/icon/process-arrow-1-1.png',
     number: '03',
   },
   {
-    title: 'We Care About',
+    title: 'Client-Centric Approach',
     description:
-      'Extensible for web iterate process before meta services impact with olisticly enable client.',
+      'At Synergy, we prioritize your success. Our Oracle development services are tailored to address your unique needs and deliver long-term value and innovation.',
     iconSrc: '/icon/process-1-3.png',
     arrowSrc: '/icon/process-arrow-1-1.png',
     number: '04',
@@ -47,7 +47,7 @@ const WorkSection: React.FC = () => {
           Great Team Members
         </span>
         <h2 className="font-exo text-title sm2:text-[26px] text-[24px] font-bold uppercase leading-snug sm:text-[36px] lg:text-[40px]  xl:text-[44px] 2xl:text-[48px]">
-          We Have Expert Team
+        YOUR TRUSTED ORACLE SQL EXPERTS
         </h2>
       </div>
       <div className="flex flex-wrap justify-center">
@@ -82,8 +82,8 @@ const WorkSection: React.FC = () => {
                 {item.number}
               </span>
             </div>
-            <h3 className="text-title font-exo mb-2 text-[24px] font-bold">{item.title}</h3>
-            <p className="text-body max-w-[340px] text-base">{item.description}</p>
+            <h3 className="text-title font-exo mb-2 text-lg  font-bold leading-tight md:text-[22px]">{item.title}</h3>
+            <p className="text-body max-w-[340px] text-sm md:text-base">{item.description}</p>
           </div>
         ))}
       </div>

@@ -9,28 +9,44 @@ import { Button } from '@/component/common/Button';
 const slides = [
   {
     image: '/images/hero/hero-1-1.jpg',
-    badge: 'HIGHLY QUALIFIYED ENGINERS',
-    title1: 'TEAM OF',
-    title2: 'LEGENDS & PRO ENGINERS',
+    badge: 'EXPERT PROBLEM-SOLVERS',
+    title1: 'Experienced',
+    title2: 'Engineers at Your Service',
     description:
-      'Professionally repurpose intuitive total linkage after timely mindshare. Credibly coordinate reliable collaboration and idea-sharing after turnkey catalysts for change.',
+      'Our engineers are not just technically proficient but are passionate problem-solvers dedicated to providing actionable, tailored solutions. They work tirelessly to optimize your systems, ensuring the most efficient, cost-effective solutions for your business’s unique needs',
   },
   {
     image: '/images/hero/hero-1-2.jpg',
-    badge: 'WE HAVE TOP IT EXPERT',
-    title1: 'BEST IT',
-    title2: 'SERVICE & SOLUTION 2022',
+    badge: 'ALL-INCLUSIVE IT SOLUTIONS',
+    title1: 'Comprehensive',
+    title2: 'Services & Solutions',
     description:
-      'Professionally repurpose intuitive total linkage after timely mindshare. Credibly coordinate reliable collaboration and idea-sharing after turnkey catalysts for change.',
+      'From initial consultations to full-scale system management, our solutions cover all aspects of IT. We specialize in creating customized strategies that align with your business goals, ensuring you receive the most efficient and future-proof systems possible.',
   },
   {
     image: '/images/hero/hero-1-3.jpg',
-    badge: 'PROVIDE FREE CONSULTATION',
-    title1: 'TOP IT',
-    title2: 'SUPPORT & MANAGEMNT',
+    badge: 'TAILORED IT CONSULTATION',
+    title1: 'Consultation,',
+    title2: 'Support & Management',
     description:
-      'Professionally repurpose intuitive total linkage after timely mindshare. Credibly coordinate reliable collaboration and idea-sharing after turnkey catalysts for change.',
+      'We offer a free consultation to assess your IT needs, followed by ongoing management and support. Our experts ensure your systems are secure, optimized, and running smoothly, freeing you to focus on your business’s growth without technical worries.',
   },
+  {
+    image: '/images/hero/hero-1-1.jpg',
+    badge: 'INNOVATION AT ITS BEST',
+    title1: 'Top-Tier',
+    title2: 'IT Solutions',
+    description:
+      'We deliver industry-leading IT solutions that help businesses adapt to modern technology demands. With a focus on reliability, innovation, and scalability, our team ensures that your technology infrastructure is built to last, enabling seamless growth and operational efficiency.',
+  },
+  {
+    image: '/images/hero/hero-1-2.jpg',
+    badge: 'DRIVEN BY EXPERTISE',
+    title1: 'Our Experts ',
+    title2: 'Drive Your Success',
+    description:
+      'Our team is composed of highly skilled IT professionals who bring decades of experience and specialized knowledge across various industries. With a collaborative approach, we solve complex challenges, offering solutions that empower your business to stay ahead of the competition.',
+  }
 ];
 
 export const HeroSection: React.FC = () => {
@@ -90,7 +106,7 @@ export const HeroSection: React.FC = () => {
                       animate={{ x: 0, opacity: 1 }}
                       exit={{ x: -100, opacity: 0 }}
                       transition={{ duration: 0.6 }}
-                      className="font-exo sm2:text-[26px] text-[24px] font-bold leading-tight text-white sm:text-[34px] lg:text-[44px] xl:text-[50px]"
+                      className="font-exo sm2:text-[26px] text-[24px] font-bold uppercase leading-tight text-white sm:text-[34px] lg:text-[44px] xl:text-[50px]"
                     >
                       {slide.title1}
                     </motion.h1>
@@ -111,7 +127,7 @@ export const HeroSection: React.FC = () => {
                     animate={{ x: 0, opacity: 1 }}
                     exit={{ x: -100, opacity: 0 }}
                     transition={{ duration: 0.6, delay: 0.3 }}
-                    className="font-exo sm2:text-[26px] mb-4 text-center text-[24px] font-bold leading-tight text-white sm:text-[34px] md:mb-8 md:text-start lg:text-[44px] xl:text-[50px]"
+                    className="font-exo sm2:text-[26px] mb-4 text-center text-[24px] font-bold uppercase leading-tight text-white sm:text-[34px] md:mb-8 md:text-start lg:text-[44px] xl:text-[50px]"
                   >
                     {slide.title2}
                   </motion.h2>

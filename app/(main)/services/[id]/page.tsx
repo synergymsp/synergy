@@ -21,9 +21,9 @@ export default function ServiceDetails({ params }: { params: { id: string } }) {
 
   return (
     <div className="">
-      <div className="bg-services-details-img relative bg-cover bg-center pb-[135px] pt-[140px]">
+      <div className="bg-services-details-img relative bg-cover bg-center pb-[70px] pt-[80px] md:pb-[90px] md:pt-[100px] lg:pb-[135px] lg:pt-[140px]">
         <Container className="flex items-center justify-between">
-          <h1 className="font-exo sm2:text-[26px] text-[24px] font-bold uppercase leading-snug text-white sm:text-[36px] lg:text-[40px]  xl:text-[44px] 2xl:text-[48px]">
+          <h1 className="font-exo text-[20px] font-bold uppercase leading-snug text-white sm:text-[36px] lg:text-[40px]  xl:text-[44px] 2xl:text-[48px]">
             Service Details
           </h1>
 
@@ -52,7 +52,7 @@ export default function ServiceDetails({ params }: { params: { id: string } }) {
                   </svg>
                   <a
                     href={'#'}
-                    className="ml-1 text-sm font-medium text-white transition-all duration-300 hover:text-white/70"
+                    className="ml-1 text-sm font-medium text-white transition-all duration-300 hover:text-white/70 sm:text-base"
                   >
                     Services details
                   </a>
@@ -63,22 +63,22 @@ export default function ServiceDetails({ params }: { params: { id: string } }) {
         </Container>
       </div>
 
-      <Container className="py-[120px]">
+      <Container className="py-[50px] md:py-[80px] lg:py-[120px]">
         <div className="mb-2">
           <h2 className="font-exo text-title sm2:text-[26px] text-[24px] font-bold uppercase leading-snug sm:text-[36px] lg:text-[40px]  xl:text-[44px] 2xl:text-[48px]">
             {service?.title}
           </h2>
-          <p className="text-theme mt-2 text-lg">{service?.description}</p>
+          <p className="text-theme mt-2 text-sm sm:text-base md:text-lg">{service?.description}</p>
         </div>
 
         {service?.content.map((section, index) => (
           <div key={index} className="">
             <div className="">
-              <h2 className="text-2xl font-semibold">
+              <h2 className="text-title text-xl font-semibold uppercase md:text-2xl">
                 {section?.sectionTitle}
               </h2>
               {section?.text && (
-                <p className="text-body mb-10 text-base">{section?.text}</p>
+                <p className="text-body mb-10 text-sm sm:text-base">{section?.text}</p>
               )}
             </div>
             {section?.features && (

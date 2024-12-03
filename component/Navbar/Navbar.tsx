@@ -16,10 +16,9 @@ import { useRef, useState } from 'react';
 
 import { Container } from '@/component/common/Container';
 
-// Navigation Data
 const navigationLinks = [
   { id: 1, label: 'Home', href: '/' },
-  { id: 2, label: 'Why Choose Us', href: '/about-us' },
+  { id: 2, label: 'Why Choose Us', href: '/' },
   { id: 3, label: 'Contact Us', href: '/contact' },
 ];
 
@@ -39,8 +38,6 @@ const Navbar: React.FC = () => {
   const [isDropdownFade, setIsDropdownFade] = useState(false);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
-  const handleLinkClick = () => setMobileMenuOpen(false);
-
   const handleMouseEnter = () => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
     setIsDropdownOpen(true);
@@ -50,6 +47,16 @@ const Navbar: React.FC = () => {
   const handleMouseLeave = () => {
     setIsDropdownFade(false);
     timeoutRef.current = setTimeout(() => setIsDropdownOpen(false), 500);
+  };
+
+  const handleDropdownLinkClick = () => {
+    setIsDropdownOpen(false); // Close the dropdown menu
+    setIsDropdownFade(false); // Ensure the fade animation is reset
+  };
+
+  const handleMobileMenuLinkClick = () => {
+    setMobileMenuOpen(false); // Close the mobile menu
+    setServicesMenuOpen(false); // Close the services menu in mobile
   };
 
   return (
@@ -88,6 +95,7 @@ const Navbar: React.FC = () => {
                     <Link
                       key={service.id}
                       href={service.href}
+                      onClick={handleDropdownLinkClick}
                       className="hover:text-theme flex items-center gap-2 px-[9px] py-[3px] text-base font-medium leading-[30px] transition-all duration-200 ease-in-out"
                     >
                       <span className="item-style">
@@ -136,7 +144,7 @@ const Navbar: React.FC = () => {
               <Link
                 key={link.id}
                 href={link.href}
-                onClick={handleLinkClick}
+                onClick={handleMobileMenuLinkClick}
                 className="hover:text-theme flex items-center gap-2 border-b border-[#fdedf1] py-3 text-base font-normal"
               >
                 <FontAwesomeIcon icon={faChevronRight} className="h-3 w-3 font-normal" />
@@ -165,7 +173,7 @@ const Navbar: React.FC = () => {
                   <Link
                     key={service.id}
                     href={service.href}
-                    onClick={handleLinkClick}
+                    onClick={handleMobileMenuLinkClick}
                     className="flex items-center gap-2 border-b border-[#fdedf1] py-3 pl-3 text-base font-normal"
                   >
                     <FontAwesomeIcon icon={faChevronRight} className="h-3 w-3 font-normal" />

@@ -14,19 +14,19 @@ import { Container } from '@/component/common/Container';
 
 const faqs = [
   {
-    question: 'Master Technology It Solution Services Making?',
+    question: 'How We Can Assist You?',
     answer:
-      'Assertively communicate multidisciplinary content through emerging skills for intermandated e-tailers. Rapidiously revolutionize emerging supply for interdependent portals. Monotonectally restore 24/365 leadership for high quality niche markets transform emerging mindshare...',
+      'Synergy offers customized IT solutions designed to meet your unique business needs. Whether it’s Oracle integration, MSP services, or technology optimization, we provide expert support to ensure your operations run smoothly and efficiently.',
   },
   {
-    question: 'Contrary to popular belief is not simply random text?',
+    question: 'Expert IT Solutions for Your Business?',
     answer:
-      'Assertively communicate multidisciplinary content through emerging skills for intermandated e-tailers. Rapidiously revolutionize emerging supply for interdependent portals. Monotonectally restore 24/365 leadership for high quality niche markets transform emerging mindshare...',
+      'Our comprehensive IT services, including Oracle development and cloud solutions, are crafted to drive performance, enhance security, and ensure scalability. We specialize in making your IT systems work smarter for your business.',
   },
   {
-    question: 'There are many variations of passages of available?',
+    question: 'Exploring Diverse Technology Solutions?',
     answer:
-      'Assertively communicate multidisciplinary content through emerging skills for intermandated e-tailers. Rapidiously revolutionize emerging supply for interdependent portals. Monotonectally restore 24/365 leadership for high quality niche markets transform emerging mindshare...',
+      'Technology is not one-size-fits-all. We offer a variety of solutions tailored to your business needs, ensuring you get the right tools to stay ahead and competitive in the market.',
   },
 ];
 
