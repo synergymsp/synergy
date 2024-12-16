@@ -1,11 +1,6 @@
 'use client';
 
-import {
-  faFacebookF,
-  faInstagram,
-  faTwitter,
-  faYoutube,
-} from '@fortawesome/free-brands-svg-icons';
+import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faCopyright } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Image from 'next/image';
@@ -17,7 +12,7 @@ import { Container } from '../common/Container';
 
 interface FooterLinksProps {
   title: string;
-  links: { label: string; href: string }[]; 
+  links: { id: number; label: string; href: string }[];
 }
 
 interface SocialIconsProps {
@@ -47,7 +42,7 @@ const SocialIcons: React.FC<SocialIconsProps> = ({ icons }) => (
     {icons.map((icon, index) => (
       <Link
         key={index}
-        href="#"
+        href="https://www.linkedin.com/company/105226936/admin/inbox/"
         className="hover:bg-theme flex h-[45px] w-[45px] items-center justify-center rounded-md bg-[#15284C] transition-all duration-200"
       >
         <FontAwesomeIcon icon={icon} className="text-white" />
@@ -72,18 +67,19 @@ const Footer: React.FC = () => {
     {
       image: '/images/contact/office.webp',
       title: 'Pakistan',
-      address: 'Synergy MSP Pvt. Ltd, Lahore, Pakistan',
+      address: '71A, Tipu Block Garden Town, Lahore, Punjab 54000, Pakistan',
       phone: '+042 35197160',
       email: 'info@synergymsp.net',
       mapLink: 'https://maps.app.goo.gl/5NGXHm81S8ou6b3H6',
     },
     {
       image: '/images/contact/office.webp',
-      title: 'Location three',
-      address: 'Location three',
-      phone: '+1 732 334 3590',
-      email: 'demo@synergymsp.net',
-      mapLink: 'https://maps.app.goo.gl/5FuGVzeQPH66os1u6',
+      title: 'Pakistan',
+      address:
+        'P8PQ+P9F, Marghazar Road, Shahi Bagh Saidu Sharif, Swat, Khyber Pakhtunkhwa',
+      phone: '+92 3418440592',
+      email: 'info@synergymsp.net',
+      mapLink: 'https://maps.app.goo.gl/TqNnshtWrW8Efbrd9',
     },
   ];
 
@@ -155,31 +151,50 @@ const Footer: React.FC = () => {
               About Us
             </h3>
             <p className="mb-4 text-sm text-[#8A99B4] lg:max-w-[400px] lg:text-base">
-            Synergy combines innovation and expertise to provide robust IT services that fuel business
-growth. We’re committed to understanding your unique challenges and delivering solutions that
-enhance operational efficiency, security, and scalability, making us the ideal IT partner for
-businesses at every stage.
+              Synergy combines innovation and expertise to provide robust IT
+              services that fuel business growth. We’re committed to
+              understanding your unique challenges and delivering solutions that
+              enhance operational efficiency, security, and scalability, making
+              us the ideal IT partner for businesses at every stage.
             </p>
-            <SocialIcons
-              icons={[faFacebookF, faTwitter, faInstagram, faYoutube]}
-            />
+            <SocialIcons icons={[faLinkedin]} />
           </div>
 
           <FooterLinks
-            title="Links"
+            title="Services"
             links={[
-              { label: 'About Us', href: '/' },
-              { label: 'Our Mission', href: '/' },
-              { label: 'Meet The Teams', href: '/' },
-              { label: 'Our Projects', href: '/' },
-              { label: 'Contact Us', href: '/contact' }, // Fixed link
+              {
+                id: 1,
+                label: 'Oracle Development and Support',
+                href: '/services/1',
+              },
+              {
+                id: 2,
+                label: 'IT Infrastructure Design and Engineering',
+                href: '/services/2',
+              },
+              {
+                id: 3,
+                label: 'On-prem and Cloud Base Solutions',
+                href: '/services/3',
+              },
+              { id: 4, label: 'Help Desk Service', href: '/services/4' },
+              { id: 5, label: 'Cyber Security', href: '/services/5' },
+              { id: 6, label: 'Voice Over IP', href: '/services/6' },
             ]}
           />
+
           <FooterLinks
             title="Support"
             links={[
-              { label: 'Contact Us', href: '/contact' }, // Fixed link
-              { label: 'Privacy Policy', href: '/privacy-policy' }, // Fixed link
+              {
+                label: 'Contact Us', href: '/contact',
+                id: 1
+              },
+              {
+                label: 'Privacy Policy', href: '/privacy-policy',
+                id: 2
+              },
             ]}
           />
         </Container>

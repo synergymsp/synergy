@@ -2,11 +2,11 @@ import AboutSection from '@/component/home/about/About';
 import FAQSection from '@/component/home/faq/Faq';
 import HeroSection from '@/component/home/hero/slider';
 import NeedConsultationSection from '@/component/home/need-consultation/NeedConsultation';
-import ReviewsSection from '@/component/home/reviews/reviews';
 import ServicesSection from '@/component/home/services/Services';
 import TeamsSection from '@/component/home/teams/Teams';
 import WorkSection from '@/component/home/work/Work';
 
+// import ReviewsSection from '@/component/home/reviews/reviews';
 // import SkillsSection from '@/component/home/skill/Skill';
 // import StatsSection from '@/component/home/stats/StatsSec';
 // import BrandSection from '@/component/home/brand/Brand';
@@ -42,9 +42,9 @@ export default function Home() {
         <WorkSection />
       </section>
 
-      <section className="py-[50px] md:py-[80px] lg:py-[120px]">
+      {/* <section className="py-[50px] md:py-[80px] lg:py-[120px]">
         <ReviewsSection />
-      </section>
+      </section> */}
 
       {/* <section className='py-[50px] md:py-[80px] lg:py-[120px]'>
         <SkillsSection />

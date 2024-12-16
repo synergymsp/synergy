@@ -13,20 +13,24 @@ const officeLocations = [
     phone: '+1 732 334 3590',
     email: 'info@synergymsp.net',
     image: '/images/contact/office.webp',
+    mapLink: 'https://maps.app.goo.gl/5FuGVzeQPH66os1u6',
   },
   {
     title: 'Pakistan',
-    address: 'Synergy MSP Pvt. Ltd, Lahore, Pakistan',
+    address: '71A, Tipu Block Garden Town, Lahore, Punjab 54000, Pakistan',
     phone: '+042 35197160',
     email: 'info@synergymsp.net',
     image: '/images/contact/office.webp',
+    mapLink: 'https://maps.app.goo.gl/5NGXHm81S8ou6b3H6',
   },
   {
-    title: 'United States',
-    address: '1317 Morris Ave Suite 2, Union, NJ 07083, USA',
-    phone: '+1 732 334 3590',
+    title: 'Pakistan',
+    address:
+      'P8PQ+P9F, Marghazar Road, Shahi Bagh Saidu Sharif, Swat, Khyber Pakhtunkhwa',
+    phone: '+92 3418440592',
     email: 'info@synergymsp.net',
     image: '/images/contact/office.webp',
+    mapLink: 'https://maps.app.goo.gl/TqNnshtWrW8Efbrd9',
   },
 ];
 
@@ -107,8 +111,8 @@ export default function Contact() {
                     </div>
                     <div className="mb-2">
                       <Link
-                        href="https://maps.app.goo.gl/5FuGVzeQPH66os1u6"
-                        className="hover:text-theme block text-base text-[#8A99B4] transition-all duration-300"
+                        href={location.mapLink}
+                        className="hover:text-theme block text-sm text-[#8A99B4] transition-all duration-300"
                       >
                         {location.address}
                       </Link>
