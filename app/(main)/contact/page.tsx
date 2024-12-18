@@ -18,7 +18,7 @@ const officeLocations = [
   {
     title: 'Pakistan',
     address: '71A, Tipu Block Garden Town, Lahore, Punjab 54000, Pakistan',
-    phone: '+042 35197160',
+    phone: '+92 42 3519 7160',
     email: 'info@synergymsp.net',
     image: '/images/contact/office.webp',
     mapLink: 'https://maps.app.goo.gl/5NGXHm81S8ou6b3H6',
@@ -27,7 +27,7 @@ const officeLocations = [
     title: 'Pakistan',
     address:
       'P8PQ+P9F, Marghazar Road, Shahi Bagh Saidu Sharif, Swat, Khyber Pakhtunkhwa',
-    phone: '+92 3418440592',
+    phone: '+92 341 8440 592',
     email: 'info@synergymsp.net',
     image: '/images/contact/office.webp',
     mapLink: 'https://maps.app.goo.gl/TqNnshtWrW8Efbrd9',
@@ -79,6 +79,16 @@ export default function Contact() {
       </div>
       <Container>
         <div className="flex flex-col space-y-10 py-[50px] md:py-[80px] lg:flex-row lg:space-x-10 lg:space-y-0 lg:py-[120px]">
+          <div className="bg-smoke max-h-[100%] flex-1 p-6 md:p-10">
+            <h2 className="font-exo text-title text-[22px] font-bold uppercase leading-snug sm:text-[26px]">
+              Complete the contact form
+            </h2>
+            <p className="text-body mb-10 text-sm sm:text-base">
+              For technical support please submit a ticket
+            </p>
+            <ContactForm />
+          </div>
+
           <div className="bg-smoke max-h-[100%] w-[100%] p-6 md:p-10 lg:w-[50%]">
             <h2 className="font-exo text-title text-[22px] font-bold uppercase leading-snug sm:text-[26px]">
               Office Address
@@ -93,7 +103,7 @@ export default function Contact() {
                   key={index}
                   className="flex flex-col items-center rounded-xl bg-white p-2 sm:flex-row"
                 >
-                  <div className="flex h-auto w-[100%] max-w-[100%] items-center justify-center overflow-hidden rounded-md bg-[#152B54] sm:h-[160px] sm:max-w-[200px] lg:max-w-[150px] 2xl:max-w-[200px]">
+                  <div className="flex h-auto w-[100%] max-w-[100%] items-center justify-center overflow-hidden rounded-md bg-[#152B54] sm:h-[140px] sm:max-w-[200px] lg:max-w-[150px] 2xl:max-w-[200px]">
                     <Image
                       src={location.image}
                       alt={`${location.title} office image`}
@@ -137,15 +147,6 @@ export default function Contact() {
                 </div>
               ))}
             </div>
-          </div>
-          <div className="bg-smoke max-h-[100%] flex-1 p-6 md:p-10">
-            <h2 className="font-exo text-title text-[22px] font-bold uppercase leading-snug sm:text-[26px]">
-              Complete the contact form
-            </h2>
-            <p className="text-body mb-10 text-sm sm:text-base">
-              For technical support please submit a ticket
-            </p>
-            <ContactForm />
           </div>
         </div>
       </Container>

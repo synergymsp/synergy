@@ -42,7 +42,7 @@ const SocialIcons: React.FC<SocialIconsProps> = ({ icons }) => (
     {icons.map((icon, index) => (
       <Link
         key={index}
-        href="https://www.linkedin.com/company/105226936/admin/inbox/"
+        href="https://www.linkedin.com/company/105226936/admin/dashboard/"
         className="hover:bg-theme flex h-[45px] w-[45px] items-center justify-center rounded-md bg-[#15284C] transition-all duration-200"
       >
         <FontAwesomeIcon icon={icon} className="text-white" />
@@ -68,7 +68,7 @@ const Footer: React.FC = () => {
       image: '/images/contact/office.webp',
       title: 'Pakistan',
       address: '71A, Tipu Block Garden Town, Lahore, Punjab 54000, Pakistan',
-      phone: '+042 35197160',
+      phone: '+92 42 3519 7160',
       email: 'info@synergymsp.net',
       mapLink: 'https://maps.app.goo.gl/5NGXHm81S8ou6b3H6',
     },
@@ -77,7 +77,7 @@ const Footer: React.FC = () => {
       title: 'Pakistan',
       address:
         'P8PQ+P9F, Marghazar Road, Shahi Bagh Saidu Sharif, Swat, Khyber Pakhtunkhwa',
-      phone: '+92 3418440592',
+      phone: '+92 341 8440 592',
       email: 'info@synergymsp.net',
       mapLink: 'https://maps.app.goo.gl/TqNnshtWrW8Efbrd9',
     },
