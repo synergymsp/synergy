@@ -32,9 +32,17 @@ interface RootLayoutProps {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang='en'>
+    <html lang="en">
       <body className={`${exo.variable} ${fira_sans.variable}`}>
         {children}
+
+        {/* eslint-disable-next-line @next/next/no-sync-scripts */}
+        <script
+          data-jsd-embedded
+          data-key="13677967-7313-4cd0-befd-204bf2af1f12"
+          data-base-url="https://jsd-widget.atlassian.com"
+          src="https://jsd-widget.atlassian.com/assets/embed.js"
+        ></script>
       </body>
     </html>
   );
