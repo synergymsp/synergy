@@ -25,35 +25,25 @@ type TeamMember = {
 
 const teamMembers: TeamMember[] = [
   {
-    name: 'Alexander Mason',
-    role: 'Founder & CEO',
-    image: '/images/teams/team.webp',
+    name: 'Sameer Danish',
+    role: 'Senior .Net Developer',
+    image: '/images/teams/sameer.jpeg',
   },
   {
-    name: 'Maverick Cameron',
-    role: 'Pro Developer',
-    image: '/images/teams/team2.webp',
+    name: 'Hamza Butt',
+    role: 'Database Developer',
+    image: '/images/teams/hamza.jpeg',
   },
   {
-    name: 'Marian Widiya',
-    role: 'Lead Developer',
-    image: '/images/teams/team.webp',
+    name: 'Ali Raza',
+    role: 'Senior Oracle Developer',
+    image: '/images/teams/ali-raza.jpg',
   },
   {
-    name: 'Daniel Matthew',
-    role: 'Chief Expert',
-    image: '/images/teams/team2.webp',
-  },
-  {
-    name: 'Grayson Gabriel',
-    role: 'Head Manager',
-    image: '/images/teams/team.webp',
-  },
-  {
-    name: 'John doe',
-    role: 'Developer',
-    image: '/images/teams/team2.webp',
-  },
+    name: 'Jawad Shah',
+    role: 'Sr.System Administrator',
+    image: '/images/teams/jawad.jpeg',
+  }
 ];
 
 const socialIcons = [
@@ -120,13 +110,16 @@ const HoverAnimationCard = ({ member }: { member: TeamMember }) => {
       onMouseLeave={() => setIsHovered(false)}
     >
       <div className="relative overflow-hidden">
-        <Image
-          src={member.image}
-          alt={member.name}
-          width={283}
-          height={300}
-          className="h-full w-full transform object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
-        />
+        <div className='h-[350px] w-full'>
+          <Image
+            src={member.image}
+            alt={member.name}
+            width={0}
+            height={0}
+            sizes="100vw"
+            className="h-full w-full transform object-cover object-top transition-transform duration-300 ease-in-out group-hover:scale-105"
+          />
+        </div>
 
         <div className="bg-theme absolute inset-0 bottom-0 left-[30px] right-[30px] mt-auto flex h-fit items-center justify-center gap-3 px-8 py-3 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
           {socialIcons.map((social, i) => (
@@ -145,8 +138,8 @@ const HoverAnimationCard = ({ member }: { member: TeamMember }) => {
         </div>
       </div>
 
-      <div className="team-content pb-5 pt-8 text-center">
-        <h3 className="font-exo text-title text-[20px] font-bold">
+      <div className="team-content pb-5 pt-5 text-center">
+        <h3 className="font-exo text-title text-lg font-bold uppercase">
           {member.name}
         </h3>
         <p className="text-theme text-sm">{member.role}</p>
