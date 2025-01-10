@@ -11,6 +11,7 @@ interface OutlinedInputProps {
   rows?: number; 
   error?: string;
   touched?: boolean;
+  label?: string
 }
 
 const OutlinedInput: React.FC<OutlinedInputProps> = ({

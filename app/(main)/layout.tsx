@@ -1,9 +1,12 @@
 import { ReactNode, Suspense } from 'react';
+import { ToastContainer } from 'react-toastify';
 
 import Loading from '@/app/(main)/loading';
 import Footer from '@/component/Footer/Footer';
 import { HeaderInfo } from '@/component/HeaderInfo/HeaderInfo';
 import Navbar from '@/component/Navbar/Navbar';
+
+import 'react-toastify/dist/ReactToastify.css';
 
 export const metadata = {
   title: 'SYNERGY MSP',
@@ -16,14 +19,17 @@ interface MainLayoutProps {
 
 const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
   return (
-    <div className="flex min-h-screen flex-col">
-      <HeaderInfo />
-      <Navbar />
-      <Suspense fallback={<Loading />}>
-        <main className="flex-1">{children}</main>
-      </Suspense>
-      <Footer />
-    </div>
+    <>
+      <ToastContainer />
+      <div className="flex min-h-screen flex-col">
+        <HeaderInfo />
+        <Navbar />
+        <Suspense fallback={<Loading />}>
+          <main className="flex-1">{children}</main>
+        </Suspense>
+        <Footer />
+      </div>
+    </>
   );
 };
 

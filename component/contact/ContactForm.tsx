@@ -1,9 +1,12 @@
 'use client';
 
-import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRight, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Formik, Form, Field } from 'formik';
+import emailjs from 'emailjs-com';
+import { Formik, Form, Field, FormikHelpers } from 'formik';
+import { toast } from 'react-toastify';
 import * as Yup from 'yup';
+import 'react-toastify/dist/ReactToastify.css';
 
 import OutlinedInput from '../common/OutlinedInput';
 
@@ -20,111 +23,60 @@ const options = [
   { id: 7, name: '3CX Partner Program' },
 ];
 
+// Validation schema for the form
 const contactFormValidationSchema = Yup.object().shape({
+  email: Yup.string().email('Invalid email').required('Email is required'),
   message: Yup.string().required('Message is required'),
   question: Yup.string().required('Please select a question'),
 });
 
 interface FormValues {
+  email: string;
   message: string;
   question: string;
 }
 
-// const JIRA_API_URL = 'https://towelspecialties.atlassian.net/rest/api/3/issue';
-// const JIRA_EMAIL = 'sameerdanish125@gmail.com';
-// const JIRA_API_TOKEN =
-//   'ATATT3xFfGF0xnFcTERkKnW4iKuqqDGhosqeDwA9ZFLn8pPRDg4rgSZDBNqv0Q7faQQM1-jSPxXG0GTaJfCGzwgro93e-vf2F8GMoWAMjTJsqSZRHOn3unBjeYRht3S8IZkDNjyQfvwFO7MswuU0mL9z9XTcc86BhN779O4FQsGReeXaCloWJRM=476D399B';
-
 const ContactForm: React.FC = () => {
   const initialValues: FormValues = {
+    email: '',
     message: '',
     question: '',
   };
 
-  // const handleSubmit = async (values: FormValues) => {
-  //   const issueData = {
-  //     fields: {
-  //       project: {
-  //         key: 'SCRUM', // Replace with your Jira project key
-  //       },
-  //       summary: `New Support Request: ${values.question}`,
-  //       description: {
-  //         type: 'doc',
-  //         version: 1,
-  //         content: [
-  //           {
-  //             type: 'paragraph',
-  //             content: [
-  //               {
-  //                 type: 'text',
-  //                 text: values.message,
-  //               },
-  //             ],
-  //           },
-  //         ],
-  //       },
-  //       issuetype: {
-  //         name: 'Task', // Replace with your Jira issue type
-  //       },
-  //     },
-  //   };
-
-  //   try {
-  //     // Send the POST request
-  //     const response = await fetch(JIRA_API_URL, {
-  //       method: 'POST',
-  //       headers: {
-  //         'Content-Type': 'application/json',
-  //         Authorization: `Basic ${btoa(`${JIRA_EMAIL}:${JIRA_API_TOKEN}`)}`, // Basic Auth
-  //       },
-  //       body: JSON.stringify(issueData),
-  //     });
-
-  //     if (response.ok) {
-  //       const result = await response.json();
-
-  //       console.log('Jira Ticket Created:', result);
-  //       alert('Your request has been submitted successfully!');
-  //     } else {
-  //       // Log and display error response
-  //       const errorData = await response.json();
-
-  //       console.error('Failed to create Jira ticket:', errorData);
-  //       alert(`Failed to submit your request: ${errorData.errorMessages || errorData.message}`);
-  //     }
-  //   } catch (error) {
-  //     console.error('Error submitting Jira ticket:', error);
-  //     alert('An error occurred while submitting your request.');
-  //   }
-  // };
-
-  const handleSubmit = async (values: FormValues) => {
+  const handleSubmit = async (
+    values: FormValues,
+    { setSubmitting, resetForm }: FormikHelpers<FormValues>
+  ) => {
     try {
-      const response = await fetch('/api/create-jira-issue', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
+      setSubmitting(true); // Mark form as submitting
+
+      await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+        {
+          email: values.email,
+          question: values.question,
+          message: values.message,
         },
-        body: JSON.stringify(values),
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+      );
+
+      toast.success('Email sent successfully!', {
+        position: 'top-center',
+        autoClose: 3000,
+        hideProgressBar: true,
       });
-  
-      if (response.ok) {
-        const result = await response.json();
 
-        // eslint-disable-next-line no-console
-        console.log('Jira Ticket Created:', result);
-        alert('Your request has been submitted successfully!');
-      } else {
-        const errorData = await response.json();
-
-        // eslint-disable-next-line no-console
-        console.error('Failed to create Jira ticket:', errorData);
-        alert('Failed to submit your request. Please try again later.');
-      }
+      resetForm(); // Clear form after submission
     } catch (error) {
-      // eslint-disable-next-line no-console
-      console.error('Error submitting Jira ticket:', error);
-      alert('An error occurred while submitting your request.');
+      console.error('Failed to send email:', error);
+      toast.error('Failed to send email. Please try again.', {
+        position: 'top-center',
+        autoClose: 3000,
+        hideProgressBar: true,
+      });
+    } finally {
+      setSubmitting(false); // End submitting state
     }
   };
 
@@ -134,7 +86,7 @@ const ContactForm: React.FC = () => {
       validationSchema={contactFormValidationSchema}
       onSubmit={handleSubmit}
     >
-      {({ errors, touched }) => (
+      {({ errors, touched, isSubmitting }) => (
         <Form className="space-y-5">
           <div>
             <Field
@@ -150,6 +102,16 @@ const ContactForm: React.FC = () => {
               </p>
             )}
           </div>
+          <div>
+            <OutlinedInput
+              name="email"
+              type="email"
+              placeholder="Your email"
+              error={errors.email}
+              touched={touched.email}
+              label="Your Email"
+            />
+          </div>
           <OutlinedInput
             name="message"
             as="textarea"
@@ -160,11 +122,18 @@ const ContactForm: React.FC = () => {
           />
 
           <Button
-            className="bg-theme px-[20px] py-[14px] text-white md:px-7 md:py-4"
+            className="bg-theme flex items-center justify-center px-[20px] py-[14px] text-white md:px-7 md:py-4"
             type="submit"
+            disabled={isSubmitting}
           >
-            Contact us
-            <FontAwesomeIcon icon={faArrowRight} className="ml-2 h-4 w-4" />
+            {isSubmitting ? (
+              <FontAwesomeIcon icon={faSpinner} spin className="h-4 w-4" />
+            ) : (
+              <>
+                Contact us
+                <FontAwesomeIcon icon={faArrowRight} className="ml-2 h-4 w-4" />
+              </>
+            )}
           </Button>
         </Form>
       )}
