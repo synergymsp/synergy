@@ -48,8 +48,9 @@ const ContactForm: React.FC = () => {
     { setSubmitting, resetForm }: FormikHelpers<FormValues>
   ) => {
     try {
-      setSubmitting(true); // Mark form as submitting
+      setSubmitting(true);
 
+      console.log('Sending task creation email...');
       await emailjs.send(
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
         process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
@@ -60,23 +61,42 @@ const ContactForm: React.FC = () => {
         },
         process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
       );
+      console.log('Task creation email sent successfully.');
 
-      toast.success('Email sent successfully!', {
+      console.log('Preparing confirmation email payload...');
+      const confirmationPayload = {
+        user_email: values.email,
+        question: values.question,
+        message: values.message,
+      };
+
+      console.log('Confirmation Payload:', confirmationPayload);
+
+      console.log('Sending confirmation email...');
+      await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_CONFIRMATION_TEMPLATE_ID!,
+        confirmationPayload,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+      );
+      console.log('Confirmation email sent successfully.');
+
+      toast.success('Emails sent successfully!', {
         position: 'top-center',
         autoClose: 3000,
         hideProgressBar: true,
       });
 
-      resetForm(); // Clear form after submission
+      resetForm();
     } catch (error) {
-      console.error('Failed to send email:', error);
-      toast.error('Failed to send email. Please try again.', {
+      console.error('Error during email submission:', error);
+      toast.error('Failed to send emails. Please try again.', {
         position: 'top-center',
         autoClose: 3000,
         hideProgressBar: true,
       });
     } finally {
-      setSubmitting(false); // End submitting state
+      setSubmitting(false);
     }
   };
 
