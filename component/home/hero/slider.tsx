@@ -1,8 +1,8 @@
 'use client';
-import { faArrowRight, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { AnimatePresence, motion } from 'framer-motion';
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { Button } from '@/component/common/Button';
 
@@ -46,7 +46,7 @@ const slides = [
     title2: 'Drive Your Success',
     description:
       'Our team is composed of highly skilled IT professionals who bring decades of experience and specialized knowledge across various industries. With a collaborative approach, we solve complex challenges, offering solutions that empower your business to stay ahead of the competition.',
-  }
+  },
 ];
 
 export const HeroSection: React.FC = () => {
@@ -63,13 +63,13 @@ export const HeroSection: React.FC = () => {
 
   const handleNext = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === slides.length - 1 ? 0 : prevIndex + 1,
+      prevIndex === slides.length - 1 ? 0 : prevIndex + 1
     );
   };
 
   const handlePrev = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? slides.length - 1 : prevIndex - 1,
+      prevIndex === 0 ? slides.length - 1 : prevIndex - 1
     );
   };
 
@@ -82,17 +82,21 @@ export const HeroSection: React.FC = () => {
         >
           {/* Background Image with Zoom Effect */}
           <div
-            className={`background ${index % 2 === 0 ? 'zoom-out' : 'zoom-in'} ${
-              index === currentIndex ? 'visible' : ''
-            }`}
+            className={`background ${
+              index % 2 === 0 ? 'zoom-out' : 'zoom-in'
+            } ${index === currentIndex ? 'visible' : ''}`}
             style={{ backgroundImage: `url(${slide.image})` }}
           ></div>
 
           <div
-            className={`angled-div-1 ${index === currentIndex ? 'slide-in1' : 'slide-out2'}`}
+            className={`angled-div-1 ${
+              index === currentIndex ? 'slide-in1' : 'slide-out2'
+            }`}
           ></div>
           <div
-            className={`angled-div-2 ${index === currentIndex ? 'slide-in2' : 'slide-out2'}`}
+            className={`angled-div-2 ${
+              index === currentIndex ? 'slide-in2' : 'slide-out2'
+            }`}
           ></div>
 
           {/* Text Overlay */}

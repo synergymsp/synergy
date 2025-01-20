@@ -6,12 +6,6 @@ import ServicesSection from '@/component/home/services/Services';
 import TeamsSection from '@/component/home/teams/Teams';
 import WorkSection from '@/component/home/work/Work';
 
-// import ReviewsSection from '@/component/home/reviews/reviews';
-// import SkillsSection from '@/component/home/skill/Skill';
-// import StatsSection from '@/component/home/stats/StatsSec';
-// import BrandSection from '@/component/home/brand/Brand';
-// import CounterSection from '@/component/home/counter/Counter';
-
 export default function Home() {
   return (
     <>
@@ -41,26 +35,6 @@ export default function Home() {
       <section className="bg-process-sec bg-cover bg-center bg-no-repeat py-[50px] md:pb-[70px] md:pt-[80px] lg:pb-[90px] lg:pt-[120px]">
         <WorkSection />
       </section>
-
-      {/* <section className="py-[50px] md:py-[80px] lg:py-[120px]">
-        <ReviewsSection />
-      </section> */}
-
-      {/* <section className='py-[50px] md:py-[80px] lg:py-[120px]'>
-        <SkillsSection />
-      </section> */}
-      {/* <section className='relative'>
-        <div className='counter-shape'></div>
-        <div className='bg-counter-sec relative bg-cover bg-center py-[50px] md:py-[80px] lg:py-[120px]'>
-          <CounterSection />
-        </div>
-      </section> */}
-      {/* <section className='pb-[30px] pt-[50px] md:pb-[50px] md:pt-[80px] lg:pb-0 lg:pt-0'>
-          <StatsSection />
-        </section> */}
-      {/* <section className='pb-[50px] md:pb-[80px] lg:pb-[120px]'>
-        <BrandSection />
-      </section> */}
     </>
   );
 }

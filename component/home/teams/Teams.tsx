@@ -43,7 +43,7 @@ const teamMembers: TeamMember[] = [
     name: 'Jawad Shah',
     role: 'Sr.System Administrator',
     image: '/images/teams/jawad.jpeg',
-  }
+  },
 ];
 
 const socialIcons = [
@@ -110,7 +110,7 @@ const HoverAnimationCard = ({ member }: { member: TeamMember }) => {
       onMouseLeave={() => setIsHovered(false)}
     >
       <div className="relative overflow-hidden">
-        <div className='h-[350px] w-full'>
+        <div className="h-[350px] w-full">
           <Image
             src={member.image}
             alt={member.name}

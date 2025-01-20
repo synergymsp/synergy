@@ -47,7 +47,7 @@ const WorkSection: React.FC = () => {
           Great Team Members
         </span>
         <h2 className="font-exo text-title sm2:text-[26px] text-[24px] font-bold uppercase leading-snug sm:text-[36px] lg:text-[40px]  xl:text-[44px] 2xl:text-[48px]">
-        YOUR TRUSTED ORACLE SQL EXPERTS
+          YOUR TRUSTED ORACLE SQL EXPERTS
         </h2>
       </div>
       <div className="flex flex-wrap justify-center">
@@ -64,7 +64,10 @@ const WorkSection: React.FC = () => {
                   width={100}
                   height={100}
                   layout="fixed"
-                  style={{ transform: index % 2 === 0 ? 'rotateX(0)' : ' rotateX(190deg)' }}
+                  style={{
+                    transform:
+                      index % 2 === 0 ? 'rotateX(0)' : ' rotateX(190deg)',
+                  }}
                 />
               </div>
             )}
@@ -82,8 +85,12 @@ const WorkSection: React.FC = () => {
                 {item.number}
               </span>
             </div>
-            <h3 className="text-title font-exo mb-2 text-lg  font-bold leading-tight md:text-[22px]">{item.title}</h3>
-            <p className="text-body max-w-[340px] text-sm md:text-base">{item.description}</p>
+            <h3 className="text-title font-exo mb-2 text-lg  font-bold leading-tight md:text-[22px]">
+              {item.title}
+            </h3>
+            <p className="text-body max-w-[340px] text-sm md:text-base">
+              {item.description}
+            </p>
           </div>
         ))}
       </div>

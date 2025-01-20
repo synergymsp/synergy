@@ -2,8 +2,9 @@
 
 import { faArrowRight, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import emailjs from 'emailjs-com';
+// import emailjs from 'emailjs-com';
 import { Formik, Form, Field, FormikHelpers } from 'formik';
+import React from 'react';
 import { toast } from 'react-toastify';
 import * as Yup from 'yup';
 import 'react-toastify/dist/ReactToastify.css';
@@ -37,6 +38,9 @@ interface FormValues {
 }
 
 const ContactForm: React.FC = () => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [isSubmitting, setIsSubmitting] = React.useState(false);
+
   const initialValues: FormValues = {
     email: '',
     message: '',
@@ -45,60 +49,100 @@ const ContactForm: React.FC = () => {
 
   const handleSubmit = async (
     values: FormValues,
-    { setSubmitting, resetForm }: FormikHelpers<FormValues>
+    { resetForm }: FormikHelpers<FormValues>
   ) => {
+    setIsSubmitting(true);
     try {
-      setSubmitting(true);
-
-      console.log('Sending task creation email...');
-      await emailjs.send(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
-        {
-          email: values.email,
-          question: values.question,
-          message: values.message,
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
         },
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
-      );
-      console.log('Task creation email sent successfully.');
-
-      console.log('Preparing confirmation email payload...');
-      const confirmationPayload = {
-        user_email: values.email,
-        question: values.question,
-        message: values.message,
-      };
-
-      console.log('Confirmation Payload:', confirmationPayload);
-
-      console.log('Sending confirmation email...');
-      await emailjs.send(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
-        process.env.NEXT_PUBLIC_CONFIRMATION_TEMPLATE_ID!,
-        confirmationPayload,
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
-      );
-      console.log('Confirmation email sent successfully.');
-
-      toast.success('Emails sent successfully!', {
-        position: 'top-center',
-        autoClose: 3000,
-        hideProgressBar: true,
+        body: JSON.stringify(values),
       });
 
-      resetForm();
+      if (response.ok) {
+        toast.success('Email sent successfully!', {
+          position: 'top-center',
+          autoClose: 3000,
+          hideProgressBar: true,
+        });
+        resetForm();
+      } else {
+        toast.error('Failed to send email. Please try again.', {
+          position: 'top-center',
+          autoClose: 3000,
+          hideProgressBar: true,
+        });
+      }
     } catch (error) {
-      console.error('Error during email submission:', error);
-      toast.error('Failed to send emails. Please try again.', {
+      console.error('Error submitting form:', error);
+      toast.error('An error occurred. Please try again.', {
         position: 'top-center',
         autoClose: 3000,
         hideProgressBar: true,
       });
     } finally {
-      setSubmitting(false);
+      setIsSubmitting(false);
     }
   };
+
+  // const handleSubmit = async (
+  //   values: FormValues,
+  //   { setSubmitting, resetForm }: FormikHelpers<FormValues>
+  // ) => {
+  //   try {
+  //     setSubmitting(true);
+
+  //     console.log('Sending task creation email...');
+  //     await emailjs.send(
+  //       process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+  //       process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+  //       {
+  //         email: values.email,
+  //         question: values.question,
+  //         message: values.message,
+  //       },
+  //       process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+  //     );
+  //     console.log('Task creation email sent successfully.');
+
+  //     console.log('Preparing confirmation email payload...');
+  //     const confirmationPayload = {
+  //       user_email: values.email,
+  //       question: values.question,
+  //       message: values.message,
+  //     };
+
+  //     console.log('Confirmation Payload:', confirmationPayload);
+
+  //     console.log('Sending confirmation email...');
+  //     await emailjs.send(
+  //       process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+  //       process.env.NEXT_PUBLIC_CONFIRMATION_TEMPLATE_ID!,
+  //       confirmationPayload,
+  //       process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+  //     );
+  //     console.log('Confirmation email sent successfully.');
+
+  //     toast.success('Emails sent successfully!', {
+  //       position: 'top-center',
+  //       autoClose: 3000,
+  //       hideProgressBar: true,
+  //     });
+
+  //     resetForm();
+  //   } catch (error) {
+  //     console.error('Error during email submission:', error);
+  //     toast.error('Failed to send emails. Please try again.', {
+  //       position: 'top-center',
+  //       autoClose: 3000,
+  //       hideProgressBar: true,
+  //     });
+  //   } finally {
+  //     setSubmitting(false);
+  //   }
+  // };
 
   return (
     <Formik

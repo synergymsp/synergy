@@ -8,42 +8,42 @@ import { Container } from '@/component/common/Container';
 
 const services = [
   {
-    id:1,
+    id: 1,
     title: 'Oracle Development and Support',
     description:
       "Unlock the Full Potential of Oracle with Our Expertise At Synergy Msp, we specialize in providing overarching Oracle Development and Support services designed to help businesses, where we will use the full features of oracle database, the power of Oracle's industry-leading solutions. Our experienced team works across leading database platforms—including Oracle, SQL Server, MySQL, and PostgreSQL—and leverages expertise in ERP systems to deliver solutions to your unique needs",
     icon: '/icon/fe-1-1.png',
   },
   {
-    id:2,
+    id: 2,
     title: 'I.T. Infrastructure Design and Engineering',
     description:
       'We specialize in crafting robust and scalable I.T. infrastructures that meet the evolving demands of modern businesses. Our team of experts in system engineering, networking, cybersecurity, and applications work together to design, implement, and optimize I.T.systems tailored to your unique needs',
     icon: '/icon/fe-1-2.png',
   },
   {
-    id:3,
+    id: 3,
     title: 'On-Premises and Cloud base Solutions',
     description:
       'At Synergy MSP, we deliver tailored I.T. solutions for both On-Premises and cloud based infrastructures, ensuring your systems are reliable, secure, and aligned with your business objectives',
     icon: '/icon/fe-1-3.png',
   },
   {
-    id:4,
+    id: 4,
     title: 'Help Desk service',
     description:
       'Our Help Desk Service team is composed of highly skilled and organized IT professionals supporting businesses with a wide range of customer requirements. We are proud to serve clients both in the USA and around the globe, providing timely, efficient solutions tailored according to the unique requirements of each organization. Our experts excel in addressing and resolving technical challenges, minimizing downtime, and enhancing productivity so clients can focus on what matters most: growing their business',
     icon: '/icon/fe-1-3.png',
   },
   {
-    id:5,
+    id: 5,
     title: 'Cyber Security',
     description:
       'At Synergy MSP, we provide advanced, cloud-based Voice over IP (VoIP) solutions designed to deliver stability, crystal-clear audio quality, and cost-effectiveness. Our solutions are tailored to ensure seamless communication, both internally and externally, while accommodating your company’s specific needs and growth plans.',
     icon: '/icon/fe-1-3.png',
   },
   {
-    id:6,
+    id: 6,
     title: 'Voice over IP',
     description:
       'In today’s digital landscape, Synergy Msp offers cutting-edge cybersecurity solutions designed to safeguard your business against evolving threats. We provide end-to-end protection, ensuring your systems, data, and operations stay secure around the clock.',
@@ -100,7 +100,6 @@ const ServicesSection: React.FC = () => {
           </Link>
         ))}
       </div>
-
     </Container>
   );
 };
