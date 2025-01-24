@@ -74,7 +74,7 @@ const AboutSection: React.FC = () => {
           <FeatureItem number="02" text="Expert Advice for Your Business Growth" />
           <FeatureItem number="03" text="Endless Opportunities for Your Business" />
 
-          <p className="text-body mb-6 text-sm md:text-base">
+          <p className="text-body mb-6 text-justify text-sm md:text-base">
             Synergy combines innovation and expertise to provide robust IT services that fuel business growth. We’re committed to understanding your unique challenges and delivering solutions that enhance operational efficiency, security, and scalability, making us the ideal IT partner for businesses at every stage.
           </p>
         </div>

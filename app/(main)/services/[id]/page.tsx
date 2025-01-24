@@ -68,7 +68,7 @@ export default function ServiceDetails({ params }: { params: { id: string } }) {
           <h2 className="font-exo text-title sm2:text-[26px] text-[24px] font-bold uppercase leading-snug sm:text-[36px] lg:text-[40px]  xl:text-[44px] 2xl:text-[48px]">
             {service?.title}
           </h2>
-          <p className="text-theme mt-2 text-sm sm:text-base md:text-lg">
+          <p className="text-theme mt-2 text-justify text-sm sm:text-base  md:text-lg">
             {service?.description}
           </p>
         </div>
@@ -80,7 +80,7 @@ export default function ServiceDetails({ params }: { params: { id: string } }) {
                 {section?.sectionTitle}
               </h2>
               {section?.text && (
-                <p className="text-body mb-10 text-sm sm:text-base">
+                <p className="text-body mb-10 text-justify text-sm sm:text-base">
                   {section?.text}
                 </p>
               )}
@@ -101,7 +101,7 @@ export default function ServiceDetails({ params }: { params: { id: string } }) {
                       <h3 className="font-exo text-title mb-2 text-base font-bold capitalize">
                         {feature?.title}:
                       </h3>
-                      <p className="text-body text-xs md:text-sm">
+                      <p className="text-body text-justify text-xs md:text-sm">
                         {feature?.text}
                       </p>
                     </div>

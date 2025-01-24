@@ -141,7 +141,7 @@ export const HeroSection: React.FC = () => {
                     animate={{ y: 0, opacity: 1 }}
                     exit={{ y: 50, opacity: 0 }}
                     transition={{ duration: 0.6, delay: 0.8 }}
-                    className="mb-8 hidden max-w-[695px] text-sm text-white lg:block"
+                    className="mb-8 hidden max-w-[695px] text-justify text-sm text-white lg:block"
                   >
                     {slide.description}
                   </motion.p>

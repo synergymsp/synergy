@@ -1,21 +1,21 @@
 export interface Feature {
-    title: string;
-    text: string;
-  }
-  
+  title: string;
+  text: string;
+}
+
 export interface Content {
-    sectionTitle?: string;
-    text?: string;
-    features?: Feature[];
-  }
-  
+  sectionTitle?: string;
+  text?: string;
+  features?: Feature[];
+}
+
 export interface Service {
-    id: number;
-    title: string;
-    description?: string;
-    content: Content[];
-  }
-  
+  id: number;
+  title: string;
+  description?: string;
+  content: Content[];
+}
+
 export const services: Service[] = [
   {
     id: 1,
@@ -110,7 +110,8 @@ export const services: Service[] = [
   {
     id: 3,
     title: 'On-Premises and Cloud Base Solutions',
-    description: 'At Synergy MSP, we deliver tailored I.T. solutions for both On-Premises and cloud-based infrastructures, ensuring your systems are reliable, secure, and aligned with your business objectives.',
+    description:
+      'At Synergy MSP, we deliver tailored I.T. solutions for both On-Premises and cloud-based infrastructures, ensuring your systems are reliable, secure, and aligned with your business objectives.',
     content: [
       {
         sectionTitle: 'On-Premises Systems',
@@ -196,6 +197,48 @@ export const services: Service[] = [
   },
   {
     id: 5,
+    title: 'Cyber Security',
+    description: 'Cybersecurity Solutions to Protect Your Business',
+    content: [
+      {
+        text: 'In today’s digital landscape, Synergy MSP offers cutting-edge cybersecurity solutions designed to safeguard your business against evolving threats. We provide end-to-end protection, ensuring your systems, data, and operations stay secure around the clock.',
+      },
+      {
+        sectionTitle: 'Our Cybersecurity Services',
+        text: 'Threat Detection & Response: Using advanced monitoring tools, we detect potential threats in real-time and respond swiftly to mitigate risks before they escalate.',
+      },
+      {
+        features: [
+          {
+            title: 'Network & Security',
+            text: 'We secure your network and all connected devices, preventing unauthorized access and safeguarding critical data.',
+          },
+          {
+            title: 'Data Encryption & Backup',
+            text: 'Our data encryption and backup solutions ensure that your sensitive information remains protected, even in the event of a security breach.',
+          },
+          {
+            title: 'Risk Assessment',
+            text: 'We assess your security posture and help you comply with industry standards by reducing risks and strengthening overall resilience. Moreover, we strengthen your defenses and reduce liabilities.',
+          },
+          {
+            title: 'Security Awareness',
+            text: 'Equip your team with essential cybersecurity knowledge, helping them identify and respond to potential threats.',
+          },
+          {
+            title: 'Vulnerability Management',
+            text: 'Through regular evaluation and simulated attacks, we discover and address vulnerabilities before they can be exploited, ensuring your security is always one step ahead.',
+          },
+          {
+            title: 'Cutting-Edge Expertise',
+            text: 'We bring you the latest in cybersecurity innovations to protect your assets effectively, leveraging the best tools and industry-leading expertise.',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 6,
     title: 'Voice over IP (VoIP) Solutions',
     content: [
       {
@@ -234,48 +277,6 @@ export const services: Service[] = [
           {
             title: 'Enhanced Flexibility',
             text: 'With VoIP, your team can make and receive calls from any internet-connected device—desk phones, computers, or smartphones.',
-          },
-        ],
-      },
-    ],
-  },
-  {
-    id: 6,
-    title: 'Cyber Security',
-    description: 'Cybersecurity Solutions to Protect Your Business',
-    content: [
-      {
-        text: 'In today’s digital landscape, Synergy MSP offers cutting-edge cybersecurity solutions designed to safeguard your business against evolving threats. We provide end-to-end protection, ensuring your systems, data, and operations stay secure around the clock.',
-      },
-      {
-        sectionTitle: 'Our Cybersecurity Services',
-        text: 'Threat Detection & Response: Using advanced monitoring tools, we detect potential threats in real-time and respond swiftly to mitigate risks before they escalate.',
-      },
-      {
-        features: [
-          {
-            title: 'Network & Security',
-            text: 'We secure your network and all connected devices, preventing unauthorized access and safeguarding critical data.',
-          },
-          {
-            title: 'Data Encryption & Backup',
-            text: 'Our data encryption and backup solutions ensure that your sensitive information remains protected, even in the event of a security breach.',
-          },
-          {
-            title: 'Risk Assessment',
-            text: 'We assess your security posture and help you comply with industry standards by reducing risks and strengthening overall resilience. Moreover, we strengthen your defenses and reduce liabilities.',
-          },
-          {
-            title: 'Security Awareness',
-            text: 'Equip your team with essential cybersecurity knowledge, helping them identify and respond to potential threats.',
-          },
-          {
-            title: 'Vulnerability Management',
-            text: 'Through regular evaluation and simulated attacks, we discover and address vulnerabilities before they can be exploited, ensuring your security is always one step ahead.',
-          },
-          {
-            title: 'Cutting-Edge Expertise',
-            text: 'We bring you the latest in cybersecurity innovations to protect your assets effectively, leveraging the best tools and industry-leading expertise.',
           },
         ],
       },

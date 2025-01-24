@@ -65,8 +65,8 @@ const WorkSection: React.FC = () => {
                   height={100}
                   layout="fixed"
                   style={{
-                    transform:
-                      index % 2 === 0 ? 'rotateX(0)' : ' rotateX(190deg)',
+                    transform: index % 2 === 0 ? 'rotateX(0)' : 'rotateX(190deg)',
+                    filter: 'brightness(0) saturate(100%) invert(100%) sepia(13%) saturate(7487%) hue-rotate(178deg) brightness(84%) contrast(95%)',
                   }}
                 />
               </div>

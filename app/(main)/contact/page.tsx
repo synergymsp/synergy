@@ -1,36 +1,41 @@
 import { faHome } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Image from 'next/image';
+// import Image from 'next/image';
 import Link from 'next/link';
 
 import { Container } from '@/component/common/Container';
 import ContactForm from '@/component/contact/ContactForm';
-
 const officeLocations = [
   {
+    image: '/images/contact/office.webp',
     title: 'United States',
     address: '1317 Morris Ave Suite 2, Union, NJ 07083, USA',
     phone: '+1 732 334 3590',
     email: 'info@synergymsp.net',
-    image: '/images/contact/office.webp',
     mapLink: 'https://maps.app.goo.gl/5FuGVzeQPH66os1u6',
+    embeddedLink:
+      'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3754.1403623095175!2d-74.2428154!3d40.687797599999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c3b1d06bfeaaab%3A0x674b24038d25aec7!2sSynergy%20MSP!5e1!3m2!1sen!2s!4v1737742888088!5m2!1sen!2s',
   },
   {
+    image: '/images/contact/office.webp',
     title: 'Pakistan',
     address: '71A, Tipu Block Garden Town, Lahore, Punjab 54000, Pakistan',
     phone: '+92 42 3519 7160',
     email: 'info@synergymsp.net',
-    image: '/images/contact/office.webp',
     mapLink: 'https://maps.app.goo.gl/5NGXHm81S8ou6b3H6',
+    embeddedLink:
+      'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4221.280919985488!2d74.33038719999999!3d31.5013633!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391901cd5d72d94d%3A0xfb4c3fad21ac2862!2sSynergy%20MSP%20Pvt.%20Ltd.!5e1!3m2!1sen!2s!4v1737742980579!5m2!1sen!2s',
   },
   {
+    image: '/images/contact/office.webp',
     title: 'Pakistan',
     address:
       'P8PQ+P9F, Marghazar Road, Shahi Bagh Saidu Sharif, Swat, Khyber Pakhtunkhwa',
     phone: '+92 341 8440 592',
     email: 'info@synergymsp.net',
-    image: '/images/contact/office.webp',
     mapLink: 'https://maps.app.goo.gl/TqNnshtWrW8Efbrd9',
+    embeddedLink:
+      'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4068.547352798629!2d72.3384097!3d34.7368114!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38dc23005c8c82e7%3A0xf881e4dd1e7f5eca!2sSynergy%20MSP%20Pvt.%20Ltd.%20Swat!5e1!3m2!1sen!2s!4v1737743010662!5m2!1sen!2s',
   },
 ];
 
@@ -104,14 +109,21 @@ export default function Contact() {
                   className="flex flex-col items-center rounded-xl bg-white p-2 sm:flex-row"
                 >
                   <div className="flex h-auto w-[100%] max-w-[100%] items-center justify-center overflow-hidden rounded-md bg-[#152B54] sm:h-[140px] sm:max-w-[200px] lg:max-w-[150px] 2xl:max-w-[200px]">
-                    <Image
+                    {/* <Image
                       src={location.image}
                       alt={`${location.title} office image`}
                       width={0}
                       height={0}
                       sizes="100vw"
                       className="h-[100%] w-[100%] object-cover"
-                    />
+                    /> */}
+                    <iframe
+                      src={location.embeddedLink}
+                      width="100%"
+                      height="100%"
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                    ></iframe>
                   </div>
                   <div className="mt-4 w-full flex-1 p-2 sm:ml-4 sm:mt-0 sm:p-0">
                     <div className="mb-2">
