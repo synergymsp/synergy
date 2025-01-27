@@ -51,7 +51,7 @@ const FAQSection: React.FC = () => {
 
   return (
     <Container>
-      <div className="flex w-full flex-col items-start lg:flex-row lg:space-x-10 xl:space-x-16">
+      <div className="flex w-full flex-col items-start justify-between lg:flex-row lg:space-x-10 xl:space-x-16">
         <div className="relative mb-12 w-full lg:mb-0 lg:w-1/2 xl:w-5/12">
           <div className="relative mb-5 w-[100%] overflow-hidden sm:mb-[120px] 2xl:-ml-[200px] 2xl:mb-[30px] 2xl:w-[unset]">
             <Image

@@ -1,5 +1,6 @@
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Link from 'next/link';
 
 import { Button } from '@/component/common/Button';
 import { Container } from '@/component/common/Container';
@@ -17,10 +18,12 @@ const NeedConsultationSection: React.FC = () => {
         </div>
 
         <div>
-          <Button className="bg-theme px-[20px] py-[14px] text-white md:px-7 md:py-5">
+          <Link href={'/contact'}>
+            <Button className="bg-theme px-[20px] py-[14px] text-white md:px-7 md:py-5">
             Get a Quote
-            <FontAwesomeIcon icon={faArrowRight} className="ml-2 h-4 w-4" />
-          </Button>
+              <FontAwesomeIcon icon={faArrowRight} className="ml-2 h-4 w-4" />
+            </Button>
+          </Link>
         </div>
       </div>
     </Container>

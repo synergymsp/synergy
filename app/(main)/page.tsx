@@ -15,7 +15,7 @@ export default function Home() {
           <ServicesSection />
         </section>
       </div>
-      <section className="relative py-[60px] md:py-[80px] lg:py-[120px]">
+      <section id="about-section" className="relative py-[60px] md:py-[80px] lg:py-[120px]">
         <AboutSection />
       </section>
 

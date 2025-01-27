@@ -1,21 +1,19 @@
 'use client';
 
 import {
-  faFacebookF,
-  faTwitter,
-  faInstagram,
-  faBehance,
-  faYoutube,
+  faLinkedin,
+  faTwitter
 } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
+import { Container } from '@/component/common/Container';
 import 'swiper/css';
 import 'swiper/css/effect-fade';
-import { Container } from '@/component/common/Container';
 
 type TeamMember = {
   name: string;
@@ -47,11 +45,9 @@ const teamMembers: TeamMember[] = [
 ];
 
 const socialIcons = [
-  { icon: faFacebookF, href: '#' },
+  { icon: faEnvelope, href: '#' },
   { icon: faTwitter, href: '#' },
-  { icon: faInstagram, href: '#' },
-  { icon: faBehance, href: '#' },
-  { icon: faYoutube, href: '#' },
+  { icon: faLinkedin, href: '#' },
 ];
 
 const iconVariants = {

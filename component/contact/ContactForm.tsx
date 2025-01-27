@@ -2,7 +2,6 @@
 
 import { faArrowRight, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import emailjs from 'emailjs-com';
 import { Formik, Form, Field, FormikHelpers } from 'formik';
 import React from 'react';
 import { toast } from 'react-toastify';
@@ -52,97 +51,49 @@ const ContactForm: React.FC = () => {
     { resetForm }: FormikHelpers<FormValues>
   ) => {
     setIsSubmitting(true);
+  
+    const payload = {
+      fields: [
+        { id: 'summary', value: values.question },
+        { id: 'description', value: values.message },
+        { id: 'attachment', value: [] },
+        { id: 'email', value: values.email },
+      ],
+    };
+  
     try {
-      const response = await fetch('/api/send-email', {
+      const response = await fetch('https://jsd-widget.atlassian.com/api/embeddable/13677967-7313-4cd0-befd-204bf2af1f12/request?requestTypeId=1', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(values),
+        body: JSON.stringify(payload),
       });
-
+  
       if (response.ok) {
-        toast.success('Email sent successfully!', {
+        toast.success('Request submitted successfully! You will receive a confirmation email soon.', {
           position: 'top-center',
-          autoClose: 3000,
+          autoClose: 4000,
           hideProgressBar: true,
         });
         resetForm();
       } else {
-        toast.error('Failed to send email. Please try again.', {
+        toast.error('Failed to submit request. Please try again.', {
           position: 'top-center',
-          autoClose: 3000,
+          autoClose: 4000,
           hideProgressBar: true,
         });
       }
     } catch (error) {
-      console.error('Error submitting form:', error);
-      toast.error('An error occurred. Please try again.', {
+      toast.error(`An error occurred. Please try again. ${error}`, {
         position: 'top-center',
-        autoClose: 3000,
+        autoClose: 4000,
         hideProgressBar: true,
       });
     } finally {
       setIsSubmitting(false);
     }
-  };
-
-  // const handleSubmit = async (
-  //   values: FormValues,
-  //   { setSubmitting, resetForm }: FormikHelpers<FormValues>
-  // ) => {
-  //   try {
-  //     setSubmitting(true);
-
-  //     console.log('Sending task creation email...');
-  //     await emailjs.send(
-  //       process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
-  //       process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
-  //       {
-  //         email: values.email,
-  //         question: values.question,
-  //         message: values.message,
-  //       },
-  //       process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
-  //     );
-  //     console.log('Task creation email sent successfully.');
-
-  //     console.log('Preparing confirmation email payload...');
-  //     const confirmationPayload = {
-  //       user_email: values.email,
-  //       question: values.question,
-  //       message: values.message,
-  //     };
-
-  //     console.log('Confirmation Payload:', confirmationPayload);
-
-  //     console.log('Sending confirmation email...');
-  //     await emailjs.send(
-  //       process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
-  //       process.env.NEXT_PUBLIC_CONFIRMATION_TEMPLATE_ID!,
-  //       confirmationPayload,
-  //       process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
-  //     );
-  //     console.log('Confirmation email sent successfully.');
-
-  //     toast.success('Emails sent successfully!', {
-  //       position: 'top-center',
-  //       autoClose: 3000,
-  //       hideProgressBar: true,
-  //     });
-
-  //     resetForm();
-  //   } catch (error) {
-  //     console.error('Error during email submission:', error);
-  //     toast.error('Failed to send emails. Please try again.', {
-  //       position: 'top-center',
-  //       autoClose: 3000,
-  //       hideProgressBar: true,
-  //     });
-  //   } finally {
-  //     setSubmitting(false);
-  //   }
-  // };
+  };  
 
   return (
     <Formik
@@ -150,6 +101,7 @@ const ContactForm: React.FC = () => {
       validationSchema={contactFormValidationSchema}
       onSubmit={handleSubmit}
     >
+      
       {({ errors, touched, isSubmitting }) => (
         <Form className="space-y-5">
           <div>

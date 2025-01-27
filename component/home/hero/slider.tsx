@@ -2,6 +2,7 @@
 import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { AnimatePresence, motion } from 'framer-motion';
+import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 
 import { Button } from '@/component/common/Button';
@@ -153,20 +154,15 @@ export const HeroSection: React.FC = () => {
                     transition={{ duration: 0.6, delay: 1.2 }}
                     className="flex justify-center gap-4 md:justify-start"
                   >
-                    <Button className="bg-theme px-[14px] py-[11px] text-white md:px-7 md:py-5">
+                    <Link href={'/#about-section'}>
+                      <Button className="bg-theme px-[14px] py-[11px] text-white md:px-7 md:py-5">
                       ABOUT US
-                      <FontAwesomeIcon
-                        icon={faArrowRight}
-                        className="ml-2 h-4 w-4"
-                      />
-                    </Button>
-                    <Button className="text-theme bg-white px-[14px] py-[11px] md:px-7 md:py-5">
-                      READ MORE
-                      <FontAwesomeIcon
-                        icon={faArrowRight}
-                        className="ml-2 h-4 w-4 "
-                      />
-                    </Button>
+                        <FontAwesomeIcon
+                          icon={faArrowRight}
+                          className="ml-2 h-4 w-4"
+                        />
+                      </Button>
+                    </Link>
                   </motion.div>
                 </div>
               </div>
