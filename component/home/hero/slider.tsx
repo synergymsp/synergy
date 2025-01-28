@@ -9,7 +9,7 @@ import { Button } from '@/component/common/Button';
 
 const slides = [
   {
-    image: '/images/hero/hero-1-1.jpg',
+    image: '/images/hero/hero-1-1.webp',
     badge: 'EXPERT PROBLEM-SOLVERS',
     title1: 'Experienced',
     title2: 'Engineers at Your Service',
@@ -17,7 +17,7 @@ const slides = [
       'Our engineers are not just technically proficient but are passionate problem-solvers dedicated to providing actionable, tailored solutions. They work tirelessly to optimize your systems, ensuring the most efficient, cost-effective solutions for your business’s unique needs',
   },
   {
-    image: '/images/hero/hero-1-2.jpg',
+    image: '/images/hero/hero-1-2.webp',
     badge: 'ALL-INCLUSIVE IT SOLUTIONS',
     title1: 'Comprehensive',
     title2: 'Services & Solutions',
@@ -25,7 +25,7 @@ const slides = [
       'From initial consultations to full-scale system management, our solutions cover all aspects of IT. We specialize in creating customized strategies that align with your business goals, ensuring you receive the most efficient and future-proof systems possible.',
   },
   {
-    image: '/images/hero/hero-1-3.jpg',
+    image: '/images/hero/hero-1-3.webp',
     badge: 'TAILORED IT CONSULTATION',
     title1: 'Consultation,',
     title2: 'Support & Management',
@@ -33,7 +33,7 @@ const slides = [
       'We offer a free consultation to assess your IT needs, followed by ongoing management and support. Our experts ensure your systems are secure, optimized, and running smoothly, freeing you to focus on your business’s growth without technical worries.',
   },
   {
-    image: '/images/hero/hero-1-1.jpg',
+    image: '/images/hero/hero-1-1.webp',
     badge: 'INNOVATION AT ITS BEST',
     title1: 'Top-Tier',
     title2: 'IT Solutions',
@@ -41,7 +41,7 @@ const slides = [
       'We deliver industry-leading IT solutions that help businesses adapt to modern technology demands. With a focus on reliability, innovation, and scalability, our team ensures that your technology infrastructure is built to last, enabling seamless growth and operational efficiency.',
   },
   {
-    image: '/images/hero/hero-1-2.jpg',
+    image: '/images/hero/hero-1-2.webp',
     badge: 'DRIVEN BY EXPERTISE',
     title1: 'Our Experts ',
     title2: 'Drive Your Success',

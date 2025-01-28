@@ -81,11 +81,11 @@ const WorkSection: React.FC = () => {
                 style={{ width: '45%', height: 'auto' }}
               />
 
-              <span className="bg-theme font-exo absolute right-0 top-0 flex h-[35px] w-[35px] items-center justify-center rounded-full border-[5px] border-white text-xs font-bold text-white">
+              <span className="font-exo bg-theme absolute right-0 top-0 flex h-[35px] w-[35px] items-center justify-center rounded-full border-[5px] border-white text-xs font-bold text-white">
                 {item.number}
               </span>
             </div>
-            <h3 className="text-title font-exo mb-2 text-lg  font-bold leading-tight md:text-[22px]">
+            <h3 className="font-exo text-title mb-2 text-lg  font-bold leading-tight md:text-[22px]">
               {item.title}
             </h3>
             <p className="text-body max-w-[340px] text-sm md:text-base">

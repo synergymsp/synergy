@@ -12,7 +12,7 @@ export default function ServiceDetails({ params }: { params: { id: string } }) {
   if (!service) {
     return (
       <div className="container mx-auto py-10">
-        <h1 className="font-exo sm2:text-[26px] text-title text-[24px] font-bold uppercase leading-snug sm:text-[36px] lg:text-[40px] xl:text-[44px] 2xl:text-[48px]">
+        <h1 className="font-exo text-title sm2:text-[26px] text-[24px] font-bold uppercase leading-snug sm:text-[36px] lg:text-[40px] xl:text-[44px] 2xl:text-[48px]">
           Service Not Found
         </h1>
       </div>
@@ -95,7 +95,7 @@ export default function ServiceDetails({ params }: { params: { id: string } }) {
                         key={idx}
                       >
                         <div className="w-fit -translate-y-[25px] rounded-md bg-white p-[10px]">
-                          <div className="bg-theme font-exo flex h-[40px] w-[40px] items-center justify-center rounded-md font-bold text-white">
+                          <div className="font-exo bg-theme flex h-[40px] w-[40px] items-center justify-center rounded-md font-bold text-white">
                           0{idx + 1}
                           </div>
                         </div>

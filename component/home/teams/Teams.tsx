@@ -23,24 +23,34 @@ type TeamMember = {
 
 const teamMembers: TeamMember[] = [
   {
+    name: 'Ali Raza',
+    role: 'Senior Oracle Developer',
+    image: '/images/teams/ali-raza.webp',
+  },
+  {
     name: 'Sameer Danish',
     role: 'Senior .Net Developer',
-    image: '/images/teams/sameer.jpeg',
+    image: '/images/teams/sameer.webp',
   },
   {
     name: 'Hamza Butt',
     role: 'Database Developer',
-    image: '/images/teams/hamza.jpeg',
+    image: '/images/teams/hamza.webp',
   },
   {
-    name: 'Ali Raza',
-    role: 'Senior Oracle Developer',
-    image: '/images/teams/ali-raza.jpg',
+    name: 'Abdullah Butt',
+    role: 'Database Developer',
+    image: '/images/teams/Abdullah-Butt.webp',
   },
   {
-    name: 'Jawad Shah',
-    role: 'Sr.System Administrator',
-    image: '/images/teams/jawad.jpeg',
+    name: 'Wahib Butt',
+    role: 'Team Lead Development',
+    image: '/images/teams/Wahib-Butt.webp',
+  },
+  {
+    name: 'Yousaf Ali',
+    role: 'Sr. Network Administrator',
+    image: '/images/teams/Yousaf-Ali.webp',
   },
 ];
 

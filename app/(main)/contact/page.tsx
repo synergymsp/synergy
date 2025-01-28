@@ -151,7 +151,7 @@ export default function Contact() {
                       <div>
                         <Link
                           href={`mailto:${location.email}`}
-                          className="hover:text-theme text-theme block text-base transition-all duration-300"
+                          className="text-theme hover:text-theme block text-base transition-all duration-300"
                         >
                           {location.email}
                         </Link>

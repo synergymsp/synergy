@@ -39,11 +39,10 @@ const Navbar: React.FC = () => {
   const [isDropdownFade, setIsDropdownFade] = useState(false);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
-  const pathname = usePathname(); // Get the current route
+  const pathname = usePathname();
 
   const isActive = (href: string) => {
     if (href === '/') {
-      // Show active for Home and Why Choose Us when on home page
       return pathname === '/';
     }
 
@@ -62,13 +61,13 @@ const Navbar: React.FC = () => {
   };
 
   const handleDropdownLinkClick = () => {
-    setIsDropdownOpen(false); // Close the dropdown menu
-    setIsDropdownFade(false); // Ensure the fade animation is reset
+    setIsDropdownOpen(false); 
+    setIsDropdownFade(false); 
   };
 
   const handleMobileMenuLinkClick = () => {
-    setMobileMenuOpen(false); // Close the mobile menu
-    setServicesMenuOpen(false); // Close the services menu in mobile
+    setMobileMenuOpen(false); 
+    setServicesMenuOpen(false); 
   };
 
   return (
