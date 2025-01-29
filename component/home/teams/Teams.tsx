@@ -4,13 +4,15 @@ import {
   faLinkedin,
   faTwitter
 } from '@fortawesome/free-brands-svg-icons';
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faArrowLeft, faArrowRight, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { useState } from 'react';
+import { Swiper as SwiperType } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
+import { Button } from '@/component/common/Button';
 import { Container } from '@/component/common/Container';
 import 'swiper/css';
 import 'swiper/css/effect-fade';
@@ -73,6 +75,10 @@ const iconVariants = {
 };
 
 const TeamsSection: React.FC = () => {
+  const [swiperInstance, setSwiperInstance] = useState<SwiperType | null>(null);
+  const [isBeginning, setIsBeginning] = useState(true);
+  const [isEnd, setIsEnd] = useState(false);
+
   return (
     <Container>
       <div className="mx-auto mb-6 max-w-[600px] text-center md:mb-10">
@@ -94,6 +100,15 @@ const TeamsSection: React.FC = () => {
           1200: { slidesPerView: 4.4 },
         }}
         grabCursor={true}
+        onSwiper={(swiper) => {
+          setSwiperInstance(swiper);
+          setIsBeginning(swiper.isBeginning);
+          setIsEnd(swiper.isEnd);
+        }}
+        onSlideChange={(swiper) => {
+          setIsBeginning(swiper.isBeginning);
+          setIsEnd(swiper.isEnd);
+        }}
         className="team-carousel"
       >
         {teamMembers.map((member, index) => (
@@ -102,6 +117,26 @@ const TeamsSection: React.FC = () => {
           </SwiperSlide>
         ))}
       </Swiper>
+
+      <div className="mt-10 flex w-full justify-center gap-4 md:mt-16 md:gap-[30px]">
+        <Button
+          className="bg-smoke text-theme px-[20px] py-[10px] lg:px-7 lg:py-4" 
+          onClick={() => swiperInstance?.slidePrev()} 
+          disabled={isBeginning}
+        >
+          <FontAwesomeIcon icon={faArrowLeft} className="mr-2 h-4 w-4" />
+            PREV
+        </Button>
+
+        <Button 
+          className="bg-smoke text-theme px-[20px] py-[10px] lg:px-7 lg:py-4" 
+          onClick={() => swiperInstance?.slideNext()}
+          disabled={isEnd}
+        >
+            NEXT
+          <FontAwesomeIcon icon={faArrowRight} className="ml-2 h-4 w-4" />
+        </Button>
+      </div>
     </Container>
   );
 };

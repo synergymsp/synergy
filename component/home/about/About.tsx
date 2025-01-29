@@ -6,12 +6,12 @@ import { Container } from '@/component/common/Container';
 
 const FeatureItem = ({ number, text }: { number: string; text: string }) => (
   <div className="mb-6 flex items-center">
-    <div className="bg-theme mr-4 flex h-[50px] w-[50px] items-center justify-center rounded-md">
-      <span className="font-exo text-base font-bold uppercase text-white">
+    <div className="bg-theme mr-4 flex h-[40px] w-[40px] items-center justify-center rounded-md sm:h-[50px] sm:w-[50px]">
+      <span className="font-exo text-sm font-bold uppercase text-white sm:text-base">
         {number}
       </span>
     </div>
-    <h5 className="font-exo text-title flex-1 text-base font-semibold uppercase leading-snug">
+    <h5 className="font-exo text-title flex-1 text-sm font-semibold uppercase leading-snug md:text-base">
       {text}
     </h5>
   </div>
@@ -25,7 +25,6 @@ const AboutSection: React.FC = () => {
       </span>
 
       <div className="flex flex-col lg:flex-row lg:space-x-10 xl:space-x-16">
-        {/* Left Section */}
         <div className="relative mb-12 lg:mb-0 lg:w-1/2 xl:w-5/12" data-wow-delay="0.2s">
           <div className="relative mb-5 w-full overflow-hidden rounded-md sm:mb-[60px] lg:max-w-[425px]">
             <Image
@@ -61,7 +60,6 @@ const AboutSection: React.FC = () => {
           </div>
         </div>
 
-        {/* Right Section */}
         <div className="flex flex-col justify-center lg:w-1/2 xl:w-7/12" data-wow-delay="0.3s">
           <span className="font-exo text-theme mb-5 flex items-center text-base font-semibold uppercase">
             <FontAwesomeIcon icon={faCopy} className="mr-2" /> Get Best IT Solution {new Date().getFullYear()}
