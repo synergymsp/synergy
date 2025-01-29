@@ -64,7 +64,7 @@ const AboutSection: React.FC = () => {
         {/* Right Section */}
         <div className="flex flex-col justify-center lg:w-1/2 xl:w-7/12" data-wow-delay="0.3s">
           <span className="font-exo text-theme mb-5 flex items-center text-base font-semibold uppercase">
-            <FontAwesomeIcon icon={faCopy} className="mr-2" /> Get Best IT Solution 2024
+            <FontAwesomeIcon icon={faCopy} className="mr-2" /> Get Best IT Solution {new Date().getFullYear()}
           </span>
           <h2 className="font-exo text-title sm2:text-[26px] mb-5 text-[24px] font-bold uppercase leading-snug sm:text-[36px] lg:text-[40px] xl:text-[44px] 2xl:text-[48px]">
             Reasons for Choosing Us

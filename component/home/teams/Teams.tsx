@@ -23,14 +23,19 @@ type TeamMember = {
 
 const teamMembers: TeamMember[] = [
   {
-    name: 'Ali Raza',
-    role: 'Senior Oracle Developer',
-    image: '/images/teams/ali-raza.webp',
+    name: 'Wahib Butt',
+    role: 'Team Lead Development',
+    image: '/images/teams/Wahib-Butt.webp',
   },
   {
     name: 'Sameer Danish',
     role: 'Senior .Net Developer',
     image: '/images/teams/sameer.webp',
+  },
+  {
+    name: 'Yousaf Ali',
+    role: 'Sr. Network Administrator',
+    image: '/images/teams/Yousaf-Ali.webp',
   },
   {
     name: 'Hamza Butt',
@@ -43,14 +48,9 @@ const teamMembers: TeamMember[] = [
     image: '/images/teams/Abdullah-Butt.webp',
   },
   {
-    name: 'Wahib Butt',
-    role: 'Team Lead Development',
-    image: '/images/teams/Wahib-Butt.webp',
-  },
-  {
-    name: 'Yousaf Ali',
-    role: 'Sr. Network Administrator',
-    image: '/images/teams/Yousaf-Ali.webp',
+    name: 'Ali Raza',
+    role: 'Senior Oracle Developer',
+    image: '/images/teams/ali-raza.webp',
   },
 ];
 
@@ -88,12 +88,12 @@ const TeamsSection: React.FC = () => {
         spaceBetween={30}
         breakpoints={{
           320: { slidesPerView: 1 },
-          576: { slidesPerView: 2 },
-          768: { slidesPerView: 3 },
-          992: { slidesPerView: 4 },
+          600: { slidesPerView: 2.3 },
+          768: { slidesPerView: 2.5 },
+          992: { slidesPerView: 3.4 },
+          1200: { slidesPerView: 4.4 },
         }}
         grabCursor={true}
-        loop={true}
         className="team-carousel"
       >
         {teamMembers.map((member, index) => (
@@ -111,7 +111,7 @@ const HoverAnimationCard = ({ member }: { member: TeamMember }) => {
 
   return (
     <div
-      className="shadow5 group relative overflow-hidden bg-white hover:bg-[#f6f7fa]"
+      className="shadow5 bg-smoke group relative mx-auto max-w-[340px] overflow-hidden transition-all duration-300 hover:bg-[#f6f7fa] md:max-w-full"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >

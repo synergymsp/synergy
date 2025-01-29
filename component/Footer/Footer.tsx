@@ -42,7 +42,7 @@ const SocialIcons: React.FC<SocialIconsProps> = ({ icons }) => (
     {icons.map((icon, index) => (
       <Link
         key={index}
-        href="https://www.linkedin.com/company/105226936/admin/dashboard/"
+        href="https://www.linkedin.com/company/synergy-msp-new-jersey-usa/"
         className="hover:bg-theme flex h-[45px] w-[45px] items-center justify-center rounded-md bg-[#15284C] transition-all duration-200"
       >
         <FontAwesomeIcon icon={icon} className="text-white" />
@@ -210,7 +210,7 @@ const Footer: React.FC = () => {
       <div className="bg-[#0B2048] py-7">
         <Container>
           <p className="text-center text-sm text-[#8A99B4]">
-            Copyright <FontAwesomeIcon icon={faCopyright} /> 2022{' '}
+    Copyright <FontAwesomeIcon icon={faCopyright} /> {new Date().getFullYear()}{' '}
             <span className="text-white">Synergy MSP</span>
           </p>
         </Container>
