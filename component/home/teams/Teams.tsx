@@ -1,15 +1,17 @@
 'use client';
 
+import { faLinkedin, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import {
-  faLinkedin,
-  faTwitter
-} from '@fortawesome/free-brands-svg-icons';
-import { faArrowLeft, faArrowRight, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+  faArrowLeft,
+  faArrowRight,
+  faEnvelope,
+} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { useState } from 'react';
 import { Swiper as SwiperType } from 'swiper';
+import { Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import { Button } from '@/component/common/Button';
@@ -76,8 +78,7 @@ const iconVariants = {
 
 const TeamsSection: React.FC = () => {
   const [swiperInstance, setSwiperInstance] = useState<SwiperType | null>(null);
-  const [isBeginning, setIsBeginning] = useState(true);
-  const [isEnd, setIsEnd] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
 
   return (
     <Container>
@@ -85,57 +86,60 @@ const TeamsSection: React.FC = () => {
         <span className="font-exo text-theme mb-2 inline-block text-base font-semibold uppercase md:mb-5">
           Great Team Members
         </span>
-        <h2 className="font-exo text-title sm2:text-[26px] text-[24px] font-bold uppercase leading-snug sm:text-[36px] lg:text-[40px]  xl:text-[44px] 2xl:text-[48px]">
+        <h2 className="font-exo text-title sm2:text-[26px] text-[24px] font-bold uppercase leading-snug sm:text-[36px] lg:text-[40px] xl:text-[44px] 2xl:text-[48px]">
           We Have Expert Team
         </h2>
       </div>
 
-      <Swiper
-        spaceBetween={30}
-        breakpoints={{
-          320: { slidesPerView: 1 },
-          600: { slidesPerView: 2.3 },
-          768: { slidesPerView: 2.5 },
-          992: { slidesPerView: 3.4 },
-          1200: { slidesPerView: 4.4 },
-        }}
-        grabCursor={true}
-        onSwiper={(swiper) => {
-          setSwiperInstance(swiper);
-          setIsBeginning(swiper.isBeginning);
-          setIsEnd(swiper.isEnd);
-        }}
-        onSlideChange={(swiper) => {
-          setIsBeginning(swiper.isBeginning);
-          setIsEnd(swiper.isEnd);
-        }}
-        className="team-carousel"
+      <div
+        className="relative"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
       >
-        {teamMembers.map((member, index) => (
-          <SwiperSlide key={index} className="relative">
-            <HoverAnimationCard member={member} />
-          </SwiperSlide>
-        ))}
-      </Swiper>
-
-      <div className="mt-10 flex w-full justify-center gap-4 md:mt-16 md:gap-[30px]">
-        <Button
-          className="bg-smoke text-theme px-[20px] py-[10px] lg:px-7 lg:py-4" 
-          onClick={() => swiperInstance?.slidePrev()} 
-          disabled={isBeginning}
+        <div
+          className={`absolute !-right-8 -left-8 top-[50%] z-20 flex -translate-y-1/2 transform justify-between transition-opacity duration-500 ${
+            isHovered ? 'visible opacity-100' : 'invisible opacity-0'
+          }`}
         >
-          <FontAwesomeIcon icon={faArrowLeft} className="mr-2 h-4 w-4" />
-            PREV
-        </Button>
+          <Button
+            className="bg-smoke text-theme size-16 !rounded-full"
+            onClick={() => swiperInstance?.slidePrev()}
+          >
+            <FontAwesomeIcon icon={faArrowLeft} className="h-6 w-6" />
+          </Button>
 
-        <Button 
-          className="bg-smoke text-theme px-[20px] py-[10px] lg:px-7 lg:py-4" 
-          onClick={() => swiperInstance?.slideNext()}
-          disabled={isEnd}
+          <Button
+            className="bg-smoke text-theme size-16 !rounded-full"
+            onClick={() => swiperInstance?.slideNext()}
+          >
+            <FontAwesomeIcon icon={faArrowRight} className="h-6 w-6" />
+          </Button>
+        </div>
+
+        <Swiper
+          spaceBetween={30}
+          autoplay={{
+            delay: 3000,
+            disableOnInteraction: false,
+          }}
+          loop={true}
+          breakpoints={{
+            320: { slidesPerView: 1 },
+            600: { slidesPerView: 2 },
+            992: { slidesPerView: 3 },
+            1200: { slidesPerView: 4 },
+          }}
+          grabCursor={true}
+          onSwiper={setSwiperInstance}
+          modules={[Autoplay]}
+          className="team-carousel"
         >
-            NEXT
-          <FontAwesomeIcon icon={faArrowRight} className="ml-2 h-4 w-4" />
-        </Button>
+          {teamMembers.map((member, index) => (
+            <SwiperSlide key={index} className="relative">
+              <HoverAnimationCard member={member} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
     </Container>
   );
