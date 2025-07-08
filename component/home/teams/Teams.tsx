@@ -9,15 +9,20 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { useState } from 'react';
-import { Swiper as SwiperType } from 'swiper';
+import type React from 'react';
+import { useState, useEffect } from 'react';
+import type { Swiper as SwiperType } from 'swiper';
 import { Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-import { Button } from '@/component/common/Button';
-import { Container } from '@/component/common/Container';
 import 'swiper/css';
 import 'swiper/css/effect-fade';
+import { Button } from '@/component/common/Button';
+
+// Mock Container component
+const Container = ({ children }: { children: React.ReactNode }) => (
+  <div className="container mx-auto px-4">{children}</div>
+);
 
 type TeamMember = {
   name: string;
@@ -83,10 +88,10 @@ const TeamsSection: React.FC = () => {
   return (
     <Container>
       <div className="mx-auto mb-6 max-w-[600px] text-center md:mb-10">
-        <span className="font-exo text-theme mb-2 inline-block text-base font-semibold uppercase md:mb-5">
+        <span className="mb-2 inline-block text-base font-semibold uppercase text-blue-600 md:mb-5">
           Great Team Members
         </span>
-        <h2 className="font-exo text-title sm2:text-[26px] text-[24px] font-bold uppercase leading-snug sm:text-[36px] lg:text-[40px] xl:text-[44px] 2xl:text-[48px]">
+        <h2 className="text-[24px] font-bold uppercase leading-snug text-gray-900 sm:text-[26px] md:text-[36px] lg:text-[40px] xl:text-[44px] 2xl:text-[48px]">
           We Have Expert Team
         </h2>
       </div>
@@ -97,19 +102,18 @@ const TeamsSection: React.FC = () => {
         onMouseLeave={() => setIsHovered(false)}
       >
         <div
-          className={`absolute !-right-8 -left-8 top-[50%] z-20 flex -translate-y-1/2 transform justify-between transition-opacity duration-500 ${
+          className={`absolute -left-8 -right-8 top-[50%] z-20 hidden -translate-y-1/2 transform justify-between transition-opacity duration-500 md:flex ${
             isHovered ? 'visible opacity-100' : 'invisible opacity-0'
           }`}
         >
           <Button
-            className="bg-smoke text-theme size-16 !rounded-full"
+            className="size-16 rounded-full bg-gray-100 text-blue-600 hover:bg-gray-200"
             onClick={() => swiperInstance?.slidePrev()}
           >
             <FontAwesomeIcon icon={faArrowLeft} className="h-6 w-6" />
           </Button>
-
           <Button
-            className="bg-smoke text-theme size-16 !rounded-full"
+            className="size-16 rounded-full bg-gray-100 text-blue-600 hover:bg-gray-200"
             onClick={() => swiperInstance?.slideNext()}
           >
             <FontAwesomeIcon icon={faArrowRight} className="h-6 w-6" />
@@ -147,47 +151,76 @@ const TeamsSection: React.FC = () => {
 
 const HoverAnimationCard = ({ member }: { member: TeamMember }) => {
   const [isHovered, setIsHovered] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768); // md breakpoint
+    };
+
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   return (
     <div
-      className="shadow5 bg-smoke group relative mx-auto max-w-[340px] overflow-hidden transition-all duration-300 hover:bg-[#f6f7fa] md:max-w-full"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      className="group relative mx-auto max-w-[340px] overflow-hidden bg-gray-100 shadow-lg transition-all duration-300 hover:bg-gray-50 md:max-w-full"
+      onMouseEnter={() => !isMobile && setIsHovered(true)}
+      onMouseLeave={() => !isMobile && setIsHovered(false)}
     >
       <div className="relative overflow-hidden">
         <div className="h-[350px] w-full">
           <Image
-            src={member.image}
+            src={member.image || '/placeholder.svg'}
             alt={member.name}
-            width={0}
-            height={0}
-            sizes="100vw"
+            width={300}
+            height={350}
             className="h-full w-full transform object-cover object-top transition-transform duration-300 ease-in-out group-hover:scale-105"
           />
         </div>
 
-        <div className="bg-theme absolute inset-0 bottom-0 left-[30px] right-[30px] mt-auto flex h-fit items-center justify-center gap-3 px-8 py-3 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+        {/* Mobile: Always visible social icons */}
+        <div className="absolute bottom-0 left-[30px] right-[30px] flex h-fit items-center justify-center gap-3 bg-blue-600 px-8 py-3 md:hidden">
+          {socialIcons.map((social, i) => (
+            <a
+              key={i}
+              href={social.href}
+              className="text-white transition-colors duration-200 hover:text-gray-300"
+            >
+              <FontAwesomeIcon icon={social.icon} className="h-4 w-4" />
+            </a>
+          ))}
+        </div>
+
+        {/* Desktop: Hover animated social icons */}
+        <div
+          className={`absolute bottom-0 left-[30px] right-[30px] hidden h-fit items-center justify-center gap-3 bg-blue-600 px-8 py-3 transition-opacity duration-300 md:flex ${
+            isHovered ? 'opacity-100' : 'opacity-0'
+          }`}
+        >
           {socialIcons.map((social, i) => (
             <motion.a
               key={i}
               href={social.href}
-              className="text-white hover:text-gray-300"
+              className="text-white transition-colors duration-200 hover:text-gray-300"
               initial="hidden"
               animate={isHovered ? 'visible' : 'hidden'}
               custom={i}
               variants={iconVariants}
             >
-              <FontAwesomeIcon icon={social.icon} />
+              <FontAwesomeIcon icon={social.icon} className="h-4 w-4" />
             </motion.a>
           ))}
         </div>
       </div>
 
-      <div className="team-content pb-5 pt-5 text-center">
-        <h3 className="font-exo text-title text-lg font-bold uppercase">
+      <div className="pb-5 pt-5 text-center">
+        <h3 className="text-lg font-bold uppercase text-gray-900">
           {member.name}
         </h3>
-        <p className="text-theme text-sm">{member.role}</p>
+        <p className="text-sm text-blue-600">{member.role}</p>
       </div>
     </div>
   );

@@ -76,11 +76,11 @@ const FAQSection: React.FC = () => {
               href="#"
               className="duration-400 group absolute left-[50%] top-[50%] z-10 inline-block -translate-x-[50%] -translate-y-[50%] bg-transparent p-0 transition-all ease-in-out"
             >
-              <span className="duration-400 bg-theme/55 flex h-[60px] w-[60px] items-center justify-center rounded-md text-lg text-white transition-all ease-in-out">
+              <span className="duration-400 flex h-[60px] w-[60px] items-center justify-center rounded-md bg-theme/55 text-lg text-white transition-all ease-in-out">
                 <FontAwesomeIcon icon={faPlay} />
               </span>
-              <span className="duration-400 bg-theme/55 absolute inset-0 -z-10 h-full w-full rounded-md opacity-50 transition-all ease-in-out group-hover:opacity-100" />
-              <span className="bg-theme/55 absolute inset-0 -z-10 h-full w-full animate-ping rounded-md opacity-50" />
+              <span className="duration-400 absolute inset-0 -z-10 h-full w-full rounded-md bg-theme/55 opacity-50 transition-all ease-in-out group-hover:opacity-100" />
+              <span className="absolute inset-0 -z-10 h-full w-full animate-ping rounded-md bg-theme/55 opacity-50" />
             </a>
           </div>
         </div>
@@ -89,7 +89,7 @@ const FAQSection: React.FC = () => {
             <FontAwesomeIcon icon={faCopy} className="mr-2" /> Talk About
             Something
           </span>
-          <h2 className="font-exo sm2:text-[26px] mb-5 text-[24px] font-bold uppercase leading-snug text-white sm:text-[36px] lg:text-[40px]  xl:text-[44px] 2xl:text-[48px]">
+          <h2 className="font-exo mb-5 text-[24px] font-bold uppercase leading-snug text-white sm2:text-[26px] sm:text-[36px] lg:text-[40px]  xl:text-[44px] 2xl:text-[48px]">
             How can we help you?
           </h2>
           {faqs.map((faq, index) => (
@@ -128,7 +128,7 @@ const FAQSection: React.FC = () => {
                 className="overflow-hidden transition-[height] duration-500 ease-in-out"
               >
                 <div className="border-t border-[#EBEBEB] py-3 sm:py-5">
-                  <p className="text-body text-justify text-sm md:text-base">{faq.answer}</p>
+                  <p className="text-justify text-sm text-body md:text-base">{faq.answer}</p>
                 </div>
               </div>
             </div>

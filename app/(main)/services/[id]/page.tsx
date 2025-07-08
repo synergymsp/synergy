@@ -12,7 +12,7 @@ export default function ServiceDetails({ params }: { params: { id: string } }) {
   if (!service) {
     return (
       <div className="container mx-auto py-10">
-        <h1 className="font-exo text-title sm2:text-[26px] text-[24px] font-bold uppercase leading-snug sm:text-[36px] lg:text-[40px] xl:text-[44px] 2xl:text-[48px]">
+        <h1 className="font-exo text-[24px] font-bold uppercase leading-snug text-title sm2:text-[26px] sm:text-[36px] lg:text-[40px] xl:text-[44px] 2xl:text-[48px]">
           Service Not Found
         </h1>
       </div>
@@ -22,7 +22,7 @@ export default function ServiceDetails({ params }: { params: { id: string } }) {
   return (
     <>
       <div className="">
-        <div className="bg-services-details-img relative bg-cover bg-center pb-[70px] pt-[80px] md:pb-[90px] md:pt-[100px] lg:pb-[135px] lg:pt-[140px]">
+        <div className="relative bg-services-details-img bg-cover bg-center pb-[70px] pt-[80px] md:pb-[90px] md:pt-[100px] lg:pb-[135px] lg:pt-[140px]">
           <Container className="flex items-center justify-between">
             <h1 className="font-exo text-[20px] font-bold uppercase leading-snug text-white sm:text-[36px] lg:text-[40px]  xl:text-[44px] 2xl:text-[48px]">
             Service Details
@@ -66,10 +66,10 @@ export default function ServiceDetails({ params }: { params: { id: string } }) {
 
         <Container className="py-[50px] md:py-[80px] lg:py-[120px]">
           <div className="mb-2">
-            <h2 className="font-exo text-title sm2:text-[26px] text-[24px] font-bold uppercase leading-snug sm:text-[36px] lg:text-[40px]  xl:text-[44px] 2xl:text-[48px]">
+            <h2 className="font-exo text-[24px] font-bold uppercase leading-snug text-title sm2:text-[26px] sm:text-[36px] lg:text-[40px]  xl:text-[44px] 2xl:text-[48px]">
               {service?.title}
             </h2>
-            <p className="text-theme mt-2 text-justify text-sm sm:text-base  md:text-lg">
+            <p className="mt-2 text-justify text-sm text-theme sm:text-base  md:text-lg">
               {service?.description}
             </p>
           </div>
@@ -77,11 +77,11 @@ export default function ServiceDetails({ params }: { params: { id: string } }) {
           {service?.content.map((section, index) => (
             <div key={index} className="">
               <div className="">
-                <h2 className="text-title text-xl font-semibold uppercase md:text-2xl">
+                <h2 className="text-xl font-semibold uppercase text-title md:text-2xl">
                   {section?.sectionTitle}
                 </h2>
                 {section?.text && (
-                  <p className="text-body mb-10 text-justify text-sm sm:text-base">
+                  <p className="mb-10 text-justify text-sm text-body sm:text-base">
                     {section?.text}
                   </p>
                 )}
@@ -91,18 +91,18 @@ export default function ServiceDetails({ params }: { params: { id: string } }) {
                   <div className="mt-20 grid grid-cols-1 gap-x-6 gap-y-10 md:grid-cols-2 lg:grid-cols-3">
                     {section?.features?.map((feature, idx) => (
                       <div
-                        className="hover:shadow-shadow4 relative h-[100%] rounded-md bg-[#F8F8F9] px-6 pb-6 transition-all duration-300 ease-out hover:bg-white"
+                        className="relative h-[100%] rounded-md bg-[#F8F8F9] px-6 pb-6 transition-all duration-300 ease-out hover:bg-white hover:shadow-shadow4"
                         key={idx}
                       >
                         <div className="w-fit -translate-y-[25px] rounded-md bg-white p-[10px]">
-                          <div className="font-exo bg-theme flex h-[40px] w-[40px] items-center justify-center rounded-md font-bold text-white">
+                          <div className="font-exo flex h-[40px] w-[40px] items-center justify-center rounded-md bg-theme font-bold text-white">
                           0{idx + 1}
                           </div>
                         </div>
-                        <h3 className="font-exo text-title mb-2 text-base font-bold capitalize">
+                        <h3 className="font-exo mb-2 text-base font-bold capitalize text-title">
                           {feature?.title}:
                         </h3>
-                        <p className="text-body text-justify text-xs md:text-sm">
+                        <p className="text-justify text-xs text-body md:text-sm">
                           {feature?.text}
                         </p>
                       </div>

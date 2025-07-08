@@ -2,16 +2,16 @@
 
 import { faArrowRight, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Formik, Form, Field, FormikHelpers } from 'formik';
+import { Formik, Form, Field, type FormikHelpers } from 'formik';
 import React from 'react';
 import { toast } from 'react-toastify';
 import * as Yup from 'yup';
 import 'react-toastify/dist/ReactToastify.css';
 
-import OutlinedInput from '../common/OutlinedInput';
-
 import { Button } from '@/component/common/Button';
 import Select from '@/component/common/Select';
+
+import OutlinedInput from '../common/OutlinedInput';
 
 const options = [
   { id: 1, name: '3CX Proposal Request' },
@@ -51,41 +51,49 @@ const ContactForm: React.FC = () => {
     { resetForm }: FormikHelpers<FormValues>
   ) => {
     setIsSubmitting(true);
-  
-    const payload = {
-      fields: [
-        { id: 'summary', value: values.question },
-        { id: 'description', value: values.message },
-        { id: 'attachment', value: [] },
-        { id: 'email', value: values.email },
-      ],
-    };
-  
+
     try {
-      const response = await fetch('https://jsd-widget.atlassian.com/api/embeddable/13677967-7313-4cd0-befd-204bf2af1f12/request?requestTypeId=1', {
+      // Use relative URL instead of full external URL
+      const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'X-Requested-With': 'XMLHttpRequest', // Add CSRF protection header
         },
-        body: JSON.stringify(payload),
+        body: JSON.stringify({
+          question: values.question,
+          message: values.message,
+          email: values.email,
+          timestamp: Date.now(), // Add timestamp for additional validation
+        }),
       });
-  
+
       if (response.ok) {
-        toast.success('Request submitted successfully! You will receive a confirmation email soon.', {
-          position: 'top-center',
-          autoClose: 4000,
-          hideProgressBar: true,
-        });
+        toast.success(
+          'Request submitted successfully! You will receive a confirmation email soon.',
+          {
+            position: 'top-center',
+            autoClose: 4000,
+            hideProgressBar: true,
+          }
+        );
         resetForm();
       } else {
-        toast.error('Failed to submit request. Please try again.', {
-          position: 'top-center',
-          autoClose: 4000,
-          hideProgressBar: true,
-        });
+        const errorData = await response.json();
+
+        toast.error(
+          errorData.message || 'Failed to submit request. Please try again.',
+          {
+            position: 'top-center',
+            autoClose: 4000,
+            hideProgressBar: true,
+          }
+        );
       }
     } catch (error) {
-      toast.error(`An error occurred. Please try again. ${error}`, {
+      // eslint-disable-next-line no-console
+      console.error('Form submission error:', error);
+      toast.error('An error occurred. Please try again later.', {
         position: 'top-center',
         autoClose: 4000,
         hideProgressBar: true,
@@ -93,7 +101,7 @@ const ContactForm: React.FC = () => {
     } finally {
       setIsSubmitting(false);
     }
-  };  
+  };
 
   return (
     <Formik
@@ -101,7 +109,6 @@ const ContactForm: React.FC = () => {
       validationSchema={contactFormValidationSchema}
       onSubmit={handleSubmit}
     >
-      
       {({ errors, touched, isSubmitting }) => (
         <Form className="space-y-5">
           <div>
@@ -138,7 +145,7 @@ const ContactForm: React.FC = () => {
           />
 
           <Button
-            className="bg-theme flex items-center justify-center px-[20px] py-[14px] text-white md:px-7 md:py-4"
+            className="flex items-center justify-center bg-theme px-[20px] py-[14px] text-white md:px-7 md:py-4"
             type="submit"
             disabled={isSubmitting}
           >

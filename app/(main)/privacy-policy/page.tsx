@@ -42,16 +42,16 @@ export default function PrivacyPolicy() {
   return (
     <Container className="py-[50px] md:py-[80px] lg:py-[120px]">
       <div className="mb-10">
-        <h2 className="font-exo text-title sm2:text-[26px] text-[24px] font-bold uppercase leading-snug sm:text-[36px] lg:text-[40px] xl:text-[44px] 2xl:text-[48px]">
+        <h2 className="font-exo text-[24px] font-bold uppercase leading-snug text-title sm2:text-[26px] sm:text-[36px] lg:text-[40px] xl:text-[44px] 2xl:text-[48px]">
           Privacy Policy
         </h2>
       </div>
       {sections.map((section, index) => (
-        <div className="border-smoke mb-6 border-b py-4" key={index}>
-          <h2 className="text-title text-xl font-medium md:text-2xl">
+        <div className="mb-6 border-b border-smoke py-4" key={index}>
+          <h2 className="text-xl font-medium text-title md:text-2xl">
             {section.title}
           </h2>
-          <p className="text-body mt-2 text-sm sm:text-base md:text-lg">
+          <p className="mt-2 text-sm text-body sm:text-base md:text-lg">
             {section.content}
           </p>
         </div>

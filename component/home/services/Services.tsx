@@ -55,10 +55,10 @@ const ServicesSection: React.FC = () => {
   return (
     <Container>
       <div className="head mx-auto mb-14 max-w-[600px] text-center">
-        <span className="font-exo text-theme mb-2 inline-block text-base font-semibold uppercase md:mb-5">
+        <span className="font-exo mb-2 inline-block text-base font-semibold uppercase text-theme md:mb-5">
           Our Latest Services
         </span>
-        <h2 className="font-exo text-title sm2:text-[26px] text-[24px] font-bold uppercase leading-snug sm:text-[36px] lg:text-[40px]  xl:text-[44px] 2xl:text-[48px]">
+        <h2 className="font-exo text-[24px] font-bold uppercase leading-snug text-title sm2:text-[26px] sm:text-[36px] lg:text-[40px]  xl:text-[44px] 2xl:text-[48px]">
           What Kind of Services We are Offering
         </h2>
       </div>
@@ -66,12 +66,12 @@ const ServicesSection: React.FC = () => {
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
         {services?.map((service, index) => (
           <Link key={index} href={`/services/${service.id}`}>
-            <div className="duration-400 shadow-shadow3 group relative h-full cursor-pointer overflow-hidden rounded-md bg-white px-5 py-8 transition-all sm:px-10 sm:py-12">
-              <div className="bg-services-bg absolute inset-0 h-full w-full scale-125 bg-cover bg-center opacity-0 transition-all duration-700 ease-in-out group-hover:scale-100 group-hover:opacity-100"></div>
+            <div className="duration-400 group relative h-full cursor-pointer overflow-hidden rounded-md bg-white px-5 py-8 shadow-shadow3 transition-all sm:px-10 sm:py-12">
+              <div className="absolute inset-0 h-full w-full scale-125 bg-services-bg bg-cover bg-center opacity-0 transition-all duration-700 ease-in-out group-hover:scale-100 group-hover:opacity-100"></div>
 
               <div className="relative z-10 flex h-[100%] flex-col items-start justify-between">
                 <div>
-                  <div className="bg-smoke mb-4 flex h-[60px] w-[60px] items-center justify-center rounded-full sm:mb-6 sm:h-[70px] sm:w-[70px] xl:mb-8">
+                  <div className="mb-4 flex h-[60px] w-[60px] items-center justify-center rounded-full bg-smoke sm:mb-6 sm:h-[70px] sm:w-[70px] xl:mb-8">
                     <Image
                       src={service.icon}
                       alt="services Icon"
@@ -81,14 +81,14 @@ const ServicesSection: React.FC = () => {
                       style={{ width: '50%', height: 'auto' }}
                     />
                   </div>
-                  <h3 className="font-exo duration-400 text-title my-2 text-lg font-bold capitalize transition-all ease-in-out group-hover:text-white lg:my-3 xl:text-[24px]">
+                  <h3 className="font-exo duration-400 my-2 text-lg font-bold capitalize text-title transition-all ease-in-out group-hover:text-white lg:my-3 xl:text-[24px]">
                     {service.title}
                   </h3>
-                  <p className="ellipsis-3-lines duration-400 text-body mb-5 text-justify text-sm transition-all ease-in-out group-hover:text-white md:text-base">
+                  <p className="ellipsis-3-lines duration-400 mb-5 text-justify text-sm text-body transition-all ease-in-out group-hover:text-white md:text-base">
                     {service.description}
                   </p>
                 </div>
-                <Button className="bg-smoke text-theme px-5 py-[14px]">
+                <Button className="bg-smoke px-5 py-[14px] text-theme">
                   READ MORE
                   <FontAwesomeIcon
                     icon={faArrowRight}

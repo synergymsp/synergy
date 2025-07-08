@@ -27,7 +27,7 @@ const FooterLinks: React.FC<FooterLinksProps> = ({ title, links }) => (
         <li key={index} className="text-center md:text-start">
           <Link
             href={link.href}
-            className="hover:text-theme mb-3 inline-block text-base text-[#8A99B4]"
+            className="mb-3 inline-block text-base text-[#8A99B4] hover:text-theme"
           >
             {link.label}
           </Link>
@@ -43,7 +43,7 @@ const SocialIcons: React.FC<SocialIconsProps> = ({ icons }) => (
       <Link
         key={index}
         href="https://www.linkedin.com/company/synergy-msp-new-jersey-usa/"
-        className="hover:bg-theme flex h-[45px] w-[45px] items-center justify-center rounded-md bg-[#15284C] transition-all duration-200"
+        className="flex h-[45px] w-[45px] items-center justify-center rounded-md bg-[#15284C] transition-all duration-200 hover:bg-theme"
       >
         <FontAwesomeIcon icon={icon} className="text-white" />
       </Link>
@@ -90,7 +90,7 @@ const Footer: React.FC = () => {
   ];
 
   return (
-    <footer className="bg-footer-sec bg-[#07193d] bg-contain bg-bottom bg-no-repeat">
+    <footer className="bg-[#07193d] bg-footer-sec bg-contain bg-bottom bg-no-repeat">
       {!isContactPage && (
         <div className="border-b border-[#152B54]">
           <Container className="grid grid-cols-1 gap-y-10 py-[50px] md:grid-cols-3 md:gap-6">
@@ -115,7 +115,7 @@ const Footer: React.FC = () => {
                     </h3>
                     <Link
                       href={`tel:${location.phone}`}
-                      className="hover:text-theme block text-sm text-[#8A99B4] transition-all duration-300"
+                      className="block text-sm text-[#8A99B4] transition-all duration-300 hover:text-theme"
                     >
                       {location.phone}
                     </Link>
@@ -126,7 +126,7 @@ const Footer: React.FC = () => {
                     </h3>
                     <Link
                       href={`mailto:${location.email}`}
-                      className="hover:text-theme block text-sm text-[#8A99B4] transition-all duration-300"
+                      className="block text-sm text-[#8A99B4] transition-all duration-300 hover:text-theme"
                     >
                       {location.email}
                     </Link>
@@ -137,7 +137,7 @@ const Footer: React.FC = () => {
                     </h3>
                     <Link
                       href={location.mapLink}
-                      className="hover:text-theme block text-sm text-[#8A99B4] transition-all duration-300"
+                      className="block text-sm text-[#8A99B4] transition-all duration-300 hover:text-theme"
                     >
                       {location.address}
                     </Link>

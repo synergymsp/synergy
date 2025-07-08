@@ -43,7 +43,7 @@ export default function Contact() {
   return (
     <>
       <div className='contact-page'>
-        <div className="bg-services-details-img relative bg-cover bg-center pb-[70px] pt-[80px] md:pb-[90px] md:pt-[100px] lg:pb-[135px] lg:pt-[140px]">
+        <div className="relative bg-services-details-img bg-cover bg-center pb-[70px] pt-[80px] md:pb-[90px] md:pt-[100px] lg:pb-[135px] lg:pt-[140px]">
           <Container className="flex items-center justify-between">
             <h1 className="font-exo text-[20px] font-bold uppercase leading-snug text-white lg:text-[40px] xl:text-[44px] 2xl:text-[48px]">
             Contact Us
@@ -85,21 +85,21 @@ export default function Contact() {
         </div>
         <Container>
           <div className="flex flex-col space-y-10 py-[50px] md:py-[80px] lg:flex-row lg:space-x-10 lg:space-y-0 lg:py-[120px]">
-            <div className="bg-smoke max-h-[100%] flex-1 p-6 md:p-10">
-              <h2 className="font-exo text-title text-[22px] font-bold uppercase leading-snug sm:text-[26px]">
+            <div className="max-h-[100%] flex-1 bg-smoke p-6 md:p-10">
+              <h2 className="font-exo text-[22px] font-bold uppercase leading-snug text-title sm:text-[26px]">
               Complete the contact form
               </h2>
-              <p className="text-body mb-10 text-sm sm:text-base">
+              <p className="mb-10 text-sm text-body sm:text-base">
               For technical support please submit a ticket
               </p>
               <ContactForm />
             </div>
 
-            <div className="bg-smoke max-h-[100%] w-[100%] p-6 md:p-10 lg:w-[50%]">
-              <h2 className="font-exo text-title text-[22px] font-bold uppercase leading-snug sm:text-[26px]">
+            <div className="max-h-[100%] w-[100%] bg-smoke p-6 md:p-10 lg:w-[50%]">
+              <h2 className="font-exo text-[22px] font-bold uppercase leading-snug text-title sm:text-[26px]">
               Office Address
               </h2>
-              <p className="text-body mb-10 text-sm sm:text-base">
+              <p className="mb-10 text-sm text-body sm:text-base">
               Get in touch with us to see how our company can help you grow your
               business online.
               </p>
@@ -128,14 +128,14 @@ export default function Contact() {
                     </div>
                     <div className="mt-4 w-full flex-1 p-2 sm:ml-4 sm:mt-0 sm:p-0">
                       <div className="mb-2">
-                        <h3 className="font-exo text-title text-lg font-bold uppercase">
+                        <h3 className="font-exo text-lg font-bold uppercase text-title">
                           {location.title}
                         </h3>
                       </div>
                       <div className="mb-2">
                         <Link
                           href={location.mapLink}
-                          className="hover:text-theme block text-sm text-[#8A99B4] transition-all duration-300"
+                          className="block text-sm text-[#8A99B4] transition-all duration-300 hover:text-theme"
                         >
                           {location.address}
                         </Link>
@@ -143,7 +143,7 @@ export default function Contact() {
                       <div className="mb-1">
                         <Link
                           href={`tel:${location.phone}`}
-                          className="hover:text-theme block text-base text-[#8A99B4] transition-all duration-300"
+                          className="block text-base text-[#8A99B4] transition-all duration-300 hover:text-theme"
                         >
                         Tel. {location.phone}
                         </Link>
@@ -151,7 +151,7 @@ export default function Contact() {
                       <div>
                         <Link
                           href={`mailto:${location.email}`}
-                          className="text-theme hover:text-theme block text-base transition-all duration-300"
+                          className="block text-base text-theme transition-all duration-300 hover:text-theme"
                         >
                           {location.email}
                         </Link>

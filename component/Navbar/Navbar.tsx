@@ -80,8 +80,8 @@ const Navbar: React.FC = () => {
               <Link
                 key={link.id}
                 href={link.href}
-                className={`hover:text-theme flex items-center py-4 text-base font-medium ${
-                  isActive(link.href) ? 'text-theme font-bold' : 'text-title'
+                className={`flex items-center py-4 text-base font-medium hover:text-theme ${
+                  isActive(link.href) ? 'font-bold text-theme' : 'text-title'
                 }`}
               >
                 {link.label}
@@ -94,13 +94,13 @@ const Navbar: React.FC = () => {
               onMouseLeave={handleMouseLeave}
               className="group relative inline-block text-left"
             >
-              <button className="hover:text-theme flex items-center py-[16.5px] text-base font-medium">
+              <button className="flex items-center py-[16.5px] text-base font-medium hover:text-theme">
                 Services
                 <FontAwesomeIcon icon={faChevronDown} className="ml-1 h-3 w-3" />
               </button>
               {isDropdownOpen && (
                 <div
-                  className={`dropdown-items shadow-dropdown-shadow absolute z-50 mt-2 w-max translate-y-12 transform border-b-[3px] border-[#0E5AF2] bg-white px-5 py-[18px] transition-all duration-200 group-hover:block ${
+                  className={`dropdown-items absolute z-50 mt-2 w-max translate-y-12 transform border-b-[3px] border-[#0E5AF2] bg-white px-5 py-[18px] shadow-dropdown-shadow transition-all duration-200 group-hover:block ${
                     isDropdownFade ? 'transform-up' : 'transform-down'
                   }`}
                 >
@@ -109,8 +109,8 @@ const Navbar: React.FC = () => {
                       key={service.id}
                       href={service.href}
                       onClick={handleDropdownLinkClick}
-                      className={`hover:text-theme flex items-center gap-2 px-[9px] py-[3px] text-base font-medium leading-[30px] transition-all duration-200 ease-in-out ${
-                        isActive(service.href) ? 'text-theme font-bold' : 'text-title'
+                      className={`flex items-center gap-2 px-[9px] py-[3px] text-base font-medium leading-[30px] transition-all duration-200 ease-in-out hover:text-theme ${
+                        isActive(service.href) ? 'font-bold text-theme' : 'text-title'
                       }`}
                     >
                       <span className="item-style">
@@ -127,7 +127,7 @@ const Navbar: React.FC = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(true)}
-            className="text-theme my-[10px] flex h-[48px] w-[48px] items-center justify-center rounded-[5px] bg-[#f2f6ff] lg:hidden"
+            className="my-[10px] flex h-[48px] w-[48px] items-center justify-center rounded-[5px] bg-[#f2f6ff] text-theme lg:hidden"
           >
             <FontAwesomeIcon icon={faBars} className="h-6 w-6" aria-hidden="true" />
           </button>
@@ -143,7 +143,7 @@ const Navbar: React.FC = () => {
           <div className="relative bg-[#e8f8f9] px-6 py-10">
             <button
               onClick={() => setMobileMenuOpen(false)}
-              className="text-theme shadow-shadow1 absolute right-3 top-3 h-10 w-10 rounded-full bg-[#eff1f5]"
+              className="absolute right-3 top-3 h-10 w-10 rounded-full bg-[#eff1f5] text-theme shadow-shadow1"
             >
               <FontAwesomeIcon icon={faTimes} className="h-6 w-6" aria-hidden="true" />
             </button>
@@ -160,8 +160,8 @@ const Navbar: React.FC = () => {
                 key={link.id}
                 href={link.href}
                 onClick={handleMobileMenuLinkClick}
-                className={`hover:text-theme flex items-center gap-2 border-b border-[#fdedf1] py-3 text-base font-normal ${
-                  isActive(link.href) ? 'text-theme font-bold' : 'text-title'
+                className={`flex items-center gap-2 border-b border-[#fdedf1] py-3 text-base font-normal hover:text-theme ${
+                  isActive(link.href) ? 'font-bold text-theme' : 'text-title'
                 }`}
               >
                 <FontAwesomeIcon icon={faChevronRight} className="h-3 w-3 font-normal" />
@@ -170,16 +170,16 @@ const Navbar: React.FC = () => {
             ))}
 
             {/* Services Collapsible Menu in Mobile */}
-            <div className="hover:text-theme flex items-center justify-between gap-2 border-b border-[#fdedf1] py-3 text-base font-normal">
+            <div className="flex items-center justify-between gap-2 border-b border-[#fdedf1] py-3 text-base font-normal hover:text-theme">
               <div className="flex items-center gap-2">
                 <FontAwesomeIcon icon={faChevronRight} className="h-3 w-3 font-normal" />
                 <span>Services</span>
               </div>
               <button onClick={() => setServicesMenuOpen(!servicesMenuOpen)}>
-                <span className="shadow-shadow1 flex h-[25px] w-[25px] items-center justify-center rounded-full bg-[#eff1f5]">
+                <span className="flex h-[25px] w-[25px] items-center justify-center rounded-full bg-[#eff1f5] shadow-shadow1">
                   <FontAwesomeIcon
                     icon={servicesMenuOpen ? faMinus : faPlus}
-                    className="text-title text-[12px] font-normal"
+                    className="text-[12px] font-normal text-title"
                   />
                 </span>
               </button>
@@ -191,8 +191,8 @@ const Navbar: React.FC = () => {
                     key={service.id}
                     href={service.href}
                     onClick={handleMobileMenuLinkClick}
-                    className={`hover:text-theme flex items-center gap-2 border-b border-[#fdedf1] py-3 pl-3 text-base font-normal ${
-                      isActive(service.href) ? 'text-theme font-bold' : 'text-title'
+                    className={`flex items-center gap-2 border-b border-[#fdedf1] py-3 pl-3 text-base font-normal hover:text-theme ${
+                      isActive(service.href) ? 'font-bold text-theme' : 'text-title'
                     }`}
                   >
                     <FontAwesomeIcon icon={faChevronRight} className="h-3 w-3 font-normal" />

@@ -111,7 +111,7 @@ export const HeroSection: React.FC = () => {
                       animate={{ x: 0, opacity: 1 }}
                       exit={{ x: -100, opacity: 0 }}
                       transition={{ duration: 0.6 }}
-                      className="font-exo sm2:text-[26px] text-[24px] font-bold uppercase leading-tight text-white sm:text-[34px] lg:text-[44px] xl:text-[50px]"
+                      className="font-exo text-[24px] font-bold uppercase leading-tight text-white sm2:text-[26px] sm:text-[34px] lg:text-[44px] xl:text-[50px]"
                     >
                       {slide.title1}
                     </motion.h1>
@@ -132,7 +132,7 @@ export const HeroSection: React.FC = () => {
                     animate={{ x: 0, opacity: 1 }}
                     exit={{ x: -100, opacity: 0 }}
                     transition={{ duration: 0.6, delay: 0.3 }}
-                    className="font-exo sm2:text-[26px] mb-4 text-center text-[24px] font-bold uppercase leading-tight text-white sm:text-[34px] md:mb-8 md:text-start lg:text-[44px] xl:text-[50px]"
+                    className="font-exo mb-4 text-center text-[24px] font-bold uppercase leading-tight text-white sm2:text-[26px] sm:text-[34px] md:mb-8 md:text-start lg:text-[44px] xl:text-[50px]"
                   >
                     {slide.title2}
                   </motion.h2>
