@@ -6,7 +6,7 @@ import ServicesSection from '@/component/home/services/Services';
 import TeamsSection from '@/component/home/teams/Teams';
 import WorkSection from '@/component/home/work/Work';
 
-export default function Home() {
+export default function HomePage() {
   return (
     <>
       <HeroSection />

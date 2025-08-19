@@ -42,18 +42,24 @@ const teamMembers: TeamMember[] = [
     image: '/images/teams/sameer.webp',
   },
   {
+    name: 'Jawad',
+    role: 'Senior System Administrator',
+    image: '/images/teams/jawad.webp',
+  },
+  {
+    name: 'Hamza Butt',
+    role: 'Senior Database Developer',
+    image: '/images/teams/hamza.webp',
+  },
+  {
     name: 'Yousaf Ali',
     role: 'Sr. Network Administrator',
     image: '/images/teams/Yousaf-Ali.webp',
   },
-  {
-    name: 'Hamza Butt',
-    role: 'Database Developer',
-    image: '/images/teams/hamza.webp',
-  },
+ 
   {
     name: 'Abdullah Butt',
-    role: 'Database Developer',
+    role: 'Senior Database Developer',
     image: '/images/teams/Abdullah-Butt.webp',
   },
   {
@@ -107,13 +113,13 @@ const TeamsSection: React.FC = () => {
           }`}
         >
           <Button
-            className="size-16 rounded-full bg-gray-100 text-blue-600 hover:bg-gray-200"
+            className="size-16 rounded-full bg-gray-100 text-blue-600 hover:bg-gray-200 hover:text-blue-600"
             onClick={() => swiperInstance?.slidePrev()}
           >
             <FontAwesomeIcon icon={faArrowLeft} className="h-6 w-6" />
           </Button>
           <Button
-            className="size-16 rounded-full bg-gray-100 text-blue-600 hover:bg-gray-200"
+            className="size-16 rounded-full bg-gray-100 text-blue-600 hover:bg-gray-200 hover:text-blue-600"
             onClick={() => swiperInstance?.slideNext()}
           >
             <FontAwesomeIcon icon={faArrowRight} className="h-6 w-6" />

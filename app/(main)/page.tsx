@@ -1,13 +1,10 @@
-import dynamic from 'next/dynamic';
 import { Suspense } from 'react';
 
 import Loading from '@/app/(main)/loading';
 
-const HomePage = dynamic(() => import('@/app/(main)/home/home'), {
-  suspense: true,
-});
+import HomePage from './home/home';
 
-export default function Page() {
+export default function MainPage() {
   return (
     <Suspense fallback={<Loading />}>
       <HomePage />
