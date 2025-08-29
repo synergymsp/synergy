@@ -19,18 +19,32 @@ import { Container } from '@/component/common/Container';
 
 const navigationLinks = [
   { id: 1, label: 'Home', href: '/' },
-  { id: 2, label: 'Why Choose Us', href: '/#about-section' }, 
+  { id: 2, label: 'Why Choose Us', href: '/#about-section' },
   { id: 3, label: 'Contact Us', href: '/contact' },
 ];
 
-const servicesLinks = [
-  { id: 1, label: 'Oracle Development and Support', href: '/services/1' },
-  { id: 2, label: 'IT Infrastructure Design and Engineering', href: '/services/2' },
-  { id: 3, label: 'On-prem and Cloud Base Solutions', href: '/services/3' },
-  { id: 4, label: 'Help Desk Service', href: '/services/4' },
-  { id: 5, label: 'Cyber Security', href: '/services/5' },
-  { id: 6, label: 'Voice Over IP', href: '/services/6' },
+// Services data
+const services = [
+  { id: 1, title: 'Oracle Development and Support' },
+  { id: 2, title: 'IT Infrastructure Design and Engineering' },
+  { id: 3, title: 'On-prem and Cloud Base Solutions' },
+  { id: 4, title: 'Help Desk Service' },
+  { id: 5, title: 'Cyber Security' },
+  { id: 6, title: 'Voice Over IP' },
 ];
+
+// helper to create slug from title
+const slugify = (text: string) =>
+  text
+    .toLowerCase()
+    .replace(/\s+/g, '-') // replace spaces with -
+    .replace(/[^a-z0-9-]/g, ''); // remove special chars
+
+// build href with id + slug
+const servicesLinks = services.map((service) => ({
+  ...service,
+  href: `/services/${service.id}-${slugify(service.title)}`,
+}));
 
 const Navbar: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -61,13 +75,13 @@ const Navbar: React.FC = () => {
   };
 
   const handleDropdownLinkClick = () => {
-    setIsDropdownOpen(false); 
-    setIsDropdownFade(false); 
+    setIsDropdownOpen(false);
+    setIsDropdownFade(false);
   };
 
   const handleMobileMenuLinkClick = () => {
-    setMobileMenuOpen(false); 
-    setServicesMenuOpen(false); 
+    setMobileMenuOpen(false);
+    setServicesMenuOpen(false);
   };
 
   return (
@@ -96,7 +110,10 @@ const Navbar: React.FC = () => {
             >
               <button className="flex items-center py-[16.5px] text-base font-medium hover:text-theme">
                 Services
-                <FontAwesomeIcon icon={faChevronDown} className="ml-1 h-3 w-3" />
+                <FontAwesomeIcon
+                  icon={faChevronDown}
+                  className="ml-1 h-3 w-3"
+                />
               </button>
               {isDropdownOpen && (
                 <div
@@ -110,13 +127,15 @@ const Navbar: React.FC = () => {
                       href={service.href}
                       onClick={handleDropdownLinkClick}
                       className={`flex items-center gap-2 px-[9px] py-[3px] text-base font-medium leading-[30px] transition-all duration-200 ease-in-out hover:text-theme ${
-                        isActive(service.href) ? 'font-bold text-theme' : 'text-title'
+                        isActive(service.href)
+                          ? 'font-bold text-theme'
+                          : 'text-title'
                       }`}
                     >
                       <span className="item-style">
                         <span className="dot"></span>
                       </span>
-                      {service.label}
+                      {service.title}
                     </Link>
                   ))}
                 </div>
@@ -129,23 +148,37 @@ const Navbar: React.FC = () => {
             onClick={() => setMobileMenuOpen(true)}
             className="my-[10px] flex h-[48px] w-[48px] items-center justify-center rounded-[5px] bg-[#f2f6ff] text-theme lg:hidden"
           >
-            <FontAwesomeIcon icon={faBars} className="h-6 w-6" aria-hidden="true" />
+            <FontAwesomeIcon
+              icon={faBars}
+              className="h-6 w-6"
+              aria-hidden="true"
+            />
           </button>
         </nav>
       </Container>
 
       {/* Mobile Menu Overlay */}
-      <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden">
+      <Dialog
+        open={mobileMenuOpen}
+        onClose={setMobileMenuOpen}
+        className="lg:hidden"
+      >
         <div className="fixed inset-0 z-50 bg-black bg-opacity-50" />
         <DialogPanel
-          className={`${mobileMenuOpen ? 'mobileMenuOpen' : ''} fixed inset-y-0 left-0 z-50 w-full max-w-[378px] overflow-y-auto bg-white`}
+          className={`${
+            mobileMenuOpen ? 'mobileMenuOpen' : ''
+          } fixed inset-y-0 left-0 z-50 w-full max-w-[378px] overflow-y-auto bg-white`}
         >
           <div className="relative bg-[#e8f8f9] px-6 py-10">
             <button
               onClick={() => setMobileMenuOpen(false)}
               className="absolute right-3 top-3 h-10 w-10 rounded-full bg-[#eff1f5] text-theme shadow-shadow1"
             >
-              <FontAwesomeIcon icon={faTimes} className="h-6 w-6" aria-hidden="true" />
+              <FontAwesomeIcon
+                icon={faTimes}
+                className="h-6 w-6"
+                aria-hidden="true"
+              />
             </button>
             <div className="flex justify-center">
               <Link href={'/'}>
@@ -164,7 +197,10 @@ const Navbar: React.FC = () => {
                   isActive(link.href) ? 'font-bold text-theme' : 'text-title'
                 }`}
               >
-                <FontAwesomeIcon icon={faChevronRight} className="h-3 w-3 font-normal" />
+                <FontAwesomeIcon
+                  icon={faChevronRight}
+                  className="h-3 w-3 font-normal"
+                />
                 {link.label}
               </Link>
             ))}
@@ -172,7 +208,10 @@ const Navbar: React.FC = () => {
             {/* Services Collapsible Menu in Mobile */}
             <div className="flex items-center justify-between gap-2 border-b border-[#fdedf1] py-3 text-base font-normal hover:text-theme">
               <div className="flex items-center gap-2">
-                <FontAwesomeIcon icon={faChevronRight} className="h-3 w-3 font-normal" />
+                <FontAwesomeIcon
+                  icon={faChevronRight}
+                  className="h-3 w-3 font-normal"
+                />
                 <span>Services</span>
               </div>
               <button onClick={() => setServicesMenuOpen(!servicesMenuOpen)}>
@@ -192,11 +231,16 @@ const Navbar: React.FC = () => {
                     href={service.href}
                     onClick={handleMobileMenuLinkClick}
                     className={`flex items-center gap-2 border-b border-[#fdedf1] py-3 pl-3 text-base font-normal hover:text-theme ${
-                      isActive(service.href) ? 'font-bold text-theme' : 'text-title'
+                      isActive(service.href)
+                        ? 'font-bold text-theme'
+                        : 'text-title'
                     }`}
                   >
-                    <FontAwesomeIcon icon={faChevronRight} className="h-3 w-3 font-normal" />
-                    {service.label}
+                    <FontAwesomeIcon
+                      icon={faChevronRight}
+                      className="h-3 w-3 font-normal"
+                    />
+                    {service.title}
                   </Link>
                 ))}
               </div>

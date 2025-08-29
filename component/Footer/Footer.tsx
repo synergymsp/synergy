@@ -89,6 +89,19 @@ const Footer: React.FC = () => {
     },
   ];
 
+  const services = [
+    { id: 1, title: 'Oracle Development and Support' },
+    { id: 2, title: 'IT Infrastructure Design and Engineering' },
+    { id: 3, title: 'On-prem and Cloud Base Solutions' },
+    { id: 4, title: 'Help Desk Service' },
+    { id: 5, title: 'Cyber Security' },
+    { id: 6, title: 'Voice Over IP' },
+  ];
+
+  // helper to create slug from title
+  const slugify = (text: string) =>
+    text.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
+
   return (
     <footer className="bg-[#07193d] bg-footer-sec bg-contain bg-bottom bg-no-repeat">
       {!isContactPage && (
@@ -167,26 +180,11 @@ const Footer: React.FC = () => {
 
           <FooterLinks
             title="Services"
-            links={[
-              {
-                id: 1,
-                label: 'Oracle Development and Support',
-                href: '/services/1',
-              },
-              {
-                id: 2,
-                label: 'IT Infrastructure Design and Engineering',
-                href: '/services/2',
-              },
-              {
-                id: 3,
-                label: 'On-prem and Cloud Base Solutions',
-                href: '/services/3',
-              },
-              { id: 4, label: 'Help Desk Service', href: '/services/4' },
-              { id: 5, label: 'Cyber Security', href: '/services/5' },
-              { id: 6, label: 'Voice Over IP', href: '/services/6' },
-            ]}
+            links={services.map(service => ({
+              id: service.id,
+              label: service.title,
+              href: `/services/${service.id}-${slugify(service.title)}`,
+            }))}
           />
 
           <FooterLinks

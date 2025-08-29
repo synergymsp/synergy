@@ -64,8 +64,8 @@ const ServicesSection: React.FC = () => {
       </div>
 
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {services?.map((service, index) => (
-          <Link key={index} href={`/services/${service.id}`}>
+        {services?.map((service) => (
+          <Link key={service.id} href={`/services/${service.id}-${service.title.toLowerCase().replace(/\s+/g, '-')}`}>
             <div className="duration-400 group relative h-full cursor-pointer overflow-hidden rounded-md bg-white px-5 py-8 shadow-shadow3 transition-all sm:px-10 sm:py-12">
               <div className="absolute inset-0 h-full w-full scale-125 bg-services-bg bg-cover bg-center opacity-0 transition-all duration-700 ease-in-out group-hover:scale-100 group-hover:opacity-100"></div>
 
