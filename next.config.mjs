@@ -51,16 +51,6 @@ const nextConfig = {
     ];
   },
 
-  async redirects() {
-    return [
-      {
-        source: '/linkedin',
-        destination: 'https://www.linkedin.com/company/synergy-msp-new-jersey-usa/', 
-        permanent: true,
-      },
-    ];
-  },
-
   // Add security-related configurations
   poweredByHeader: false,
 
