@@ -23,7 +23,8 @@ const nextConfig = {
           },
           {
             key: 'Permissions-Policy',
-            value: 'camera=(), microphone=(), geolocation=(), browsing-topics=()',
+            value:
+              'camera=(), microphone=(), geolocation=(), browsing-topics=()',
           },
         ],
       },
@@ -32,7 +33,10 @@ const nextConfig = {
         headers: [
           {
             key: 'Access-Control-Allow-Origin',
-            value: process.env.NODE_ENV === 'production' ? 'https://synergymsp.net/' : '*',
+            value:
+              process.env.NODE_ENV === 'production'
+                ? 'https://synergymsp.net/'
+                : '*',
           },
           {
             key: 'Access-Control-Allow-Methods',
@@ -46,21 +50,31 @@ const nextConfig = {
       },
     ];
   },
-  
+
+  async redirects() {
+    return [
+      {
+        source: '/linkedin',
+        destination: 'https://www.linkedin.com/company/synergy-msp-new-jersey-usa/', 
+        permanent: true,
+      },
+    ];
+  },
+
   // Add security-related configurations
   poweredByHeader: false,
-  
+
   // Optimize images and reduce suspicious patterns
   images: {
     domains: ['jsd-widget.atlassian.com'],
     dangerouslyAllowSVG: false,
     unoptimized: true,
   },
-  
+
   eslint: {
     ignoreDuringBuilds: true,
   },
-  
+
   typescript: {
     ignoreBuildErrors: true,
   },
