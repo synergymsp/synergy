@@ -1,16 +1,16 @@
 'use client';
 
-import { faLinkedin, faTwitter } from '@fortawesome/free-brands-svg-icons';
+// import { faLinkedin, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import {
   faArrowLeft,
   faArrowRight,
-  faEnvelope,
+  // faEnvelope,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { motion } from 'framer-motion';
+// import { motion } from 'framer-motion';
 import Image from 'next/image';
 import type React from 'react';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import type { Swiper as SwiperType } from 'swiper';
 import { Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -56,7 +56,7 @@ const teamMembers: TeamMember[] = [
     role: 'Senior Network Engineer',
     image: '/images/teams/Yousaf-Ali.webp',
   },
- 
+
   {
     name: 'Abdullah Butt',
     role: 'Database Developer',
@@ -74,23 +74,23 @@ const teamMembers: TeamMember[] = [
   },
 ];
 
-const socialIcons = [
-  { icon: faEnvelope, href: '#' },
-  { icon: faTwitter, href: '#' },
-  { icon: faLinkedin, href: '#' },
-];
+// const socialIcons = [
+//   { icon: faEnvelope, href: '#' },
+//   { icon: faTwitter, href: '#' },
+//   { icon: faLinkedin, href: '#' },
+// ];
 
-const iconVariants = {
-  hidden: { y: -20, opacity: 0 },
-  visible: (i: number) => ({
-    y: 0,
-    opacity: 1,
-    transition: {
-      delay: i * 0.1,
-      duration: 0.3,
-    },
-  }),
-};
+// const iconVariants = {
+//   hidden: { y: -20, opacity: 0 },
+//   visible: (i: number) => ({
+//     y: 0,
+//     opacity: 1,
+//     transition: {
+//       delay: i * 0.1,
+//       duration: 0.3,
+//     },
+//   }),
+// };
 
 const TeamsSection: React.FC = () => {
   const [swiperInstance, setSwiperInstance] = useState<SwiperType | null>(null);
@@ -161,25 +161,25 @@ const TeamsSection: React.FC = () => {
 };
 
 const HoverAnimationCard = ({ member }: { member: TeamMember }) => {
-  const [isHovered, setIsHovered] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
+  // const [isHovered, setIsHovered] = useState(false);
+  // const [isMobile, setIsMobile] = useState(false);
 
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768); // md breakpoint
-    };
+  // useEffect(() => {
+  //   const checkMobile = () => {
+  //     setIsMobile(window.innerWidth < 768); // md breakpoint
+  //   };
 
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
+  //   checkMobile();
+  //   window.addEventListener('resize', checkMobile);
 
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
+  //   return () => window.removeEventListener('resize', checkMobile);
+  // }, []);
 
   return (
     <div
       className="group relative mx-auto max-w-[340px] overflow-hidden bg-gray-100 shadow-lg transition-all duration-300 hover:bg-gray-50 md:max-w-full"
-      onMouseEnter={() => !isMobile && setIsHovered(true)}
-      onMouseLeave={() => !isMobile && setIsHovered(false)}
+      // onMouseEnter={() => !isMobile && setIsHovered(true)}
+      // onMouseLeave={() => !isMobile && setIsHovered(false)}
     >
       <div className="relative overflow-hidden">
         <div className="h-[350px] w-full">
@@ -193,7 +193,7 @@ const HoverAnimationCard = ({ member }: { member: TeamMember }) => {
         </div>
 
         {/* Mobile: Always visible social icons */}
-        <div className="absolute bottom-0 left-[30px] right-[30px] flex h-fit items-center justify-center gap-3 bg-blue-600 px-8 py-3 md:hidden">
+        {/* <div className="absolute bottom-0 left-[30px] right-[30px] flex h-fit items-center justify-center gap-3 bg-blue-600 px-8 py-3 md:hidden">
           {socialIcons.map((social, i) => (
             <a
               key={i}
@@ -203,10 +203,10 @@ const HoverAnimationCard = ({ member }: { member: TeamMember }) => {
               <FontAwesomeIcon icon={social.icon} className="h-4 w-4" />
             </a>
           ))}
-        </div>
+        </div> */}
 
         {/* Desktop: Hover animated social icons */}
-        <div
+        {/* <div
           className={`absolute bottom-0 left-[30px] right-[30px] hidden h-fit items-center justify-center gap-3 bg-blue-600 px-8 py-3 transition-opacity duration-300 md:flex ${
             isHovered ? 'opacity-100' : 'opacity-0'
           }`}
@@ -224,7 +224,7 @@ const HoverAnimationCard = ({ member }: { member: TeamMember }) => {
               <FontAwesomeIcon icon={social.icon} className="h-4 w-4" />
             </motion.a>
           ))}
-        </div>
+        </div> */}
       </div>
 
       <div className="pb-5 pt-5 text-center">
