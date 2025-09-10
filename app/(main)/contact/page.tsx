@@ -41,7 +41,7 @@ const officeLocations = [
     title: 'UAE',
     address:
       'Office # 3500-02, Al Saqr Business Tower, Sheikh Zayed Road, Dubai.',
-    phone: '+92 341 8440 592',
+    phone: '+1 732 334 3590',
     email: 'info@synergymsp.net',
     mapLink: 'https://maps.app.goo.gl/b89zytQ9VrwC18yi9',
     embeddedLink:
