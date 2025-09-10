@@ -36,6 +36,17 @@ const officeLocations = [
     embeddedLink:
       'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4068.547352798629!2d72.3384097!3d34.7368114!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38dc23005c8c82e7%3A0xf881e4dd1e7f5eca!2sSynergy%20MSP%20Pvt.%20Ltd.%20Swat!5e1!3m2!1sen!2s!4v1737743010662!5m2!1sen!2s',
   },
+  {
+    image: '/images/contact/office.webp',
+    title: 'UAE',
+    address:
+      'Office # 3500-02, Al Saqr Business Tower, Sheikh Zayed Road, Dubai.',
+    phone: '+92 341 8440 592',
+    email: 'info@synergymsp.net',
+    mapLink: 'https://maps.app.goo.gl/b89zytQ9VrwC18yi9',
+    embeddedLink:
+      'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3609.6841759270637!2d55.278054899999994!3d25.2138711!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f428c4b20d9c1%3A0xda2a93cfee3dee03!2sAl%20Saqr%20Business%20Tower!5e0!3m2!1sen!2s!4v1757521170191!5m2!1sen!2s',
+  },
 ];
 
 export default function Contact() {
