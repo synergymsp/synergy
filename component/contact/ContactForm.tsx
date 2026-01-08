@@ -110,7 +110,7 @@ const ContactForm: React.FC = () => {
       onSubmit={handleSubmit}
     >
       {({ errors, touched, isSubmitting }) => (
-        <Form className="space-y-5">
+        <Form className="space-y-6">
           <div>
             <Field
               name="question"
@@ -139,7 +139,7 @@ const ContactForm: React.FC = () => {
             name="message"
             as="textarea"
             placeholder="Your message"
-            rows={4}
+            rows={8}
             error={errors.message}
             touched={touched.message}
           />

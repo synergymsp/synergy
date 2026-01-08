@@ -27,7 +27,7 @@ const FooterLinks: React.FC<FooterLinksProps> = ({ title, links }) => (
         <li key={index} className="text-center md:text-start">
           <Link
             href={link.href}
-            className="mb-3 inline-block text-base text-[#8A99B4] hover:text-theme"
+            className="mb-3 inline-block text-base text-muted hover:text-theme"
           >
             {link.label}
           </Link>
@@ -43,7 +43,7 @@ const SocialIcons: React.FC<SocialIconsProps> = ({ icons }) => (
       <Link
         key={index}
         href="https://www.linkedin.com/company/synergy-msp-new-jersey-usa/"
-        className="flex h-[45px] w-[45px] items-center justify-center rounded-md bg-[#15284C] transition-all duration-200 hover:bg-theme"
+        className="flex h-[45px] w-[45px] items-center justify-center rounded-md bg-primaryDark transition-all duration-200 hover:bg-theme"
       >
         <FontAwesomeIcon icon={icon} className="text-white" />
       </Link>
@@ -59,8 +59,8 @@ const Footer: React.FC = () => {
     {
       image: '/images/contact/office.webp',
       title: 'United States',
-      address: '1317 Morris Ave Suite 2, Union, NJ 07083, USA',
-      phone: '+1 732 334 3590',
+      address: '1317 Morris Ave, Suite 2, Union, New Jersey, 07083',
+      phone: '+1-732-334-3590',
       email: 'info@synergymsp.net',
       mapLink: 'https://maps.app.goo.gl/5FuGVzeQPH66os1u6',
       embeddedLink:
@@ -69,8 +69,8 @@ const Footer: React.FC = () => {
     {
       image: '/images/contact/office.webp',
       title: 'Pakistan',
-      address: '71A, Tipu Block Garden Town, Lahore, Punjab 54000, Pakistan',
-      phone: '+92 42 3519 7160',
+      address: '71-A, Tipu Block, New Garden Town, Lahore, Punjab, 54600',
+      phone: '+92-42-3519-7160',
       email: 'info@synergymsp.net',
       mapLink: 'https://maps.app.goo.gl/5NGXHm81S8ou6b3H6',
       embeddedLink:
@@ -80,12 +80,23 @@ const Footer: React.FC = () => {
       image: '/images/contact/office.webp',
       title: 'Pakistan',
       address:
-        'P8PQ+P9F, Marghazar Road, Shahi Bagh Saidu Sharif, Swat, Khyber Pakhtunkhwa',
-      phone: '+92 341 8440 592',
+        'P8PQ+P9F, Marghazar Road, Shahi Bagh, Saidu Sharif, Swat, Khyber Pakhtunkhwa',
+      phone: '+92-341-8440-592',
       email: 'info@synergymsp.net',
       mapLink: 'https://maps.app.goo.gl/TqNnshtWrW8Efbrd9',
       embeddedLink:
         'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4068.547352798629!2d72.3384097!3d34.7368114!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38dc23005c8c82e7%3A0xf881e4dd1e7f5eca!2sSynergy%20MSP%20Pvt.%20Ltd.%20Swat!5e1!3m2!1sen!2s!4v1737743010662!5m2!1sen!2s',
+    },
+    {
+      image: '/images/contact/office.webp',
+      title: 'UAE',
+      address:
+        'Office # 3500-02, Al-Saqr Business Tower, Sheikh Zayed Road, Dubai',
+      phone: '+1-732-334-3590',
+      email: 'info@synergymsp.net',
+      mapLink: 'https://maps.app.goo.gl/eyUpQ1MLztShFoew9',
+      embeddedLink:
+        'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d4479.204456361364!2d55.273291!3d25.213871!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f428c4b20d9c1%3A0xda2a93cfee3dee03!2sAl%20Saqr%20Business%20Tower!5e1!3m2!1sen!2s!4v1767907409905!5m2!1sen!2s',
     },
   ];
 
@@ -100,19 +111,22 @@ const Footer: React.FC = () => {
 
   // helper to create slug from title
   const slugify = (text: string) =>
-    text.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
+    text
+      .toLowerCase()
+      .replace(/\s+/g, '-')
+      .replace(/[^a-z0-9-]/g, '');
 
   return (
-    <footer className="bg-[#07193d] bg-footer-sec bg-contain bg-bottom bg-no-repeat">
+    <footer className="bg-brandDeep bg-footer-sec bg-contain bg-bottom bg-no-repeat">
       {!isContactPage && (
-        <div className="border-b border-[#152B54]">
-          <Container className="grid grid-cols-1 gap-y-10 py-[50px] md:grid-cols-3 md:gap-6">
+        <div className="border-b border-surfaceDark">
+          <Container className="grid grid-cols-1 gap-3 gap-y-10 py-[50px] sm:grid-cols-2 md:gap-6 lg:grid-cols-4">
             {officeLocations.map((location, index) => (
               <div
                 key={index}
-                className="flex flex-col items-center text-center md:items-start md:text-start"
+                className="flex flex-col items-center text-center lg:items-start lg:text-start"
               >
-                <div className="flex h-[150px] w-[100%] max-w-[290px] items-center justify-center overflow-hidden rounded-md bg-[#152B54]">
+                <div className="flex h-[150px] w-[100%] max-w-[290px] items-center justify-center overflow-hidden rounded-md bg-surfaceDark">
                   <iframe
                     src={location.embeddedLink}
                     width="100%"
@@ -128,7 +142,7 @@ const Footer: React.FC = () => {
                     </h3>
                     <Link
                       href={`tel:${location.phone}`}
-                      className="block text-sm text-[#8A99B4] transition-all duration-300 hover:text-theme"
+                      className="block text-sm text-muted transition-all duration-300 hover:text-theme"
                     >
                       {location.phone}
                     </Link>
@@ -139,7 +153,7 @@ const Footer: React.FC = () => {
                     </h3>
                     <Link
                       href={`mailto:${location.email}`}
-                      className="block text-sm text-[#8A99B4] transition-all duration-300 hover:text-theme"
+                      className="block text-sm text-muted transition-all duration-300 hover:text-theme"
                     >
                       {location.email}
                     </Link>
@@ -150,7 +164,7 @@ const Footer: React.FC = () => {
                     </h3>
                     <Link
                       href={location.mapLink}
-                      className="block text-sm text-[#8A99B4] transition-all duration-300 hover:text-theme"
+                      className="block max-w-[250px] text-sm text-muted transition-all duration-300 hover:text-theme"
                     >
                       {location.address}
                     </Link>
@@ -163,12 +177,12 @@ const Footer: React.FC = () => {
       )}
 
       <div className="py-12">
-        <Container className="flex flex-wrap justify-center md:justify-between lg:flex-nowrap">
+        <Container className="flex flex-wrap justify-center gap-3 md:justify-between lg:flex-nowrap">
           <div className="mb-7 flex flex-col items-center text-center md:w-[50%] md:items-start md:text-start lg:mb-0 lg:w-fit">
             <h3 className="font-exo mb-5 text-[24px] font-bold text-white">
               About Us
             </h3>
-            <p className="mb-4 text-justify text-sm text-[#8A99B4] lg:max-w-[400px] lg:text-base">
+            <p className="mb-4 text-justify text-sm text-muted lg:max-w-[400px] lg:text-base">
               Synergy combines innovation and expertise to provide robust IT
               services that fuel business growth. We’re committed to
               understanding your unique challenges and delivering solutions that
@@ -180,7 +194,7 @@ const Footer: React.FC = () => {
 
           <FooterLinks
             title="Services"
-            links={services.map(service => ({
+            links={services.map((service) => ({
               id: service.id,
               label: service.title,
               href: `/services/${service.id}-${slugify(service.title)}`,
@@ -205,10 +219,11 @@ const Footer: React.FC = () => {
         </Container>
       </div>
 
-      <div className="bg-[#0B2048] py-7">
+      <div className="bg-navDark py-7">
         <Container>
-          <p className="text-center text-sm text-[#8A99B4]">
-    Copyright <FontAwesomeIcon icon={faCopyright} /> {new Date().getFullYear()}{' '}
+          <p className="text-center text-sm text-muted">
+            Copyright <FontAwesomeIcon icon={faCopyright} />{' '}
+            {new Date().getFullYear()}{' '}
             <span className="text-white">Synergy MSP</span>
           </p>
         </Container>

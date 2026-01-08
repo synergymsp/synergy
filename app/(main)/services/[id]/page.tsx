@@ -91,7 +91,7 @@ export default function ServiceDetails({ params }: { params: { id: string } }) {
                   <div className="mt-20 grid grid-cols-1 gap-x-6 gap-y-10 md:grid-cols-2 lg:grid-cols-3">
                     {section?.features?.map((feature, idx) => (
                       <div
-                        className="relative h-[100%] rounded-md bg-[#F8F8F9] px-6 pb-6 transition-all duration-300 ease-out hover:bg-white hover:shadow-shadow4"
+                        className="relative h-[100%] rounded-md bg-surfaceMuted px-6 pb-6 transition-all duration-300 ease-out hover:bg-white hover:shadow-shadow4"
                         key={idx}
                       >
                         <div className="w-fit -translate-y-[25px] rounded-md bg-white p-[10px]">

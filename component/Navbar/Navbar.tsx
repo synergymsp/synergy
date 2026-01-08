@@ -146,7 +146,7 @@ const Navbar: React.FC = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(true)}
-            className="my-[10px] flex h-[48px] w-[48px] items-center justify-center rounded-[5px] bg-[#f2f6ff] text-theme lg:hidden"
+            className="my-[10px] flex h-[48px] w-[48px] items-center justify-center rounded-[5px] bg-surfaceExtraLight text-theme lg:hidden"
           >
             <FontAwesomeIcon
               icon={faBars}
@@ -169,10 +169,10 @@ const Navbar: React.FC = () => {
             mobileMenuOpen ? 'mobileMenuOpen' : ''
           } fixed inset-y-0 left-0 z-50 w-full max-w-[378px] overflow-y-auto bg-white`}
         >
-          <div className="relative bg-[#e8f8f9] px-6 py-10">
+          <div className="relative bg-highlightSoft px-6 py-10">
             <button
               onClick={() => setMobileMenuOpen(false)}
-              className="absolute right-3 top-3 h-10 w-10 rounded-full bg-[#eff1f5] text-theme shadow-shadow1"
+              className="absolute right-3 top-3 h-10 w-10 rounded-full bg-smoke text-theme shadow-shadow1"
             >
               <FontAwesomeIcon
                 icon={faTimes}
@@ -193,7 +193,7 @@ const Navbar: React.FC = () => {
                 key={link.id}
                 href={link.href}
                 onClick={handleMobileMenuLinkClick}
-                className={`flex items-center gap-2 border-b border-[#fdedf1] py-3 text-base font-normal hover:text-theme ${
+                className={`flex items-center gap-2 border-b border-alertSoft py-3 text-base font-normal hover:text-theme ${
                   isActive(link.href) ? 'font-bold text-theme' : 'text-title'
                 }`}
               >
@@ -206,7 +206,7 @@ const Navbar: React.FC = () => {
             ))}
 
             {/* Services Collapsible Menu in Mobile */}
-            <div className="flex items-center justify-between gap-2 border-b border-[#fdedf1] py-3 text-base font-normal hover:text-theme">
+            <div className="flex items-center justify-between gap-2 border-b border-alertSoft py-3 text-base font-normal hover:text-theme">
               <div className="flex items-center gap-2">
                 <FontAwesomeIcon
                   icon={faChevronRight}
@@ -215,7 +215,7 @@ const Navbar: React.FC = () => {
                 <span>Services</span>
               </div>
               <button onClick={() => setServicesMenuOpen(!servicesMenuOpen)}>
-                <span className="flex h-[25px] w-[25px] items-center justify-center rounded-full bg-[#eff1f5] shadow-shadow1">
+                <span className="flex h-[25px] w-[25px] items-center justify-center rounded-full bg-smoke shadow-shadow1">
                   <FontAwesomeIcon
                     icon={servicesMenuOpen ? faMinus : faPlus}
                     className="text-[12px] font-normal text-title"
@@ -230,7 +230,7 @@ const Navbar: React.FC = () => {
                     key={service.id}
                     href={service.href}
                     onClick={handleMobileMenuLinkClick}
-                    className={`flex items-center gap-2 border-b border-[#fdedf1] py-3 pl-3 text-base font-normal hover:text-theme ${
+                    className={`flex items-center gap-2 border-b border-alertSoft py-3 pl-3 text-base font-normal hover:text-theme ${
                       isActive(service.href)
                         ? 'font-bold text-theme'
                         : 'text-title'

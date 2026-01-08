@@ -127,7 +127,7 @@ const FAQSection: React.FC = () => {
                 }}
                 className="overflow-hidden transition-[height] duration-500 ease-in-out"
               >
-                <div className="border-t border-[#EBEBEB] py-3 sm:py-5">
+                <div className="border-t border-stroke py-3 sm:py-5">
                   <p className="text-justify text-sm text-body md:text-base">{faq.answer}</p>
                 </div>
               </div>

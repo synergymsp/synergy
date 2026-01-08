@@ -8,8 +8,8 @@ const officeLocations = [
   {
     image: '/images/contact/office.webp',
     title: 'United States',
-    address: '1317 Morris Ave Suite 2, Union, NJ 07083, USA',
-    phone: '+1 732 334 3590',
+    address: '1317 Morris Ave, Suite 2, Union, New Jersey, 07083',
+    phone: '+1-732-334-3590',
     email: 'info@synergymsp.net',
     mapLink: 'https://maps.app.goo.gl/5FuGVzeQPH66os1u6',
     embeddedLink:
@@ -18,8 +18,8 @@ const officeLocations = [
   {
     image: '/images/contact/office.webp',
     title: 'Pakistan',
-    address: '71A, Tipu Block Garden Town, Lahore, Punjab 54000, Pakistan',
-    phone: '+92 42 3519 7160',
+    address: '71-A, Tipu Block, New Garden Town, Lahore, Punjab, 54600',
+    phone: '+92-42-3519-7160',
     email: 'info@synergymsp.net',
     mapLink: 'https://maps.app.goo.gl/5NGXHm81S8ou6b3H6',
     embeddedLink:
@@ -29,24 +29,34 @@ const officeLocations = [
     image: '/images/contact/office.webp',
     title: 'Pakistan',
     address:
-      'P8PQ+P9F, Marghazar Road, Shahi Bagh Saidu Sharif, Swat, Khyber Pakhtunkhwa',
-    phone: '+92 341 8440 592',
+      'P8PQ+P9F, Marghazar Road, Shahi Bagh, Saidu Sharif, Swat, Khyber Pakhtunkhwa',
+    phone: '+92-341-8440-592',
     email: 'info@synergymsp.net',
     mapLink: 'https://maps.app.goo.gl/TqNnshtWrW8Efbrd9',
     embeddedLink:
       'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4068.547352798629!2d72.3384097!3d34.7368114!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38dc23005c8c82e7%3A0xf881e4dd1e7f5eca!2sSynergy%20MSP%20Pvt.%20Ltd.%20Swat!5e1!3m2!1sen!2s!4v1737743010662!5m2!1sen!2s',
   },
+  {
+    image: '/images/contact/office.webp',
+    title: 'UAE',
+    address:
+      'Office # 3500-02, Al-Saqr Business Tower, Sheikh Zayed Road, Dubai',
+    phone: '+1-732-334-3590',
+    email: 'info@synergymsp.net',
+    mapLink: 'https://maps.app.goo.gl/eyUpQ1MLztShFoew9',
+    embeddedLink:
+      'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d4479.204456361364!2d55.273291!3d25.213871!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f428c4b20d9c1%3A0xda2a93cfee3dee03!2sAl%20Saqr%20Business%20Tower!5e1!3m2!1sen!2s!4v1767907409905!5m2!1sen!2s',
+  },
 ];
 
 export default function Contact() {
-
   return (
     <>
-      <div className='contact-page'>
+      <div className="contact-page">
         <div className="relative bg-services-details-img bg-cover bg-center pb-[70px] pt-[80px] md:pb-[90px] md:pt-[100px] lg:pb-[135px] lg:pt-[140px]">
           <Container className="flex items-center justify-between">
             <h1 className="font-exo text-[20px] font-bold uppercase leading-snug text-white lg:text-[40px] xl:text-[44px] 2xl:text-[48px]">
-            Contact Us
+              Contact Us
             </h1>
             <nav aria-label="Breadcrumb" className="flex">
               <ol role="list" className="flex items-center space-x-1">
@@ -75,7 +85,7 @@ export default function Contact() {
                       href={'#'}
                       className="ml-1 text-sm font-medium text-white transition-all duration-300 hover:text-white/70 sm:text-base"
                     >
-                    Contact Us
+                      Contact Us
                     </a>
                   </div>
                 </li>
@@ -85,39 +95,31 @@ export default function Contact() {
         </div>
         <Container>
           <div className="flex flex-col space-y-10 py-[50px] md:py-[80px] lg:flex-row lg:space-x-10 lg:space-y-0 lg:py-[120px]">
-            <div className="max-h-[100%] flex-1 bg-smoke p-6 md:p-10">
+            <div className="flex-1 bg-smoke p-4 md:p-8">
               <h2 className="font-exo text-[22px] font-bold uppercase leading-snug text-title sm:text-[26px]">
-              Complete the contact form
+                Complete the contact form
               </h2>
-              <p className="mb-10 text-sm text-body sm:text-base">
-              For technical support please submit a ticket
+              <p className="mb-10 text-sm text-body sm:text-base ">
+                For technical support please submit a ticket
               </p>
               <ContactForm />
             </div>
 
-            <div className="max-h-[100%] w-[100%] bg-smoke p-6 md:p-10 lg:w-[50%]">
+            <div className="w-[100%] bg-smoke p-4 md:p-8 lg:w-[50%]">
               <h2 className="font-exo text-[22px] font-bold uppercase leading-snug text-title sm:text-[26px]">
-              Office Address
+                Office Address
               </h2>
-              <p className="mb-10 text-sm text-body sm:text-base">
-              Get in touch with us to see how our company can help you grow your
-              business online.
+              <p className="mb-10 max-w-[470px] text-sm text-body sm:text-base">
+                Get in touch with us to see how our company can help you grow
+                your business online.
               </p>
-              <div className="space-y-10">
+              <div className="space-y-4">
                 {officeLocations.map((location, index) => (
                   <div
                     key={index}
                     className="flex flex-col items-center rounded-xl bg-white p-2 sm:flex-row"
                   >
-                    <div className="flex h-auto w-[100%] max-w-[100%] items-center justify-center overflow-hidden rounded-md bg-[#152B54] sm:h-[140px] sm:max-w-[200px] lg:max-w-[150px] 2xl:max-w-[200px]">
-                      {/* <Image
-                      src={location.image}
-                      alt={`${location.title} office image`}
-                      width={0}
-                      height={0}
-                      sizes="100vw"
-                      className="h-[100%] w-[100%] object-cover"
-                    /> */}
+                    <div className="flex h-auto w-[100%] max-w-[100%] items-center justify-center overflow-hidden rounded-md sm:h-[140px] sm:max-w-[200px] lg:max-w-[150px] 2xl:max-w-[200px]">
                       <iframe
                         src={location.embeddedLink}
                         width="100%"
@@ -135,7 +137,7 @@ export default function Contact() {
                       <div className="mb-2">
                         <Link
                           href={location.mapLink}
-                          className="block text-sm text-[#8A99B4] transition-all duration-300 hover:text-theme"
+                          className="block text-sm text-muted transition-all duration-300 hover:text-theme"
                         >
                           {location.address}
                         </Link>
@@ -143,9 +145,9 @@ export default function Contact() {
                       <div className="mb-1">
                         <Link
                           href={`tel:${location.phone}`}
-                          className="block text-base text-[#8A99B4] transition-all duration-300 hover:text-theme"
+                          className="block text-base text-muted transition-all duration-300 hover:text-theme"
                         >
-                        Tel. {location.phone}
+                          Tel. {location.phone}
                         </Link>
                       </div>
                       <div>
@@ -163,7 +165,7 @@ export default function Contact() {
             </div>
           </div>
         </Container>
-      </div></>
-   
+      </div>
+    </>
   );
 }
