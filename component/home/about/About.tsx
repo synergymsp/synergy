@@ -11,7 +11,7 @@ const FeatureItem = ({ number, text }: { number: string; text: string }) => (
         {number}
       </span>
     </div>
-    <h5 className="font-exo flex-1 text-sm font-semibold uppercase leading-snug text-title md:text-base">
+    <h5 className="flex-1 font-exo text-sm font-semibold uppercase leading-snug text-title md:text-base">
       {text}
     </h5>
   </div>
@@ -20,7 +20,7 @@ const FeatureItem = ({ number, text }: { number: string; text: string }) => (
 const AboutSection: React.FC = () => {
   return (
     <Container>
-      <span className="vertical-text font-exo absolute bottom-[100px] right-[95px] -z-10 hidden rotate-180 text-[80px] font-normal uppercase leading-none text-blue-700/10 xl:inline-block 2xl:text-[120px]">
+      <span className="vertical-text absolute bottom-[100px] right-[95px] -z-10 hidden rotate-180 font-exo text-[80px] font-normal uppercase leading-none text-blue-700/10 xl:inline-block 2xl:text-[120px]">
         Synergy
       </span>
 
@@ -61,10 +61,10 @@ const AboutSection: React.FC = () => {
         </div>
 
         <div className="flex flex-col justify-center lg:w-1/2 xl:w-7/12" data-wow-delay="0.3s">
-          <span className="font-exo mb-5 flex items-center text-base font-semibold uppercase text-theme">
+          <span className="mb-5 flex items-center font-exo text-base font-semibold uppercase text-theme">
             <FontAwesomeIcon icon={faCopy} className="mr-2" /> Get Best IT Solution {new Date().getFullYear()}
           </span>
-          <h2 className="font-exo mb-5 text-[24px] font-bold uppercase leading-snug text-title sm2:text-[26px] sm:text-[36px] lg:text-[40px] xl:text-[44px] 2xl:text-[48px]">
+          <h2 className="mb-5 font-exo text-[24px] font-bold uppercase leading-snug text-title sm2:text-[26px] sm:text-[36px] lg:text-[40px] xl:text-[44px] 2xl:text-[48px]">
             Reasons for Choosing Us
           </h2>
 

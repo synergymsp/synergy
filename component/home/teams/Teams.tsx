@@ -18,11 +18,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/effect-fade';
 import { Button } from '@/component/common/Button';
-
-// Mock Container component
-const Container = ({ children }: { children: React.ReactNode }) => (
-  <div className="container mx-auto px-4">{children}</div>
-);
+import { Container } from '@/component/common/Container';
 
 type TeamMember = {
   name: string;
@@ -98,11 +94,11 @@ const TeamsSection: React.FC = () => {
 
   return (
     <Container>
-      <div className="mx-auto mb-6 max-w-[600px] text-center md:mb-10">
-        <span className="mb-2 inline-block text-base font-semibold uppercase text-blue-600 md:mb-5">
+      <div className="mx-auto mb-2 max-w-[600px] text-center md:mb-6">
+        <span className="mb-2 inline-block font-exo text-base font-semibold uppercase text-theme md:mb-5">
           Great Team Members
         </span>
-        <h2 className="text-[24px] font-bold uppercase leading-snug text-gray-900 sm:text-[26px] md:text-[36px] lg:text-[40px] xl:text-[44px] 2xl:text-[48px]">
+        <h2 className="font-exo text-[24px] font-bold uppercase leading-snug text-gray-900 sm:text-[26px] md:text-[36px] lg:text-[40px] xl:text-[44px] 2xl:text-[48px]">
           We Have Expert Team
         </h2>
       </div>
@@ -150,7 +146,7 @@ const TeamsSection: React.FC = () => {
           className="team-carousel"
         >
           {teamMembers.map((member, index) => (
-            <SwiperSlide key={index} className="relative">
+            <SwiperSlide key={index} className="relative w-full py-5">
               <HoverAnimationCard member={member} />
             </SwiperSlide>
           ))}

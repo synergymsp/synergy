@@ -85,11 +85,11 @@ const FAQSection: React.FC = () => {
           </div>
         </div>
         <div className="flex flex-col justify-center lg:w-1/2 xl:w-7/12">
-          <span className="font-exo mb-5 flex items-center text-base font-semibold uppercase text-white">
+          <span className="mb-5 flex items-center font-exo text-base font-semibold uppercase text-white">
             <FontAwesomeIcon icon={faCopy} className="mr-2" /> Talk About
             Something
           </span>
-          <h2 className="font-exo mb-5 text-[24px] font-bold uppercase leading-snug text-white sm2:text-[26px] sm:text-[36px] lg:text-[40px]  xl:text-[44px] 2xl:text-[48px]">
+          <h2 className="mb-5 font-exo text-[24px] font-bold uppercase leading-snug text-white sm2:text-[26px] sm:text-[36px] lg:text-[40px]  xl:text-[44px] 2xl:text-[48px]">
             How can we help you?
           </h2>
           {faqs.map((faq, index) => (

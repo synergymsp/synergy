@@ -6,6 +6,10 @@ const config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        exo: ['var(--font-exo)', 'sans-serif'],
+        fira: ['var(--font-fira)', 'sans-serif'],
+      },
       backgroundImage: {
         'about-bg': "url('/bg/ab-bg.jpg')",
         'services-sec-bg': "url('/bg/sr-bg.png')",

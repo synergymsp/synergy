@@ -43,7 +43,7 @@ const WorkSection: React.FC = () => {
   return (
     <Container>
       <div className="mx-auto mb-16 max-w-[600px] text-center">
-        <span className="font-exo mb-2 inline-block text-base font-semibold uppercase text-theme md:mb-5">
+        <span className="mb-2 inline-block font-exo text-base font-semibold uppercase text-theme md:mb-5">
           Great Team Members
         </span>
         <h2 className="font-exo text-[24px] font-bold uppercase leading-snug text-title sm2:text-[26px] sm:text-[36px] lg:text-[40px]  xl:text-[44px] 2xl:text-[48px]">
@@ -81,11 +81,11 @@ const WorkSection: React.FC = () => {
                 style={{ width: '45%', height: 'auto' }}
               />
 
-              <span className="font-exo absolute right-0 top-0 flex h-[35px] w-[35px] items-center justify-center rounded-full border-[5px] border-white bg-theme text-xs font-bold text-white">
+              <span className="absolute right-0 top-0 flex h-[35px] w-[35px] items-center justify-center rounded-full border-[5px] border-white bg-theme font-exo text-xs font-bold text-white">
                 {item.number}
               </span>
             </div>
-            <h3 className="font-exo mb-2 text-lg font-bold  leading-tight text-title md:text-[22px]">
+            <h3 className="mb-2 font-exo text-lg font-bold  leading-tight text-title md:text-[22px]">
               {item.title}
             </h3>
             <p className="max-w-[340px] text-sm text-body md:text-base">

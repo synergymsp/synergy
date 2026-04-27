@@ -21,6 +21,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/api/create-jira-issue/route.js"],
+  "include": ["next-env.d.ts", "types/global.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/api/create-jira-issue/route.js"],
   "exclude": ["node_modules"]
 }
