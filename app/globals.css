@@ -121,12 +121,12 @@ body {
 /* Testimonial slider: equal-height slides */
 .testi-swiper .swiper-wrapper {
   align-items: stretch;
-  height: 100%;
+    padding: 50px 0;
 }
 
 .testi-swiper .swiper-slide {
   height: auto;
-  padding: 50px 0;
+
 }
 
 .testi-swiper .swiper-slide > article {

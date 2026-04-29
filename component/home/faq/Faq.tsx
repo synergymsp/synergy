@@ -3,8 +3,7 @@
 import {
   faArrowDown,
   faArrowRight,
-  faCopy,
-  faPlay,
+  faCopy
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Image from 'next/image';
@@ -72,7 +71,7 @@ const FAQSection: React.FC = () => {
               sizes="100vw"
               style={{ width: '100%', height: 'auto' }}
             />
-            <a
+            {/* <a
               href="#"
               className="duration-400 group absolute left-[50%] top-[50%] z-10 inline-block -translate-x-[50%] -translate-y-[50%] bg-transparent p-0 transition-all ease-in-out"
             >
@@ -81,7 +80,7 @@ const FAQSection: React.FC = () => {
               </span>
               <span className="duration-400 absolute inset-0 -z-10 h-full w-full rounded-md bg-theme/55 opacity-50 transition-all ease-in-out group-hover:opacity-100" />
               <span className="absolute inset-0 -z-10 h-full w-full animate-ping rounded-md bg-theme/55 opacity-50" />
-            </a>
+            </a> */}
           </div>
         </div>
         <div className="flex flex-col justify-center lg:w-1/2 xl:w-7/12">

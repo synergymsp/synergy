@@ -16,6 +16,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 import 'swiper/css';
 
+import { Button } from '@/component/common/Button';
 import { Container } from '@/component/common/Container';
 
 type Review = {
@@ -47,6 +48,11 @@ const reviews: Review[] = [
     role: 'Managing Director, Manhattan Group Inc.',
     text: `Our Manhattan Group Inc. has been a client of Synergy MSP for five years, and their service has consistently been outstanding. They provide high-quality IT support with quick response times, ensuring minimal downtime. Their global team is always available, and their combination of technical expertise and personalized support truly sets them apart. We value their reliability and professionalism and consider ourselves customers for life.`,
   },
+  {
+    name: 'Frank Kalata',
+    role: 'President, East Coast Corridor, Inc ECG',
+    text: `We have relied on Synergy MSP for our IT support for many years, and they have consistently delivered exactly what we need — reliable, responsive service that keeps our business running without disruption. As a relatively small user of IT services, we especially appreciate that we are never made to feel like a low priority. When issues arise, they are handled promptly and professionally. What gives us the most confidence is knowing that the right support is always there when we need it, at a fair and transparent cost. They are a trusted partner, and we would recommend them without hesitation.`,
+  },
 ];
 
 const FeedbackSection: React.FC = () => {
@@ -76,24 +82,20 @@ const FeedbackSection: React.FC = () => {
           </div>
 
           <div className="hidden gap-3 md:flex">
-            <button
-              type="button"
-              disabled
-              aria-label="Previous testimonial"
-              className="inline-flex h-[54px] cursor-not-allowed items-center gap-2 rounded-[6px] bg-smoke px-6 font-exo text-[16px] font-bold uppercase text-theme/50"
+            <Button
+              className="gap-2 bg-smoke px-5 py-[14px] text-theme"
+              onClick={() => swiperInstance?.slidePrev()}
             >
               <FontAwesomeIcon icon={faArrowLeft} className="h-4 w-4" />
               Prev
-            </button>
-            <button
-              type="button"
-              disabled
-              aria-label="Next testimonial"
-              className="inline-flex h-[54px] cursor-not-allowed items-center gap-2 rounded-[6px] bg-smoke px-6 font-exo text-[16px] font-bold uppercase text-theme/50"
+            </Button>
+            <Button
+              className="gap-2 bg-smoke px-5 py-[14px] text-theme"
+              onClick={() => swiperInstance?.slideNext()}
             >
               Next
               <FontAwesomeIcon icon={faArrowRight} className="h-4 w-4" />
-            </button>
+            </Button>
           </div>
         </div>
 
@@ -112,8 +114,8 @@ const FeedbackSection: React.FC = () => {
             className="testi-swiper"
           >
             {reviews.map((review) => (
-              <SwiperSlide key={review.name} className="h-auto">
-                <article className="group relative mb-[30px] mt-[15px] flex h-full cursor-pointer flex-col justify-between rounded-[5px] bg-surfaceMuted px-[25px] pb-[35px] pt-[1px] transition-all duration-300 hover:bg-white hover:shadow-shadow3">
+              <SwiperSlide key={review.name}>
+                <div className="group relative flex h-full cursor-pointer flex-col justify-between rounded-[5px] bg-surfaceMuted px-[25px] pb-[35px] pt-[1px] transition-all duration-300 hover:bg-white hover:shadow-shadow3">
                   <div>
                     <div className="-mt-[25px] mb-[20px] w-fit rounded-[5px] bg-white p-[10px]">
                       <div className="flex h-[60px] w-[60px] items-center justify-center rounded-[5px] bg-theme text-[24px] text-white">
@@ -124,13 +126,13 @@ const FeedbackSection: React.FC = () => {
                       </div>
                     </div>
 
-                    <p className="text-justify text-xs font-normal text-body sm:text-sm md:text-base ">
+                    <p className="mb-5 text-justify text-xs font-normal text-body sm:text-sm md:text-base">
                       “{review.text}”
                     </p>
                   </div>
 
                   <div>
-                    <div className="mb-3 flex items-center gap-1 text-[14px] text-[#fec624]">
+                    <div className="mb-3 flex items-center gap-1 text-sm text-[#fec624]">
                       {Array.from({ length: 5 }).map((_, index) => (
                         <FontAwesomeIcon
                           key={index}
@@ -147,31 +149,27 @@ const FeedbackSection: React.FC = () => {
                       {review.role}
                     </span>
                   </div>
-                </article>
+                </div>
               </SwiperSlide>
             ))}
           </Swiper>
         </div>
 
         <div className="flex justify-center gap-3 md:hidden">
-          <button
-            type="button"
+          <Button
+            className="gap-2 bg-smoke px-5 py-[14px] text-theme"
             onClick={() => swiperInstance?.slidePrev()}
-            aria-label="Previous testimonial"
-            className="inline-flex h-12 items-center gap-2 rounded-[6px] bg-smoke px-4 font-exo text-sm font-bold uppercase text-theme transition-all duration-300 hover:bg-theme hover:text-white"
           >
             <FontAwesomeIcon icon={faArrowLeft} className="h-4 w-4" />
-            Prev
-          </button>
-          <button
-            type="button"
+              Prev
+          </Button>
+          <Button
+            className="gap-2 bg-smoke px-5 py-[14px] text-theme"
             onClick={() => swiperInstance?.slideNext()}
-            aria-label="Next testimonial"
-            className="inline-flex h-12 items-center gap-2 rounded-[6px] bg-smoke px-4 font-exo text-sm font-bold uppercase text-theme transition-all duration-300 hover:bg-theme hover:text-white"
           >
-            Next
+              Next
             <FontAwesomeIcon icon={faArrowRight} className="h-4 w-4" />
-          </button>
+          </Button>
         </div>
       </div>
     </Container>

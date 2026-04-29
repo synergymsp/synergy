@@ -1,4 +1,4 @@
-import { faCopy, faPlay } from '@fortawesome/free-solid-svg-icons';
+import { faCopy } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Image from 'next/image';
 
@@ -47,7 +47,7 @@ const AboutSection: React.FC = () => {
               sizes="100vw"
               style={{ width: '100%', height: 'auto' }}
             />
-            <a
+            {/* <a
               href="#"
               className="duration-400 group absolute left-1/2 top-1/2 z-10 inline-block -translate-x-1/2 -translate-y-1/2 bg-transparent p-0 transition-all ease-in-out"
             >
@@ -56,7 +56,7 @@ const AboutSection: React.FC = () => {
               </span>
               <span className="duration-400 absolute inset-0 -z-10 h-full w-full rounded-md bg-theme opacity-50 transition-all ease-in-out group-hover:opacity-100" />
               <span className="absolute inset-0 -z-10 h-full w-full animate-ping rounded-md bg-theme opacity-50" />
-            </a>
+            </a> */}
           </div>
         </div>
 

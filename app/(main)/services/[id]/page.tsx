@@ -95,11 +95,11 @@ export default function ServiceDetails({ params }: { params: { id: string } }) {
                         key={idx}
                       >
                         <div className="w-fit -translate-y-[25px] rounded-md bg-white p-[10px]">
-                          <div className="font-exo flex h-[40px] w-[40px] items-center justify-center rounded-md bg-theme font-bold text-white">
+                          <div className="flex h-[40px] w-[40px] items-center justify-center rounded-md bg-theme font-exo font-bold text-white">
                           0{idx + 1}
                           </div>
                         </div>
-                        <h3 className="font-exo mb-2 text-base font-bold capitalize text-title">
+                        <h3 className="mb-2 font-exo text-base font-bold capitalize text-title">
                           {feature?.title}:
                         </h3>
                         <p className="text-justify text-xs text-body md:text-sm">
