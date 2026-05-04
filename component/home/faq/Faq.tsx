@@ -54,33 +54,26 @@ const FAQSection: React.FC = () => {
         <div className="relative mb-12 w-full lg:mb-0 lg:w-1/2 xl:w-5/12">
           <div className="relative mb-5 w-[100%] overflow-hidden sm:mb-[120px] 2xl:-ml-[200px] 2xl:mb-[30px] 2xl:w-[unset]">
             <Image
-              src="/images/faq/faq-1.webp"
-              alt="About image"
+              src="/images/software-development.webp"
+              alt="Software Development"
               width={0}
               height={0}
               sizes="100vw"
-              style={{ width: '100%', height: 'auto' }}
+              style={{ width: '100%', height: '100%' }}
+              className='rounded-md object-cover object-right-top'
             />
           </div>
           <div className="relative bottom-0 w-[100%] rounded-md bg-white p-2 sm:absolute sm:right-[30px] sm:h-[220px] sm:w-[290px] 2xl:-right-0 2xl:rounded-r-none 2xl:pb-0 2xl:pr-0">
             <Image
-              src="/images/faq/faq-2.webp"
-              alt="About image small"
+              src="/images/data-protection.webp"
+              alt="Data Protection"
               width={0}
               height={0}
               sizes="100vw"
-              style={{ width: '100%', height: 'auto' }}
+              style={{ width: '100%', height: '100%' }}
+              className='rounded-tl-md object-cover object-right-top'
             />
-            {/* <a
-              href="#"
-              className="duration-400 group absolute left-[50%] top-[50%] z-10 inline-block -translate-x-[50%] -translate-y-[50%] bg-transparent p-0 transition-all ease-in-out"
-            >
-              <span className="duration-400 flex h-[60px] w-[60px] items-center justify-center rounded-md bg-theme/55 text-lg text-white transition-all ease-in-out">
-                <FontAwesomeIcon icon={faPlay} />
-              </span>
-              <span className="duration-400 absolute inset-0 -z-10 h-full w-full rounded-md bg-theme/55 opacity-50 transition-all ease-in-out group-hover:opacity-100" />
-              <span className="absolute inset-0 -z-10 h-full w-full animate-ping rounded-md bg-theme/55 opacity-50" />
-            </a> */}
+            
           </div>
         </div>
         <div className="flex flex-col justify-center lg:w-1/2 xl:w-7/12">

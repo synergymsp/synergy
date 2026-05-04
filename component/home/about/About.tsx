@@ -28,19 +28,19 @@ const AboutSection: React.FC = () => {
         <div className="relative mb-12 lg:mb-0 lg:w-1/2 xl:w-5/12" data-wow-delay="0.2s">
           <div className="relative mb-5 w-full overflow-hidden rounded-md sm:mb-[60px] lg:max-w-[425px]">
             <Image
-              src="/images/about/about-2.webp"
-              alt="About image"
+              src="/images/cybersecurity.webp"
+              alt="Cybersecurity"
               width={0}
               height={0}
               sizes="100vw"
-              style={{ width: '100%', height: 'auto' }}
-              className="rounded-md"
+              style={{ width: '100%', height: 'auto', minHeight: '450px' }}
+              className="rounded-md object-cover"
             />
           </div>
           <div className="relative bottom-0 right-0 w-full sm:absolute sm:h-[282px] sm:w-[344px]">
             <Image
-              src="/images/about/about-1.webp"
-              alt="About image small"
+              src="/images/why-choose-us.webp"
+              alt="Why Choose Us"
               className="rounded-md"
               width={0}
               height={0}
