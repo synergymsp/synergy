@@ -71,7 +71,7 @@ const FAQSection: React.FC = () => {
               height={0}
               sizes="100vw"
               style={{ width: '100%', height: '100%' }}
-              className='rounded-tl-md object-cover object-right-top'
+              className='object-cover object-right-top max-sm:rounded-md sm:rounded-tl-md'
             />
             
           </div>
