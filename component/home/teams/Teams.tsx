@@ -99,7 +99,7 @@ const TeamsSection: React.FC = () => {
           Great Team Members
         </span>
         <h2 className="font-exo text-[24px] font-bold uppercase leading-snug text-gray-900 sm:text-[26px] md:text-[36px] lg:text-[40px] xl:text-[44px] 2xl:text-[48px]">
-          We Have Expert Team
+          Experts Behind Your Infrastructure
         </h2>
       </div>
 

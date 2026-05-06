@@ -59,7 +59,7 @@ const ServicesSection: React.FC = () => {
           Our Latest Services
         </span>
         <h2 className="font-exo text-[24px] font-bold uppercase leading-snug text-title sm2:text-[26px] sm:text-[36px] lg:text-[40px]  xl:text-[44px] 2xl:text-[48px]">
-          What Kind of Services We are Offering
+          Our Core Offerings
         </h2>
       </div>
 

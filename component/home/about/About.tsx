@@ -65,7 +65,7 @@ const AboutSection: React.FC = () => {
             <FontAwesomeIcon icon={faCopy} className="mr-2" /> Get Best IT Solution {new Date().getFullYear()}
           </span>
           <h2 className="mb-5 font-exo text-[24px] font-bold uppercase leading-snug text-title sm2:text-[26px] sm:text-[36px] lg:text-[40px] xl:text-[44px] 2xl:text-[48px]">
-            Reasons for Choosing Us
+            Whats Sets Us Apart
           </h2>
 
           <FeatureItem number="01" text="Comprehensive Technology Solutions" />

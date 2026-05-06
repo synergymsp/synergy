@@ -77,7 +77,7 @@ const FeedbackSection: React.FC = () => {
               Review&apos;s {new Date().getFullYear()}
             </span>
             <h2 className="font-exo text-[24px] font-bold uppercase leading-snug text-title sm2:text-[26px] sm:text-[36px] lg:text-[40px]  xl:text-[44px] 2xl:text-[48px]">
-              Customer&apos;s Feedback
+              Voice Of Our Partners
             </h2>
           </div>
 

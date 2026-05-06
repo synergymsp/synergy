@@ -9,11 +9,11 @@ const NeedConsultationSection: React.FC = () => {
     <Container>
       <div className="flex flex-col items-center justify-center lg:flex-row lg:justify-between">
         <div className="mb-2 text-center md:mb-6 lg:mb-0 lg:text-start">
-          <span className="font-exo mb-5 text-sm font-semibold uppercase text-white sm:text-base">
+          <span className="mb-5 font-exo text-sm font-semibold uppercase text-white sm:text-base">
             We are here to answer your questions 24/7
           </span>
-          <h2 className="font-exo text-[24px] font-bold uppercase leading-snug text-white sm2:text-[26px] sm:text-[36px] lg:text-[40px]  xl:text-[44px] 2xl:text-[48px]">
-            Need A Consultation?
+          <h2 className="font-exo text-[24px] font-bold uppercase leading-snug text-white sm2:text-[26px] sm:text-[36px] lg:text-[40px]">
+            Start Your Transformation Today.
           </h2>
         </div>
 

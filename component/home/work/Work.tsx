@@ -46,8 +46,8 @@ const WorkSection: React.FC = () => {
         <span className="mb-2 inline-block font-exo text-base font-semibold uppercase text-theme md:mb-5">
           Great Team Members
         </span>
-        <h2 className="font-exo text-[24px] font-bold uppercase leading-snug text-title sm2:text-[26px] sm:text-[36px] lg:text-[40px]  xl:text-[44px] 2xl:text-[48px]">
-          YOUR TRUSTED ORACLE SQL EXPERTS
+        <h2 className="font-exo text-[24px] font-bold uppercase leading-snug text-title sm2:text-[26px] sm:text-[36px] lg:text-[40px]  xl:text-[44px]">
+          Precision Engineering for Oracle Ecosystems
         </h2>
       </div>
       <div className="flex flex-wrap justify-center">
