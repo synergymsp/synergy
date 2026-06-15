@@ -53,6 +53,11 @@ const reviews: Review[] = [
     role: 'President, East Coast Corridor, Inc ECG',
     text: `We have relied on Synergy MSP for our IT support for many years, and they have consistently delivered exactly what we need — reliable, responsive service that keeps our business running without disruption. As a relatively small user of IT services, we especially appreciate that we are never made to feel like a low priority. When issues arise, they are handled promptly and professionally. What gives us the most confidence is knowing that the right support is always there when we need it, at a fair and transparent cost. They are a trusted partner, and we would recommend them without hesitation.`,
   },
+  {
+    name: 'Steve Kaitz',
+    role: 'Stuart Ciobanu Gerhard Investments',
+    text: `Synergy MSP has been our trusted IT partner for over six years, consistently delivering reliable, proactive, and customer-focused IT services. Their team ensures our systems remain secure, operational, and resilient through innovative solutions and strong support. Led by Mr. Brazhnikov, Synergy MSP has grown into a highly skilled organization that allows businesses like ours to focus on core operations without worrying about IT infrastructure. We highly recommend Synergy MSP for their expertise, responsiveness, and commitment to client success.`,
+  },
 ];
 
 const FeedbackSection: React.FC = () => {
@@ -161,13 +166,13 @@ const FeedbackSection: React.FC = () => {
             onClick={() => swiperInstance?.slidePrev()}
           >
             <FontAwesomeIcon icon={faArrowLeft} className="h-4 w-4" />
-              Prev
+            Prev
           </Button>
           <Button
             className="gap-2 bg-smoke px-5 py-[14px] text-theme"
             onClick={() => swiperInstance?.slideNext()}
           >
-              Next
+            Next
             <FontAwesomeIcon icon={faArrowRight} className="h-4 w-4" />
           </Button>
         </div>
