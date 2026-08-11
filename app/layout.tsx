@@ -6,6 +6,7 @@ import type React from 'react';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 config.autoAddCss = false;
 import './globals.css';
+import ApolloTracker from '@/component/ApolloTracker/ApolloTracker';
 import JiraWidget from '@/component/JiraWidget/JiraWidget';
 
 const exo = Exo({
@@ -53,12 +54,17 @@ export default function RootLayout({ children }: RootLayoutProps) {
         {/* Preconnect to external domains for better performance */}
         <link rel="preconnect" href="https://jsd-widget.atlassian.com" />
         <link rel="dns-prefetch" href="https://jsd-widget.atlassian.com" />
+        <link rel="preconnect" href="https://assets.apollo.io" />
+        <link rel="dns-prefetch" href="https://assets.apollo.io" />
       </head>
       <body className={`${exo.variable} ${fira_sans.variable}`}>
         {children}
 
         {/* Jira Widget - loads on all pages except contact */}
         <JiraWidget />
+
+        {/* Apollo.io website visitor tracking */}
+        <ApolloTracker />
       </body>
     </html>
   );
