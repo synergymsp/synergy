@@ -1,7 +1,6 @@
 'use client';
 
 import {
-  faBars,
   faChevronDown,
   faChevronRight,
   faMinus,
@@ -30,8 +29,15 @@ const servicesLinks = serviceRoutes.map((route) => ({
   href: getServicePath(route.id),
 }));
 
-const Navbar: React.FC = () => {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+interface NavbarProps {
+  mobileMenuOpen: boolean;
+  setMobileMenuOpen: (open: boolean) => void;
+}
+
+const Navbar: React.FC<NavbarProps> = ({
+  mobileMenuOpen,
+  setMobileMenuOpen,
+}) => {
   const [servicesMenuOpen, setServicesMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isDropdownFade, setIsDropdownFade] = useState(false);
@@ -71,7 +77,7 @@ const Navbar: React.FC = () => {
   return (
     <header className="bg-white">
       <Container>
-        <nav className="flex items-center justify-between">
+        <nav className="hidden lg:flex lg:items-center lg:justify-between">
           {/* Left Side - Desktop Menu */}
           <div className="hidden lg:flex lg:space-x-8">
             {navigationLinks.map((link) => (
@@ -119,26 +125,13 @@ const Navbar: React.FC = () => {
                       <span className="item-style">
                         <span className="dot"></span>
                       </span>
-                      {service.title}
+                      {service.title}dsdsd
                     </Link>
                   ))}
                 </div>
               )}
             </div>
           </div>
-
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setMobileMenuOpen(true)}
-            aria-label="Open menu"
-            className="my-[10px] flex h-[48px] w-[48px] items-center justify-center rounded-[5px] bg-surfaceExtraLight text-theme lg:hidden"
-          >
-            <FontAwesomeIcon
-              icon={faBars}
-              className="h-6 w-6"
-              aria-hidden="true"
-            />
-          </button>
         </nav>
       </Container>
 

@@ -50,6 +50,7 @@ const config = {
       },
       screens: {
         sm2: '400px',
+        xs: '500px',
         sm: '576px',
         md: '768px',
         lg: '1024px',
