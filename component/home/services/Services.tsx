@@ -5,6 +5,7 @@ import Link from 'next/link';
 
 import { Button } from '@/component/common/Button';
 import { Container } from '@/component/common/Container';
+import { getServicePath } from '@/data/serviceRoutes';
 
 const services = [
   {
@@ -39,14 +40,14 @@ const services = [
     id: 5,
     title: 'Cyber Security',
     description:
-      'At Synergy MSP, we provide advanced, cloud-based Voice over IP (VoIP) solutions designed to deliver stability, crystal-clear audio quality, and cost-effectiveness. Our solutions are tailored to ensure seamless communication, both internally and externally, while accommodating your company’s specific needs and growth plans.',
+      'In today’s digital landscape, Synergy Msp offers cutting-edge cybersecurity solutions designed to safeguard your business against evolving threats. We provide end-to-end protection, ensuring your systems, data, and operations stay secure around the clock.',
     icon: '/icon/fe-2-3.png',
   },
   {
     id: 6,
     title: 'Voice over IP',
     description:
-      'In today’s digital landscape, Synergy Msp offers cutting-edge cybersecurity solutions designed to safeguard your business against evolving threats. We provide end-to-end protection, ensuring your systems, data, and operations stay secure around the clock.',
+      'At Synergy MSP, we provide advanced, cloud-based Voice over IP (VoIP) solutions designed to deliver stability, crystal-clear audio quality, and cost-effectiveness. Our solutions are tailored to ensure seamless communication, both internally and externally, while accommodating your company’s specific needs and growth plans.',
     icon: '/icon/process-2-1.png',
   },
 ];
@@ -65,7 +66,7 @@ const ServicesSection: React.FC = () => {
 
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
         {services?.map((service) => (
-          <Link key={service.id} href={`/services/${service.id}-${service.title.toLowerCase().replace(/\s+/g, '-')}`}>
+          <Link key={service.id} href={getServicePath(service.id)}>
             <div className="duration-400 group relative h-full cursor-pointer overflow-hidden rounded-md bg-white px-5 py-8 shadow-shadow3 transition-all sm:px-8 sm:py-8">
               <div className="absolute inset-0 h-full w-full scale-125 bg-services-bg bg-cover bg-center opacity-0 transition-all duration-700 ease-in-out group-hover:scale-100 group-hover:opacity-100"></div>
 
@@ -74,7 +75,7 @@ const ServicesSection: React.FC = () => {
                   <div className="mb-4 flex h-[60px] w-[60px] items-center justify-center rounded-full bg-smoke sm:mb-6 sm:h-[70px] sm:w-[70px] xl:mb-8">
                     <Image
                       src={service.icon}
-                      alt="services Icon"
+                      alt=""
                       width={0}
                       height={0}
                       sizes="100vw"

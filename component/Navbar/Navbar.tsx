@@ -16,6 +16,7 @@ import { usePathname } from 'next/navigation';
 import { useRef, useState } from 'react';
 
 import { Container } from '@/component/common/Container';
+import { getServicePath, serviceRoutes } from '@/data/serviceRoutes';
 
 const navigationLinks = [
   { id: 1, label: 'Home', href: '/' },
@@ -23,27 +24,10 @@ const navigationLinks = [
   { id: 3, label: 'Contact Us', href: '/contact' },
 ];
 
-// Services data
-const services = [
-  { id: 1, title: 'Oracle Development and Support' },
-  { id: 2, title: 'IT Infrastructure Design and Engineering' },
-  { id: 3, title: 'On-prem and Cloud Base Solutions' },
-  { id: 4, title: 'Help Desk Service' },
-  { id: 5, title: 'Cyber Security' },
-  { id: 6, title: 'Voice Over IP' },
-];
-
-// helper to create slug from title
-const slugify = (text: string) =>
-  text
-    .toLowerCase()
-    .replace(/\s+/g, '-') // replace spaces with -
-    .replace(/[^a-z0-9-]/g, ''); // remove special chars
-
-// build href with id + slug
-const servicesLinks = services.map((service) => ({
-  ...service,
-  href: `/services/${service.id}-${slugify(service.title)}`,
+const servicesLinks = serviceRoutes.map((route) => ({
+  id: route.id,
+  title: route.navTitle,
+  href: getServicePath(route.id),
 }));
 
 const Navbar: React.FC = () => {
@@ -146,6 +130,7 @@ const Navbar: React.FC = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(true)}
+            aria-label="Open menu"
             className="my-[10px] flex h-[48px] w-[48px] items-center justify-center rounded-[5px] bg-surfaceExtraLight text-theme lg:hidden"
           >
             <FontAwesomeIcon
@@ -172,6 +157,7 @@ const Navbar: React.FC = () => {
           <div className="relative bg-highlightSoft px-6 py-10">
             <button
               onClick={() => setMobileMenuOpen(false)}
+              aria-label="Close menu"
               className="absolute right-3 top-3 h-10 w-10 rounded-full bg-smoke text-theme shadow-shadow1"
             >
               <FontAwesomeIcon
@@ -182,7 +168,7 @@ const Navbar: React.FC = () => {
             </button>
             <div className="flex justify-center">
               <Link href={'/'}>
-                <Image src="/logo.svg" alt="logo" width={220} height={0} />
+                <Image src="/logo.svg" alt="Synergy MSP" width={220} height={0} />
               </Link>
             </div>
           </div>

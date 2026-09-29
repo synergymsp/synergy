@@ -1,4 +1,12 @@
 import { Container } from '@/component/common/Container';
+import { buildMetadata } from '@/lib/seo';
+
+export const metadata = buildMetadata({
+  title: 'Privacy Policy',
+  description:
+    'Read the Synergy MSP privacy policy to learn what information we collect through our website, how we use and protect it, and how long we keep it.',
+  path: '/privacy-policy',
+});
 
 const sections = [
   {
@@ -42,9 +50,9 @@ export default function PrivacyPolicy() {
   return (
     <Container className="py-[50px] md:py-[80px] lg:py-[120px]">
       <div className="mb-10">
-        <h2 className="font-exo text-[24px] font-bold uppercase leading-snug text-title sm2:text-[26px] sm:text-[36px] lg:text-[40px] xl:text-[44px] 2xl:text-[48px]">
+        <h1 className="font-exo text-[24px] font-bold uppercase leading-snug text-title sm2:text-[26px] sm:text-[36px] lg:text-[40px] xl:text-[44px] 2xl:text-[48px]">
           Privacy Policy
-        </h2>
+        </h1>
       </div>
       {sections.map((section, index) => (
         <div className="mb-6 border-b border-smoke py-4" key={index}>

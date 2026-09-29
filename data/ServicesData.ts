@@ -13,6 +13,8 @@ export interface Service {
   id: number;
   title: string;
   description?: string;
+  seoTitle: string;
+  seoDescription: string;
   content: Content[];
 }
 
@@ -20,6 +22,9 @@ export const services: Service[] = [
   {
     id: 1,
     title: 'Oracle Development and Support',
+    seoTitle: 'Oracle Development & Support Services',
+    seoDescription:
+      'Oracle development and support from Synergy MSP: custom applications, Oracle Cloud integration, database tuning, ERP customization, data warehousing and ETL.',
     description: 'Unlock the Full Potential of Oracle with Our Expertise',
     content: [
       {
@@ -66,6 +71,9 @@ export const services: Service[] = [
   {
     id: 2,
     title: 'I.T. Infrastructure Design and Engineering',
+    seoTitle: 'IT Infrastructure Design & Engineering',
+    seoDescription:
+      'Scalable IT infrastructure design and engineering: networking, cybersecurity integration, cloud and hybrid environments, storage, backup and end-to-end support.',
     content: [
       {
         text: 'We specialize in crafting robust and scalable I.T. infrastructures that meet the evolving demands of modern businesses. Our team of experts in system engineering, networking, cybersecurity, and applications work together to design, implement, and optimize I.T. systems tailored to your unique needs.',
@@ -110,6 +118,9 @@ export const services: Service[] = [
   {
     id: 3,
     title: 'On-Premises and Cloud Base Solutions',
+    seoTitle: 'On-Premises, Cloud & Hybrid IT Solutions',
+    seoDescription:
+      'On-premises, cloud and hybrid IT solutions from Synergy MSP: AWS and Azure integration, servers and virtualization, security, compliance and proactive support.',
     description:
       'At Synergy MSP, we deliver tailored I.T. solutions for both On-Premises and cloud-based infrastructures, ensuring your systems are reliable, secure, and aligned with your business objectives.',
     content: [
@@ -153,6 +164,9 @@ export const services: Service[] = [
   {
     id: 4,
     title: 'Help Desk Service',
+    seoTitle: '24/7 IT Help Desk Services',
+    seoDescription:
+      '24/7 IT help desk support for businesses in the USA and worldwide: proactive monitoring, fast issue resolution, easy ticketing and dedicated account management.',
     content: [
       {
         text: 'Our Help Desk Service team is composed of highly skilled and organized IT professionals supporting businesses with a wide range of customer requirements. We are proud to serve clients both in the USA and around the globe, providing timely, efficient solutions tailored according to the unique requirements of each organization. Our experts excel in addressing and resolving technical challenges, minimizing downtime, and enhancing productivity so clients can focus on what matters most: growing their business.',
@@ -198,6 +212,9 @@ export const services: Service[] = [
   {
     id: 5,
     title: 'Cyber Security',
+    seoTitle: 'Cybersecurity Services for Businesses',
+    seoDescription:
+      'Managed cybersecurity services that protect your business: threat detection and response, network security, encryption and backup, risk assessment and training.',
     description: 'Cybersecurity Solutions to Protect Your Business',
     content: [
       {
@@ -240,6 +257,9 @@ export const services: Service[] = [
   {
     id: 6,
     title: 'Voice over IP (VoIP) Solutions',
+    seoTitle: 'Business VoIP Phone Solutions',
+    seoDescription:
+      'Cloud-based business VoIP phone systems with reliable uptime, clear call quality and lower calling costs. Scalable setup, management and support by Synergy MSP.',
     content: [
       {
         text: 'At Synergy MSP, we provide advanced, cloud-based Voice over IP (VoIP) solutions designed to deliver stability, crystal-clear audio quality, and cost-effectiveness. Our solutions are tailored to ensure seamless communication, both internally and externally, while accommodating your company’s specific needs and growth plans.',

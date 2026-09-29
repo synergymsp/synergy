@@ -106,7 +106,7 @@ export const HeroSection: React.FC = () => {
               <div className="overlay-text">
                 <div className="mx-auto w-full px-[20px] sm:px-[30px] md:px-[80px] lg:max-w-[720px] lg:px-[30px] min-[1100px]:max-w-[945px] 2xl:max-w-[1140px]">
                   <div className="flex items-center justify-center  gap-6 md:justify-start">
-                    <motion.h1
+                    <motion.p
                       initial={{ x: -100, opacity: 0 }}
                       animate={{ x: 0, opacity: 1 }}
                       exit={{ x: -100, opacity: 0 }}
@@ -114,7 +114,7 @@ export const HeroSection: React.FC = () => {
                       className="font-exo text-[24px] font-bold uppercase leading-tight text-white sm2:text-[26px] sm:text-[34px] lg:text-[44px] xl:text-[50px]"
                     >
                       {slide.title1}
-                    </motion.h1>
+                    </motion.p>
 
                     <motion.button
                       initial={{ x: 100, opacity: 0 }}
@@ -127,7 +127,7 @@ export const HeroSection: React.FC = () => {
                     </motion.button>
                   </div>
 
-                  <motion.h2
+                  <motion.p
                     initial={{ x: -100, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
                     exit={{ x: -100, opacity: 0 }}
@@ -135,7 +135,7 @@ export const HeroSection: React.FC = () => {
                     className="font-exo mb-4 text-center text-[24px] font-bold uppercase leading-tight text-white sm2:text-[26px] sm:text-[34px] md:mb-8 md:text-start lg:text-[44px] xl:text-[50px]"
                   >
                     {slide.title2}
-                  </motion.h2>
+                  </motion.p>
 
                   <motion.p
                     initial={{ y: 50, opacity: 0 }}

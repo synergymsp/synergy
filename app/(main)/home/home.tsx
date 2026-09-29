@@ -10,6 +10,10 @@ import WorkSection from '@/component/home/work/Work';
 export default function HomePage() {
   return (
     <>
+      <h1 className="sr-only">
+        Synergy MSP – Managed IT Services, Cybersecurity, Cloud Solutions and
+        Oracle Development in New Jersey
+      </h1>
       <HeroSection />
       <section className="relative bg-services-sec-bg bg-cover bg-top pb-[80px] pt-[50px] md:pt-[60px] lg:pb-[120px] lg:pt-[90px]">
         <ServicesSection />

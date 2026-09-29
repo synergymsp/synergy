@@ -8,6 +8,8 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React from 'react';
 
+import { getServicePath, serviceRoutes } from '@/data/serviceRoutes';
+
 import { Container } from '../common/Container';
 
 interface FooterLinksProps {
@@ -21,7 +23,7 @@ interface SocialIconsProps {
 
 const FooterLinks: React.FC<FooterLinksProps> = ({ title, links }) => (
   <div className="mb-7 flex w-[100%] flex-col items-center md:mb-0 md:w-fit md:items-start">
-    <h3 className="font-exo mb-5 text-[24px] font-bold text-white">{title}</h3>
+    <h3 className="mb-5 font-exo text-[24px] font-bold text-white">{title}</h3>
     <ul>
       {links.map((link, index) => (
         <li key={index} className="text-center md:text-start">
@@ -43,6 +45,9 @@ const SocialIcons: React.FC<SocialIconsProps> = ({ icons }) => (
       <Link
         key={index}
         href="https://www.linkedin.com/company/synergy-msp-new-jersey-usa/"
+        aria-label="Synergy MSP on LinkedIn"
+        target="_blank"
+        rel="noopener noreferrer"
         className="flex h-[45px] w-[45px] items-center justify-center rounded-md bg-primaryDark transition-all duration-200 hover:bg-theme"
       >
         <FontAwesomeIcon icon={icon} className="text-white" />
@@ -100,22 +105,6 @@ const Footer: React.FC = () => {
     },
   ];
 
-  const services = [
-    { id: 1, title: 'Oracle Development and Support' },
-    { id: 2, title: 'IT Infrastructure Design and Engineering' },
-    { id: 3, title: 'On-prem and Cloud Base Solutions' },
-    { id: 4, title: 'Help Desk Service' },
-    { id: 5, title: 'Cyber Security' },
-    { id: 6, title: 'Voice Over IP' },
-  ];
-
-  // helper to create slug from title
-  const slugify = (text: string) =>
-    text
-      .toLowerCase()
-      .replace(/\s+/g, '-')
-      .replace(/[^a-z0-9-]/g, '');
-
   return (
     <footer className="bg-brandDeep bg-footer-sec bg-contain bg-bottom bg-no-repeat">
       {!isContactPage && (
@@ -129,6 +118,7 @@ const Footer: React.FC = () => {
                 <div className="flex h-[150px] w-[100%] max-w-[290px] items-center justify-center overflow-hidden rounded-md bg-surfaceDark">
                   <iframe
                     src={location.embeddedLink}
+                    title={`Synergy MSP office map – ${location.title}`}
                     width="100%"
                     height="100%"
                     loading="lazy"
@@ -179,7 +169,7 @@ const Footer: React.FC = () => {
       <div className="py-12">
         <Container className="flex flex-wrap justify-center gap-3 md:justify-between lg:flex-nowrap">
           <div className="mb-7 flex flex-col items-center text-center md:w-[50%] md:items-start md:text-start lg:mb-0 lg:w-fit">
-            <h3 className="font-exo mb-5 text-[24px] font-bold text-white">
+            <h3 className="mb-5 font-exo text-[24px] font-bold text-white">
               About Us
             </h3>
             <p className="mb-4 text-justify text-sm text-muted lg:max-w-[400px] lg:text-base">
@@ -194,10 +184,10 @@ const Footer: React.FC = () => {
 
           <FooterLinks
             title="Services"
-            links={services.map((service) => ({
-              id: service.id,
-              label: service.title,
-              href: `/services/${service.id}-${slugify(service.title)}`,
+            links={serviceRoutes.map((route) => ({
+              id: route.id,
+              label: route.navTitle,
+              href: getServicePath(route.id),
             }))}
           />
 

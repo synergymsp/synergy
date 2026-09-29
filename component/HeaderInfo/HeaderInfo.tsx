@@ -14,7 +14,7 @@ export const HeaderInfo: React.FC = () => {
         <div className="flex items-center justify-between border-b border-surfaceLight py-10">
           <div className="flex-shrink-0">
             <Link href={'/'}>
-              <Image src="/logo.svg" alt="logo" width={200} height={0} className='h-auto w-[150px] md:w-[200px]' />
+              <Image src="/logo.svg" alt="Synergy MSP" width={200} height={0} className='h-auto w-[150px] md:w-[200px]' />
             </Link>
           </div>
 

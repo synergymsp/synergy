@@ -4,6 +4,15 @@ import Link from 'next/link';
 
 import { Container } from '@/component/common/Container';
 import ContactForm from '@/component/contact/ContactForm';
+import { buildMetadata } from '@/lib/seo';
+
+export const metadata = buildMetadata({
+  title: 'Contact Us',
+  description:
+    'Contact Synergy MSP for managed IT support, a free consultation or a quote. Offices in Union, New Jersey, Lahore, Swat and Dubai. Call +1-732-334-3590.',
+  path: '/contact',
+});
+
 const officeLocations = [
   {
     image: '/images/contact/office.webp',
@@ -62,13 +71,13 @@ export default function Contact() {
               <ol role="list" className="flex items-center space-x-1">
                 <li>
                   <div>
-                    <a
-                      href="#"
+                    <Link
+                      href="/"
                       className="text-white transition-all duration-300 hover:text-white/70"
                     >
                       <FontAwesomeIcon icon={faHome} className="h-5 w-5" />
                       <span className="sr-only">Home</span>
-                    </a>
+                    </Link>
                   </div>
                 </li>
                 <li>
@@ -81,12 +90,13 @@ export default function Contact() {
                     >
                       <path d="M5.555 17.776l8-16 .894.448-8 16-.894-.448z" />
                     </svg>
-                    <a
-                      href={'#'}
+                    <Link
+                      href="/contact"
+                      aria-current="page"
                       className="ml-1 text-sm font-medium text-white transition-all duration-300 hover:text-white/70 sm:text-base"
                     >
                       Contact Us
-                    </a>
+                    </Link>
                   </div>
                 </li>
               </ol>
@@ -122,6 +132,7 @@ export default function Contact() {
                     <div className="flex h-auto w-[100%] max-w-[100%] items-center justify-center overflow-hidden rounded-md sm:h-[140px] sm:max-w-[200px] lg:max-w-[150px] 2xl:max-w-[200px]">
                       <iframe
                         src={location.embeddedLink}
+                        title={`Synergy MSP office map – ${location.title}`}
                         width="100%"
                         height="100%"
                         loading="lazy"

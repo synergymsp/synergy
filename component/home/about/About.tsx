@@ -29,7 +29,7 @@ const AboutSection: React.FC = () => {
           <div className="relative mb-5 w-full overflow-hidden rounded-md sm:mb-[60px] lg:max-w-[425px]">
             <Image
               src="/images/cybersecurity.webp"
-              alt="Cybersecurity"
+              alt="Cybersecurity and managed IT services"
               width={0}
               height={0}
               sizes="100vw"
@@ -40,7 +40,7 @@ const AboutSection: React.FC = () => {
           <div className="relative bottom-0 right-0 w-full sm:absolute sm:h-[282px] sm:w-[344px]">
             <Image
               src="/images/why-choose-us.webp"
-              alt="Why Choose Us"
+              alt="Why choose Synergy MSP"
               className="rounded-md"
               width={0}
               height={0}
@@ -65,7 +65,7 @@ const AboutSection: React.FC = () => {
             <FontAwesomeIcon icon={faCopy} className="mr-2" /> Get Best IT Solution {new Date().getFullYear()}
           </span>
           <h2 className="mb-5 font-exo text-[24px] font-bold uppercase leading-snug text-title sm2:text-[26px] sm:text-[36px] lg:text-[40px] xl:text-[44px] 2xl:text-[48px]">
-            Whats Sets Us Apart
+            What Sets Us Apart
           </h2>
 
           <FeatureItem number="01" text="Comprehensive Technology Solutions" />

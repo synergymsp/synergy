@@ -60,7 +60,7 @@ const WorkSection: React.FC = () => {
               <div className="absolute -right-[53px] top-[0] hidden lg:block">
                 <Image
                   src={item.arrowSrc}
-                  alt="arrow"
+                  alt=""
                   width={100}
                   height={100}
                   layout="fixed"
@@ -74,7 +74,7 @@ const WorkSection: React.FC = () => {
             <div className="relative mb-7 flex h-[100px] w-[100px] items-center justify-center rounded-full bg-white shadow-shadow6 lg:h-[130px] lg:w-[130px]">
               <Image
                 src={item.iconSrc}
-                alt="icon"
+                alt=""
                 width={0}
                 height={0}
                 sizes="100vw"

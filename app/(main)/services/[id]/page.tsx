@@ -1,44 +1,92 @@
 import { faHome } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import type { Metadata } from 'next';
+import Link from 'next/link';
+import { notFound } from 'next/navigation';
 
 import { Container } from '@/component/common/Container';
+import { getServicePath, serviceRoutes } from '@/data/serviceRoutes';
 import { Service, services } from '@/data/ServicesData';
+import { buildMetadata, JsonLd, siteConfig } from '@/lib/seo';
 
-export default function ServiceDetails({ params }: { params: { id: string } }) {
-  const service: Service | undefined = services.find(
-    (service) => service.id === parseInt(params.id)
-  );
+interface ServicePageProps {
+  params: { id: string };
+}
 
-  if (!service) {
-    return (
-      <div className="container mx-auto py-10">
-        <h1 className="font-exo text-[24px] font-bold uppercase leading-snug text-title sm2:text-[26px] sm:text-[36px] lg:text-[40px] xl:text-[44px] 2xl:text-[48px]">
-          Service Not Found
-        </h1>
-      </div>
-    );
-  }
+const findService = (id: string): Service | undefined =>
+  services.find((service) => service.id === parseInt(id));
+
+// Only the canonical service URLs exist; anything else is a real 404.
+// (Non-canonical slugs for known services are 308-redirected in middleware.ts.)
+export const dynamicParams = false;
+
+export function generateStaticParams() {
+  return serviceRoutes.map((route) => ({ id: `${route.id}-${route.slug}` }));
+}
+
+export function generateMetadata({ params }: ServicePageProps): Metadata {
+  const service = findService(params.id);
+
+  if (!service) return {};
+
+  return buildMetadata({
+    title: service.seoTitle,
+    description: service.seoDescription,
+    path: getServicePath(service.id),
+  });
+}
+
+export default function ServiceDetails({ params }: ServicePageProps) {
+  const service = findService(params.id);
+
+  if (!service) notFound();
+
+  const servicePath = getServicePath(service.id);
+  const serviceUrl = `${siteConfig.url}${servicePath}`;
 
   return (
     <>
+      <JsonLd
+        data={{
+          '@context': 'https://schema.org',
+          '@graph': [
+            {
+              '@type': 'Service',
+              name: service.title,
+              serviceType: service.seoTitle,
+              description: service.seoDescription,
+              url: serviceUrl,
+              provider: { '@id': `${siteConfig.url}/#organization` },
+              areaServed: 'Worldwide',
+            },
+            {
+              '@type': 'BreadcrumbList',
+              itemListElement: [
+                { '@type': 'ListItem', position: 1, name: 'Home', item: siteConfig.url },
+                { '@type': 'ListItem', position: 2, name: service.title, item: serviceUrl },
+              ],
+            },
+          ],
+        }}
+      />
       <div className="">
         <div className="relative bg-services-details-img bg-cover bg-center pb-[70px] pt-[80px] md:pb-[90px] md:pt-[100px] lg:pb-[135px] lg:pt-[140px]">
           <Container className="flex items-center justify-between">
-            <h1 className="font-exo text-[20px] font-bold uppercase leading-snug text-white sm:text-[36px] lg:text-[40px]  xl:text-[44px] 2xl:text-[48px]">
+            <p className="font-exo text-[20px] font-bold uppercase leading-snug text-white sm:text-[36px] lg:text-[40px]  xl:text-[44px] 2xl:text-[48px]">
             Service Details
-            </h1>
+            </p>
 
             <nav aria-label="Breadcrumb" className="flex">
               <ol role="list" className="flex items-center space-x-1">
                 <li>
                   <div>
-                    <a
-                      href="#"
+                    <Link
+                      href="/"
                       className="text-white transition-all duration-300 hover:text-white/70"
                     >
                       <FontAwesomeIcon icon={faHome} className="h-5 w-5" />
                       <span className="sr-only">Home</span>
-                    </a>
+                    </Link>
                   </div>
                 </li>
                 <li>
@@ -51,12 +99,13 @@ export default function ServiceDetails({ params }: { params: { id: string } }) {
                     >
                       <path d="M5.555 17.776l8-16 .894.448-8 16-.894-.448z" />
                     </svg>
-                    <a
-                      href={'#'}
+                    <Link
+                      href={servicePath}
+                      aria-current="page"
                       className="ml-1 text-sm font-medium text-white transition-all duration-300 hover:text-white/70 sm:text-base"
                     >
                     Services details
-                    </a>
+                    </Link>
                   </div>
                 </li>
               </ol>
@@ -66,9 +115,9 @@ export default function ServiceDetails({ params }: { params: { id: string } }) {
 
         <Container className="py-[50px] md:py-[80px] lg:py-[120px]">
           <div className="mb-2">
-            <h2 className="font-exo text-[24px] font-bold uppercase leading-snug text-title sm2:text-[26px] sm:text-[36px] lg:text-[40px]  xl:text-[44px] 2xl:text-[48px]">
+            <h1 className="font-exo text-[24px] font-bold uppercase leading-snug text-title sm2:text-[26px] sm:text-[36px] lg:text-[40px]  xl:text-[44px] 2xl:text-[48px]">
               {service?.title}
-            </h2>
+            </h1>
             <p className="mt-2 text-justify text-sm text-theme sm:text-base  md:text-lg">
               {service?.description}
             </p>
