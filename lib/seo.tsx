@@ -19,8 +19,13 @@ export const siteConfig = {
   email: 'info@synergymsp.net',
   phone: '+1-732-334-3590',
   linkedin: 'https://www.linkedin.com/company/synergy-msp-new-jersey-usa/',
+  // WhatsApp needs explicit dimensions/type to render the large preview, and
+  // caches previews per image URL — bump `v` whenever the image changes.
   ogImage: {
-    url: '/synergy-og.png',
+    url: '/synergy-og.png?v=2',
+    width: 1270,
+    height: 760,
+    type: 'image/png',
     alt: 'Synergy MSP – Managed IT Services, Cybersecurity, Cloud and Oracle Solutions',
   },
 };

@@ -39,7 +39,7 @@ const teamMembers: TeamMember[] = [
   },
   {
     name: 'Jawad Shah',
-    role: 'Senior System Administrator',
+    role: 'Solution Analysts',
     image: '/images/teams/jawad.webp',
   },
   {
